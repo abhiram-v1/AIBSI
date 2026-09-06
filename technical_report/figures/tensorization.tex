@@ -1,0 +1,25 @@
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[node distance=6mm and 13mm,
+block/.append style={text width=65mm,minimum height=13mm},
+process/.append style={text width=65mm,minimum height=13mm}]
+\node[block,text width=94mm] (wave) at (0,0) {One four-second EEG window: $19\times1000$ at 250 Hz};
+\node[process] (psd) at (-3.9,-1.8) {Spectral path\\Welch / spectrogram: 1--30 Hz, 0.5 Hz steps};
+\node[process] (delay) at (3.9,-1.8) {Waveform-delay path\\Resample to 125 Hz; form 16-lag views};
+\node[block,below=of psd] (spec) {V1 cohort: $69\times19\times59\times10$\\V2 window: $19\times59\times3$};
+\node[block,below=of delay] (dt) {Delay window: $19\times16\times485$\\Exact moment: $304\times304$};
+\node[process,below=of spec] (lowrank) {PCA / NMF / CP / Tucker / TT\\Training-only basis and subject pooling};
+\node[process,below=of dt] (energy) {TT / Tucker filters\\Pooled log-energy features};
+\node[block,text width=94mm] (features) at (0,-7.7) {One feature vector per participant\\Training-fitted scaling / selection, then classifier};
+\draw[arrow] (wave.south) -- ++(0,-0.12) -| (psd.north);
+\draw[arrow] (wave.south) -- ++(0,-0.12) -| (delay.north);
+\draw[arrow] (psd)--(spec);
+\draw[arrow] (delay)--(dt);
+\draw[arrow] (spec)--(lowrank);
+\draw[arrow] (dt)--(energy);
+\draw[arrow] (lowrank.south) -- ++(0,-0.4) -| (features.north);
+\draw[arrow] (energy.south) -- ++(0,-0.4) -| (features.north);
+\end{tikzpicture}
+\caption{Implemented spectral and waveform-delay tensorizations, with their actual array dimensions. The two branches are alternative representations; fusion is evaluated separately in later experiments.}
+\label{fig:tensorization}
+\end{figure}

@@ -1,0 +1,50 @@
+\chapter{Glossary and Notation}
+\label{app:glossary}
+
+\begin{description}[style=standard,itemsep=1pt,parsep=0pt,topsep=3pt]
+  \item[AD] Alzheimer's disease.
+  \item[ASR] Artifact Subspace Reconstruction, applied by the dataset authors to
+  supplied derivatives.
+  \item[Balanced accuracy (BA)] Arithmetic mean of per-class recalls; primary
+  metric for three-class comparisons.
+  \item[Boundary guard] Exclusion of any four-second window intersecting an
+  EEGLAB boundary expanded by 0.5 s on each side.
+  \item[CAR] Common-average reference across the 19 scalp channels at each time
+  sample.
+  \item[CN] Cognitively normal control group.
+  \item[CP] CANDECOMP/PARAFAC decomposition: sum of tensor rank-one terms.
+  \item[FTD] Frontotemporal dementia.
+  \item[HOSVD] Higher-order singular value decomposition; used here as a
+  training-only Tucker/multilinear projection.
+  \item[Inner CV] Cross-validation conducted only inside outer training people
+  to choose ranks, features, and classifiers.
+  \item[Outer CV] Held-out participant evaluation of the complete selection and
+  fitting procedure.
+  \item[PSD] Power spectral density.
+  \item[Subject pooling] Reduction of multiple windows to one equal-weight
+  participant representation.
+  \item[Tensor Train (TT)] Chain of low-rank cores whose matrix products recover
+  tensor entries.
+  \item[Tucker decomposition] Multilinear core tensor multiplied by one factor
+  matrix per mode.
+  \item[Window] One non-overlapping four-second, 19-channel segment at 250 Hz in
+  the processed arrays.
+\end{description}
+
+\section{Principal symbols}
+
+\begin{tabular}{ll}
+\toprule
+\textbf{Symbol} & \textbf{Meaning}\\
+\midrule
+$\mathcal{X}$ & General multi-way tensor\\
+$R$ & CP or terminal latent rank\\
+$U,V,G$ & Factor matrices or TT/Tucker cores\\
+$A$ & Electrode adjacency matrix\\
+$L$ & Electrode graph Laplacian\\
+$S$ & Subject delay-covariance moment\\
+$b$ & Vectorized channel-lag filter\\
+$\omega_i$ & Training subject class weight\\
+$M$ & Confusion matrix\\
+\bottomrule
+\end{tabular}

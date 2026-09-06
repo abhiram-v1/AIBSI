@@ -1,0 +1,50 @@
+\chapter{Source-Code Function Map}
+\label{app:code-map}
+
+\small
+\begin{longtable}{P{0.28\textwidth}P{0.23\textwidth}P{0.39\textwidth}}
+\caption{Principal implementation units and responsibilities.}
+\label{tab:code-map}\\
+\toprule
+\textbf{File} & \textbf{Function or class} & \textbf{Role}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{File} & \textbf{Function or class} & \textbf{Role}\\
+\midrule
+\endhead
+\path{preprocessing/build_balanced_dataset.py} & \code{load\_records}, \code{load\_downsampled} & Read BIDS metadata and EEGLAB derivatives; verify sampling and channel count; decimate 500 to 250 Hz.\\
+Same & \code{scan\_recordings} & Count complete windows and first-pass non-finite, flat, and amplitude flags.\\
+Same & \code{set\_reference\_buckets} & Sort all 23 FTD people and define 8/7/8 duration buckets plus shared thresholds.\\
+Same & \code{match\_group} & Solve binary MILP assignment with shortage, sex, age, duration mismatch, quota, uniqueness, and bucket-capacity terms.\\
+Same & \code{even\_temporal\_selection} & Choose target windows evenly across each selected recording.\\
+Same & \code{make\_entries}, \code{write\_signal\_datasets}, \code{verify\_outputs} & Build shuffled primary/leftover manifests and arrays; preserve partial tails; verify complete partition.\\
+\path{preprocessing/audit_primary_signal_quality.py} & \code{band\_sum}, \code{robust\_z}, \code{main} & Compute robust channel/window/subject QC and spectral diagnostics without mutation.\\
+\path{preprocessing/build_clean_primary_dataset.py} & \code{car\_transform} & Common-average re-reference and per-channel mean removal.\\
+Same & \code{signal\_qc\_reason}, \code{write\_partition} & Label fixed threshold failures; write clean/excluded arrays and metadata.\\
+\path{tensor_pipeline/tensorize_subjects.py} & \code{main} & Construct V1 $69\times19\times59\times10$ non-negative spectral tensor.\\
+\path{tensor_pipeline/run_decomposition_benchmark.py} & \code{fit\_nonnegative\_cp\_mu}, \code{decompose} & Fit PCA/NMF/CP/graph-CP/Tucker on training folds and project held-out subjects.\\
+Same & \code{classifier}, \code{aggregate\_metrics} & Build standardized classifiers and subject-level multiclass metrics.\\
+\path{tensor_pipeline/diagnose_feature_bottleneck.py} & \code{representations}, \code{main} & Compare less-compressed channel-band-time features with training-only selection.\\
+\path{tensor_pipeline/v2/prepare.py} & \code{main} & Verify header order, apply boundary guards, create logPSD tensors and 418 controls.\\
+\path{tensor_pipeline/v2/models.py} & \code{TTProjection} & Covariance-based TT-SVD-equivalent common basis with reusable held-out transform.\\
+Same & \code{TuckerProjection} & Training-only HOSVD basis for signed log-power tensors.\\
+Same & \code{anatomical\_smoothing} & Four-neighbor coordinate graph and normalized-Laplacian smoother.\\
+\path{tensor_pipeline/v2/benchmark.py} & \code{Experiment.features} & Fit/cache training-only decomposition bases and pool window latent features.\\
+Same & \code{Experiment.tune}, \code{outer}, \code{summarize} & Nested subject CV, deterministic selection, persistence, and repeat aggregation.\\
+\path{tensor_pipeline/v3_waveform/prepare.py} & \code{delay\_moment} & Build $19\times16\times485$ delay view and exact $304\times304$ covariance moment.\\
+Same & \code{spectral\_features}, \code{main} & Recompute 418 controls on full cohort and verify lineage/exclusions.\\
+\path{tensor_pipeline/v3_waveform/wave_models.py} & \code{weights}, \code{balanced\_moment}, \code{energies} & Equalize class loss, build training moments, and evaluate normalized filter energy.\\
+Same & \code{DelayProjection} & Fit unsupervised waveform TT or Tucker filters.\\
+Same & \code{SupervisedTT} & Jointly optimize TT cores and a three-class softmax head with analytic gradients.\\
+Same & \code{WavePipeline} & Combine representation, selection, weighted scaling, and classifier.\\
+\path{tensor_pipeline/v3_waveform/run.py} & \code{main}, \code{summarize} & Frozen 26-config nested benchmark and fixed learning-curve diagnostic.\\
+\path{tensor_pipeline/v3_waveform/convergence_check.py} & \code{main} & Post-hoc 100 versus 2,000 iteration sensitivity with identical splits.\\
+\path{tensor_pipeline/v4_tuning/tune_models.py} & \code{RegularizedTT} & Replace weak core anchor with configurable 0.1/1.0 anchoring.\\
+Same & \code{feature\_bank}, \code{classifier\_specs}, \code{configs} & Fit training-only TT/Tucker banks and enumerate exactly 139 settings.\\
+\path{tensor_pipeline/v4_tuning/benchmark_tuning.py} & \code{rank\_rows}, \code{select} & Deterministic primary, classifier-family, and representation-family inner selection.\\
+Same & \code{main} & Fit nested V4 benchmark, save bases/models/predictions, and aggregate complete repeats.\\
+\path{tensor_pipeline/v4_tuning/verify_report.py} & \code{main} & Replay 150 entries, reproduce split/scaler/weight/selection behavior, and export/reload XGBoost boosters.\\
+\bottomrule
+\end{longtable}
+\normalsize

@@ -1,0 +1,156 @@
+\chapter{Tensorization and Low-Rank Decomposition Foundations}
+\label{ch:tensors}
+
+\section{Why tensorize EEG?}
+
+A tensor is a multi-way array $\mathcal{X}\in\mathbb{R}^{I_1\times\cdots\times I_N}$.
+The course materials distinguish order from dimension and emphasize that
+flattening can obscure interactions among modes \citep{padhy2026course}. For
+\EEG{}, a value can be indexed simultaneously by participant, channel,
+frequency, and local time. Vectorizing these axes is always algebraically
+possible, but it removes the explicit statement that neighboring frequencies,
+electrodes, and time bins have different meanings.
+
+Tensorization is therefore a hypothesis about structure. In this project:
+
+\begin{itemize}
+  \item a frequency tensor assumes subject patterns can be expressed through
+  separable or multilinear channel-frequency-time factors;
+  \item a local-segment logPSD tensor preserves signed deviations from a
+  training mean and supports orthogonal TT/Tucker projection;
+  \item a waveform-delay tensor assumes short-lag covariance contains useful
+  information even when absolute waveform phase is not aligned across people.
+\end{itemize}
+
+\section{Rank-one structure and CP decomposition}
+
+A third-order rank-one tensor is the outer product
+$\bm{a}\circ\bm{b}\circ\bm{c}$ with entries
+$x_{ijk}=a_i b_j c_k$. CP represents an order-$N$ tensor as a sum of $R$
+rank-one terms \citep{kolda2009tensor}:
+
+\begin{equation}
+\mathcal{X}\approx\sum_{r=1}^{R}
+\bm{a}^{(1)}_r\circ\bm{a}^{(2)}_r\circ\cdots\circ\bm{a}^{(N)}_r.
+\label{eq:cp}
+\end{equation}
+
+For the V1 subject-channel-frequency-time tensor, the subject factor can be
+used as a compact embedding. Non-negativity improves parts-based interpretability
+for non-negative power data, but it is an optimization constraint, not a
+guarantee of identifiability or classification performance.
+
+The preliminary graph-regularized V1 objective has the conceptual form
+
+\begin{equation}
+\min_{A,B,C,D\geq0}
+\frac{1}{2}\left\|\mathcal{X}-[[A,B,C,D]]\right\|_F^2
++\lambda\operatorname{tr}(B^T L B),
+\label{eq:graphcp}
+\end{equation}
+
+where $B$ is the channel factor and $L$ is an electrode-graph Laplacian. The
+implemented multiplicative update mixes reconstruction and graph penalties,
+but its recorded objective scales those terms inconsistently under factor
+renormalization. The corresponding result is retained as preliminary rather
+than presented as validated graph regularization.
+
+\section{Tucker decomposition and HOSVD}
+
+Tucker decomposition uses a core tensor and one factor matrix per mode:
+
+\begin{equation}
+\mathcal{X}\approx\mathcal{G}\times_1 U^{(1)}\times_2 U^{(2)}
+\cdots\times_N U^{(N)}.
+\label{eq:tucker}
+\end{equation}
+
+Unlike CP's single component count, Tucker can choose a different multilinear
+rank for each mode. V2 implements a training-only HOSVD-like projection: each
+factor is formed from leading eigenvectors of a mode covariance, and their
+Kronecker-structured combination defines a reusable orthonormal basis. V3 uses
+channel and lag factors to form waveform-energy filters. Tucker is a natural
+course bridge from matrix PCA to structured higher-order compression
+\citep{kolda2009tensor,padhy2026lowrank}.
+
+\section{Tensor Train decomposition}
+
+Tensor Train writes each entry as a product of small cores:
+
+\begin{equation}
+x_{i_1\ldots i_N}=G_1[i_1]G_2[i_2]\cdots G_N[i_N],
+\label{eq:tt}
+\end{equation}
+
+with boundary ranks equal to one. TT-SVD obtains cores from successive low-rank
+unfoldings and controls storage through intermediate TT ranks
+\citep{oseledets2011tt}. In V2, feature modes are placed before observations;
+left-orthogonal cores define a common training-derived basis. This avoids
+comparing separately factorized subjects whose cores may differ by arbitrary
+signs, rotations, or gauges.
+
+For the V2 $19\times59\times3$ window tensor, the basis is assembled as
+
+\begin{equation}
+B_{(i,j,k),d}=\sum_{a,b}G_1(1,i,a)G_2(a,j,b)G_3(b,k,d).
+\end{equation}
+
+A centered held-out tensor is projected by matrix multiplication with $B$; the
+basis is never refit on held-out people.
+
+\section{Welch and spectrogram tensorization}
+
+Welch's method averages modified periodograms from windowed, overlapping
+segments to reduce spectral-estimate variance \citep{welch1967fft}. The project
+uses a 500-sample Hann segment at 250 Hz, 250-sample overlap, and 500-point FFT,
+giving 0.5 Hz bins. Frequencies from 1 to 30 Hz yield 59 bins.
+
+The V1 relative-power map for subject $n$, channel $c$, frequency $f$, and time
+bin $q$ can be written as
+
+\begin{equation}
+X_{ncfq}=\operatorname{median}_{w\in q}
+\sqrt{\frac{P_{ncfw}}{\sum_{c',f'}P_{nc'f'w}+\epsilon}}.
+\end{equation}
+
+V2 instead preserves signed log absolute power:
+
+\begin{equation}
+Z_{w,c,f,s}=\log_{10}\left(\max(P_{w,c,f,s},10^{-12})\right),
+\end{equation}
+
+where $s\in\{1,2,3\}$ indexes the three local overlapping two-second segments
+within a four-second window. This representation can express increases and
+decreases after centering, so non-negativity is neither required nor desirable.
+
+\section{Waveform-delay tensor and exact moment compression}
+
+Each clean four-second window is anti-alias resampled from 250 to 125 Hz,
+producing 500 samples. A 16-lag sliding view forms
+$\mathcal{D}\in\mathbb{R}^{19\times16\times485}$, where lag spacing is 8 ms and
+the first-to-last span is 120 ms. Each channel-lag row is centered over local
+positions.
+
+Let $z_p\in\mathbb{R}^{304}$ be the vectorized channel-lag sample at local
+position $p$. The per-window moment is
+
+\begin{equation}
+S_w=\frac{1}{485}\sum_{p=1}^{485} z_p z_p^T,
+\end{equation}
+
+and the subject moment is the equal-window average. For any filter
+$b\in\mathbb{R}^{304}$, its mean squared response is exactly
+
+\begin{equation}
+E(b)=\frac{b^T S b}{b^T b}.
+\label{eq:moment-energy}
+\end{equation}
+
+Thus the stored $88\times304\times304$ moments are exact sufficient statistics
+for the pooled squared response of any linear delay filter. They avoid storing
+all delay tensors, but they deliberately discard local-position and long-range
+sequence order. The waveform branch is therefore a pooled second-order model,
+not a general raw-EEG neural sequence model.
+
+\input{figures/tensorization}
+

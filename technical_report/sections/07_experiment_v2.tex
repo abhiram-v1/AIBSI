@@ -1,0 +1,126 @@
+\chapter{Experiment 2: Corrected Nested Tensor Train and Tucker Benchmark}
+\label{ch:v2}
+
+\section{Corrections and representation changes}
+
+V2 is the first fully corrected tensor benchmark. It verifies the 19-channel
+EEGLAB row order for all 69 controlled-cohort participants, applies the 0.5 s
+boundary guard, and retains 11,942 windows. It also replaces relative,
+non-negative power with signed log absolute PSD so that centered increases and
+decreases remain available to an orthogonal low-rank model.
+
+Each retained window is represented as
+$\mathcal{Z}_w\in\mathbb{R}^{19\times59\times3}$: channel $\times$ frequency
+$\times$ local segment. A separate subject tensor stores mean, median, and
+standard deviation logPSD, also of shape $19\times59\times3$. The local segment
+axis is not described as shared event time.
+
+\section{Spectral controls}
+
+The V2 control vector has 418 features. For delta (1--4 Hz), theta (4--8 Hz),
+alpha (8--13 Hz), and beta (13--30 Hz), it records per-channel mean and standard
+deviation of log absolute band power and relative band power. It also records
+per-channel mean and standard deviation of spectral entropy, 7--13 Hz alpha
+peak, and log slow-to-fast power ratio. Age, sex, MMSE, duration, window count,
+and diagnosis-derived statistics are absent.
+
+\section{Inductive TT and Tucker projections}
+
+The \code{TTProjection.fit()} implementation centers its training tensor,
+moves observations to the last mode, and computes leading left vectors from
+$AA^T$ for each unfolding. Signs are fixed by the largest-magnitude element for
+reproducible cores. The contracted cores form a common orthonormal basis; the
+code records orthogonality and centered reconstruction error.
+
+Window-level bases use 24 chronologically spread calibration windows per
+training participant. For every participant, all projected windows are pooled
+using four statistics per latent component: mean, standard deviation, median,
+and interquartile range. The decomposition basis is trained only from the
+relevant training participants; calibration provenance is saved.
+
+Tucker uses training-only multilinear PCA/HOSVD ranks $(6,8,3)$. Graph TT first
+applies a fixed coordinate-derived smoother. Each electrode connects to its four
+nearest coordinate neighbors with Gaussian distance weights. For normalized
+Laplacian $L=I-D^{-1/2}AD^{-1/2}$ and strength $\eta=0.5$, the smoother is
+
+\begin{equation}
+S=V\operatorname{diag}\left((1+\eta\lambda_i)^{-1/2}\right)V^T,
+\end{equation}
+
+where $L=V\operatorname{diag}(\lambda_i)V^T$. This is deterministic anatomical
+pre-smoothing, not the preliminary graph penalty in Eq.~\ref{eq:graphcp}.
+
+\section{Candidate families and models}
+
+Six representation families are compared:
+
+\begin{enumerate}
+  \item subject-level TT at ranks 8, 16, and 32;
+  \item pooled window TT at ranks 8, 16, and 32;
+  \item graph-smoothed pooled window TT at ranks 8, 16, and 32;
+  \item pooled window Tucker with training-only selection of 16, 32, or 64
+  latent features;
+  \item TT plus 418 spectral controls with TT ranks 8, 16, or 32 and selection
+  of 32 combined features; and
+  \item spectral controls with selection of 16, 32, or 64 features.
+\end{enumerate}
+
+Classifier candidates are logistic regression with $C\in\{0.1,1,10\}$, linear
+SVM with $C\in\{0.1,1\}$, RBF SVM with $C\in\{1,10\}$, and a fixed shallow
+histogram gradient booster. Feature selection uses ANOVA $F$ scores; every
+selector and scaler is inside the fitted pipeline.
+
+\section{Nested subject cross-validation}
+
+The outer evaluation is three repetitions of stratified five-fold participant
+CV (seed 5040). Each outer training set contains an independent three-fold inner
+CV (seed 8000 plus outer index). Inner out-of-fold balanced accuracy, then macro
+F1, selects rank, representation, feature count, and classifier. Exact ties use
+a deterministic lower-complexity ordering. This design addresses the optimistic
+bias produced when the same cross-validation result both selects and evaluates a
+model \citep{varma2006nested}.
+
+\input{figures/nested_cv}
+
+The \emph{primary} V2 endpoint is the outer score of the entire inner-selected
+pipeline. Per-family outer results are secondary method comparisons. SVM class
+labels come from \code{predict()}, while its decision scores are stored as
+uncalibrated decision functions rather than probabilities.
+
+\section{Results and interpretation}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{V2 family} & \textbf{Mean BA} & \textbf{Repeat SD}\\
+\midrule
+Inner-selected complete pipeline (primary) & 47.3\% & --\\
+Window Tucker / HOSVD & 56.0\% & 3.3 pp\\
+TT plus spectral controls & 54.1\% & --\\
+Graph-smoothed window TT & 53.1\% & --\\
+Spectral controls & 51.7\% & --\\
+Window TT & 51.2\% & --\\
+Subject TT & 50.2\% & 3.0 pp\\
+\bottomrule
+\end{tabular}
+\caption{Corrected V2 nested subject-level results. Dashes indicate values not emphasized in the consolidated record.}
+\label{tab:v2-results}
+\end{table}
+
+The strongest observed family is Tucker/HOSVD at 56.0\% mean balanced accuracy,
+with mean recalls of 59.4\% \AD{}, 50.7\% \FTD{}, and 58.0\% \CN{}. However,
+the complete automatic-selection procedure reaches only 47.3\%. The gap shows
+selection variance in a small cohort: selecting among many near-tied pipelines
+inside roughly 55 training participants can fail to identify the family that
+looks strongest after aggregation.
+
+\section{Verification}
+
+Numerical tests compare TT reconstruction against TensorLy, verify orthogonality,
+recover full-rank synthetic tensors, and check batch-invariant transform output.
+Post-run verification replays 105 saved classifier pipelines, 60 decomposition
+sets, 45 inner splits, and 15 outer splits. Held-out features are recomputed from
+saved training bases and must reproduce predictions and scores. Input hashes and
+source transforms are checked; no test participant enters basis calibration.
+

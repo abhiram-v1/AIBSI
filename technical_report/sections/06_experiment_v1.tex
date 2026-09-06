@@ -1,0 +1,105 @@
+\chapter{Experiment 1: Exploratory Spectral Tensor Benchmark}
+\label{ch:v1}
+
+\section{Objective and input cohort}
+
+The first experiment tests whether a compact non-negative
+subject-channel-frequency-time tensor can support three-class prediction on the
+controlled 69-person cohort. It uses the 12,270-window clean primary partition
+before the later EEGLAB boundary correction. The experiment is valuable as a
+baseline and design diagnostic, but its maximum across ranks and models is
+exploratory because the outer score is also used to compare those choices.
+
+\section{Tensor construction}
+
+For every four-second window and each of 19 channels, Welch PSD uses a 500-sample
+Hann segment, 250-sample overlap, 500-point FFT, constant detrending, and density
+scaling. The 59 bins from 1 to 30 Hz are retained. Power is normalized over the
+whole channel-frequency map and square-root transformed to obtain a non-negative
+representation.
+
+Each participant's windows are sorted chronologically and assigned to 10
+rank-based time bins. The median spectral map within each bin produces
+
+\begin{equation}
+\mathcal{X}\in\mathbb{R}_{+}^{69\times19\times59\times10}.
+\end{equation}
+
+The 10 bins summarize early-to-late recording position; they are not event-
+aligned epochs across people.
+
+\section{Decomposition methods}
+
+The benchmark evaluates ranks 3, 5, and 8 for five representations:
+
+\begin{enumerate}
+  \item PCA on the flattened tensor, fitted on training participants;
+  \item NMF with NNDSVDa initialization, coordinate descent, 1,000 iterations,
+  tolerance $10^{-5}$, and held-out transform;
+  \item non-negative CP fitted by multiplicative updates;
+  \item graph-regularized non-negative CP with nominal graph weight 0.1; and
+  \item non-negative Tucker with subject rank equal to the experimental rank and
+  feature ranks capped at channel 8, frequency 12, and time 5.
+\end{enumerate}
+
+CP/Tucker held-out features are solved in a fixed training-derived basis using
+non-negative least squares. Decomposition fitting occurs separately inside each
+subject-level training fold.
+
+\section{Classifiers and validation}
+
+Each representation is paired with regularized multinomial logistic regression,
+RBF SVM, and histogram gradient boosting. Logistic and SVM use standardized
+features and balanced class weights. The evaluation uses three repetitions of
+stratified five-fold participant CV with seed 5040. Since each tensor row is one
+participant, there is no window-level split at this stage.
+
+\section{Results}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Representation} & \textbf{Best rank} & \textbf{Mean BA} & \textbf{Associated classifier}\\
+\midrule
+PCA & 8 & 54.1\% & Logistic regression\\
+NMF & 8 & 54.1\% & Logistic regression\\
+Non-negative Tucker & 3 & 53.6\% & Histogram gradient boosting\\
+Non-negative CP & 5/8 & 52.2\% & Logistic regression\\
+Graph non-negative CP & 5 & 51.7\% & Logistic regression\\
+\bottomrule
+\end{tabular}
+\caption{Strongest observed V1 result for each representation family. These are exploratory maxima, not nested-selection estimates.}
+\label{tab:v1-results}
+\end{table}
+
+For the cited PCA rank-8 result, mean \BA{} is 54.1\% with repeat SD 3.6
+percentage points. Its probability-averaged 69-subject confusion matrix has
+recalls of 52.2\% \AD{}, 30.4\% \FTD{}, and 73.9\% \CN{}. The low \FTD{}
+recall immediately shows that equal window counts do not eliminate the
+difficulty of the smallest diagnostic group.
+
+An NMF convergence check raises the rank-8 iteration limit to 5,000 and produces
+the same classification result. Reconstruction error improves with rank for CP,
+but prediction does not improve monotonically. This separates compression
+fidelity from discriminative utility.
+
+\section{Feature-bottleneck diagnostic}
+
+A later diagnostic constructs less-compressed channel-band-time features and
+uses repeated five-fold CV with training-only univariate selection. Its strongest
+combination, 760 raw features reduced to 40 and classified by a linear SVM,
+reaches 57.0\% mean balanced accuracy. This suggests that aggressive low-rank
+compression may remove some useful structure, but it is not a causal ablation
+because feature form and selection also change.
+
+\section{Known limitations and correction path}
+
+The first tensorizer attached a hard-coded electrode name order to rows that were
+actually stored in another EEGLAB order. Consequently, the graph edges and any
+electrode-specific interpretation in V1 are invalid. PCA, flattened NMF, global
+statistics, and channel-permutation-invariant accuracy calculations are not
+invalidated by a consistent row permutation. The graph-NCP objective also has a
+factor-scale inconsistency. V2 therefore reads headers directly, uses signed
+absolute logPSD, guards boundaries, and evaluates a fully nested pipeline.
+

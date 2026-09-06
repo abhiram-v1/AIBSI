@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+
+# Virtual environments
+.venv*/
+venv*/
+env*/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files (large dataset files)
+dataset/
+tmp/
+
+# LaTeX build artifacts
+technical_report/*.aux
+technical_report/*.bbl
+technical_report/*.blg
+technical_report/*.lof
+technical_report/*.log
+technical_report/*.lot
+technical_report/*.out
+technical_report/*.pdf
+technical_report/*.toc
+technical_report/*.synctex.gz
+
+# Pipeline outputs (generated/large files)
+tensor_pipeline/outputs/
+tensor_pipeline/v2/__pycache__/
+tensor_pipeline/v3_waveform/__pycache__/
+tensor_pipeline/v4_tuning/__pycache__/
+preprocessing/01_duration_sorted/
+preprocessing/02_balanced_primary/
+preprocessing/03_signal_qc_audit/
+preprocessing/04_clean_primary/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,181 @@
+\chapter{Preprocessing, Cohort Construction, and Signal Quality Control}
+\label{ch:preprocessing}
+
+\section{Design principles}
+
+The preprocessing pipeline follows four constraints: preserve source data,
+create a controlled primary dataset, retain every excluded complete window in a
+separate partition, and make all selection rules reproducible. Figure
+\ref{fig:dataset-flow} summarizes the counts; this chapter gives the algorithmic
+details.
+
+\section{Window formation and first-pass QC}
+
+Each derivative recording is loaded from its EEGLAB \code{.set} file and checked
+for 19 channels at 500 Hz. Because the supplied derivative is already low-pass
+filtered at 45 Hz, retaining every second sample gives 250 Hz without aliasing
+the retained band. Each record is split into non-overlapping four-second arrays
+of shape $19\times1000$. Per-channel temporal means are removed. The incomplete
+terminal segment from each of the 88 recordings is preserved separately; the
+88 tails total 38,780 samples per channel or 155.12 seconds.
+
+Figure~\ref{fig:window-generation} shows the sample indexing, stride, and
+separate handling of incomplete tails. Here $N$ is the downsampled recording
+length; these four-second windows are distinct from the overlapping local
+segments used later inside spectral and waveform-delay tensorization.
+
+\input{figures/window_generation}
+
+The first label-blind screen flags non-finite values, a channel standard
+deviation below 0.1 microvolt, or maximum absolute amplitude above 500
+microvolts. It approves 7,252 \AD{}, 4,132 \FTD{}, and 6,007 \CN{} windows.
+Flagged windows remain in the leftover partition.
+
+\section{FTD-referenced duration buckets}
+
+The 23 \FTD{} participants are sorted by duration and divided by rank into 8
+short, 7 medium, and 8 long participants. Midpoints between adjacent boundary
+durations define thresholds shared with the other classes:
+
+\begin{equation}
+\text{bucket}(d)=
+\begin{cases}
+\text{short}, & d\leq647.60\text{ s},\\
+\text{medium}, & 647.60<d\leq806.45\text{ s},\\
+\text{long}, & d>806.45\text{ s}.
+\end{cases}
+\end{equation}
+
+The \FTD{} window targets are 1,160 short, 1,222 medium, and 1,750 long,
+totaling 4,132.
+
+\section{Participant matching as a mixed-integer assignment}
+
+The function \code{match\_group()} formulates a binary assignment between each
+\FTD{} reference person $r$ and candidate $c$ from \AD{} or \CN{}. With
+$x_{rc}\in\{0,1\}$, the cost is
+
+\begin{align}
+J_{rc} ={}& 1000\max(0,w_r-w_c)
++300\mathbb{I}(s_r\neq s_c) \\
+&+10|a_r-a_c|+0.1|w_r-w_c|,
+\end{align}
+
+where $w$ is the count of approved windows, $s$ is sex, and $a$ is age. The
+mixed-integer linear program minimizes $\sum_{r,c}J_{rc}x_{rc}$ subject to one
+candidate per reference, at most one reference per candidate, fixed feasible
+male quotas (12 for \AD{}, 13 for \CN{}), and sufficient total window capacity
+inside each duration bucket. The code uses SciPy's \code{milp()} with a 120 s
+limit. It does not duplicate a participant.
+
+If a selected recording has more approved windows than assigned, the function
+\path{even_temporal_selection()} spreads chosen windows over the full
+recording. For $m$ available windows and target $k$, the selected zero-based
+positions are
+
+\begin{equation}
+p_j=\left\lfloor\frac{(j+0.5)m}{k}\right\rfloor,
+\qquad j=0,\ldots,k-1.
+\end{equation}
+
+This avoids taking only the beginning of longer recordings. The resulting first
+primary partition contains 4,132 windows per class, 23 participants per class,
+and 49,584 seconds. Its broadly matched demographics are shown in
+Table~\ref{tab:matched-demographics}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Group} & \textbf{People} & \textbf{F} & \textbf{M} & \textbf{Age mean (SD)} & \textbf{Age range} & \textbf{Windows}\\
+\midrule
+\AD{} & 23 & 11 & 12 & 65.74 (7.35) & 49--79 & 4,132\\
+\FTD{} & 23 & 9 & 14 & 63.65 (8.22) & 44--78 & 4,132\\
+\CN{} & 23 & 10 & 13 & 66.87 (5.24) & 57--78 & 4,132\\
+\bottomrule
+\end{tabular}
+\caption{Participant composition of the first controlled primary cohort.}
+\label{tab:matched-demographics}
+\end{table}
+
+The first leftover dataset contains 5,023 complete windows: 3,135 \AD{}, 5
+\FTD{}, and 1,883 \CN{}. Of these, 4,995 pass the first conservative screen and
+28 carry initial extreme-amplitude flags. Reasons are explicit: unselected
+participant, excess approved window, or QC flag. The primary and leftover IDs
+are disjoint and jointly exhaust all 17,419 complete source windows.
+
+\section{Signal audit and common-average reference}
+
+The audit computes amplitude, adjacent-sample step, channel standard deviation,
+line-noise-band power, band powers, entropy, and across-channel common-variance
+statistics. The first primary set contains no material non-finite, repeated-
+value, or residual 50 Hz issue. Across-channel common variance is high (median
+0.953; 95th percentile 0.986), but this alone is not evidence of electrode
+bridging or artifact because scalp volume conduction and a shared mastoid
+reference naturally induce correlation.
+
+The project applies common-average reference (CAR) at each time sample:
+
+\begin{equation}
+x'_{c,t}=x_{c,t}-\frac{1}{19}\sum_{j=1}^{19}x_{j,t},
+\end{equation}
+
+followed by removal of each channel's temporal mean inside the four-second
+window. No additional broad filter, ASR, ICA, or 50 Hz notch is applied.
+
+\section{Fixed post-CAR exclusion rules}
+
+The cleaned controlled dataset uses the following label-blind thresholds:
+
+\begin{itemize}
+  \item maximum absolute amplitude at least 400 microvolts;
+  \item maximum adjacent-sample step at least 150 microvolts per 4 ms;
+  \item a separately recorded extreme-step category at least 300 microvolts;
+  \item minimum channel standard deviation below 1 microvolt;
+  \item non-finite values.
+\end{itemize}
+
+Sixty-five windows fail at least one post-CAR rule: 9 \AD{}, 42 \FTD{}, and 14
+\CN{}. Reason totals overlap because one window may trigger multiple conditions:
+52 ordinary abrupt steps, 9 extreme abrupt steps, 8 extreme amplitudes, and 1
+near-flat channel. Most suspicious \FTD{} windows are concentrated in
+\code{sub-086}; the participant remains in the cohort. High 30--45 Hz activity
+in \code{sub-067}, \code{sub-077}, and \code{sub-085} is documented but is not
+used as a class-sensitive exclusion criterion.
+
+After QC, \FTD{} has 4,090 windows and again limits the equal-window primary
+cohort. The pipeline moves 33 \AD{} and 28 \CN{} medium-duration windows to an
+excluded partition using a deterministic quality-first trim. The final
+controlled primary therefore has 12,270 windows, exactly 4,090 per diagnosis,
+69 participants, and 49,080 seconds. The excluded companion contains 126
+windows, exactly 42 per diagnosis: 65 signal-QC exclusions plus 61 balance-only
+trims. The shuffle seeds are 4506 for the retained primary and 4507 for the
+excluded partition.
+
+\section{Boundary-safe V2 index}
+
+The V2 preparation code reads the actual channel labels and coordinates from
+every EEGLAB header and asserts a common row order:
+
+\begin{center}
+\code{Fp1, Fp2, F3, F4, C3, C4, P3, P4, O1, O2, F7, F8, T3, T4, T5, T6, Fz, Cz, Pz}.
+\end{center}
+
+It then removes a primary window if its $[t,t+4)$ interval intersects any
+EEGLAB boundary time expanded by 0.5 s on both sides. This removes 328 analysis
+windows and retains 11,942: 3,985 \AD{}, 4,000 \FTD{}, and 3,957 \CN{}.
+The stored clean-primary arrays remain unchanged; V2 uses a separate index.
+
+\section{Full-cohort V3/V4 analysis index}
+
+For the approved full-cohort experiment, the code reads both original stage-02
+primary and leftover arrays, then reapplies CAR, the same thresholds, and the
+boundary guard uniformly. It retains 16,824 windows from all 88 people:
+7,030 \AD{}, 4,000 \FTD{}, and 5,794 \CN{}. Of these, 4,828 originate from the
+old leftover partition, and 54 are recovered balance-only trims. All 11,942 V2
+windows remain included, no formerly artifact-excluded primary window is
+reintroduced, and 595 excluded IDs retain their reasons.
+
+This design uses more signal without pretending to create additional \FTD{}
+participants. Later models average windows within person and weight the 23
+\FTD{} participants as a class rather than oversampling their windows.
