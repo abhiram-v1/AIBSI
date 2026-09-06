@@ -22,7 +22,10 @@ ENV/
 dataset/
 tmp/
 
-# LaTeX build artifacts
+# Technical report (LaTeX - excluded entirely)
+technical_report/
+
+# LaTeX build artifacts (redundant but kept for clarity)
 technical_report/*.aux
 technical_report/*.bbl
 technical_report/*.blg
