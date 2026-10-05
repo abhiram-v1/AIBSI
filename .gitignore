@@ -22,10 +22,7 @@ ENV/
 dataset/
 tmp/
 
-# Technical report (LaTeX - excluded entirely)
-technical_report/
-
-# LaTeX build artifacts (redundant but kept for clarity)
+# Technical report sources and final PDF are versioned; compiler byproducts are not.
 technical_report/*.aux
 technical_report/*.bbl
 technical_report/*.blg
@@ -33,9 +30,13 @@ technical_report/*.lof
 technical_report/*.log
 technical_report/*.lot
 technical_report/*.out
-technical_report/*.pdf
 technical_report/*.toc
 technical_report/*.synctex.gz
+
+# Presentation authoring caches and intermediate renderings
+presentation_progress/.build/
+presentation_progress/.chart-data-*/
+presentation_progress/.codex-build-*/
 
 # Pipeline outputs (generated/large files)
 tensor_pipeline/outputs/

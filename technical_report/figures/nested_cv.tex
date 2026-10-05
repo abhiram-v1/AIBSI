@@ -1,0 +1,19 @@
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[node distance=9mm and 9mm,
+block/.append style={text width=63mm,minimum height=17mm},
+process/.append style={text width=63mm,minimum height=17mm}]
+\node[block,text width=115mm] (people) at (0,0) {69 participants in V2; 88 in V3 / V4\\Outer CV: 3 repetitions of 5 folds};
+\node[process] (train) at (-3.8,-2.4) {Outer training people\\Inner 3-fold CV chooses the rank,\\features and classifier configuration};
+\node[block] (test) at (3.8,-2.4) {Outer test people\\All windows from these people\\are withheld from fitting and tuning};
+\node[process,below=of train] (refit) {Refit the selected complete pipeline\\Basis, selector, scaler, weights and\\classifier use outer training people};
+\node[block,below=of test] (predict) {Predict outer test people\\One prediction per person per repeat\\Pool complete-repeat subject metrics};
+\draw[arrow] (people.south) -- ++(0,-0.3) -| (train.north);
+\draw[arrow] (people.south) -- ++(0,-0.3) -| (test.north);
+\draw[arrow] (train)--(refit);
+\draw[arrow] (test)--(predict);
+\draw[arrow] (refit)--(predict);
+\end{tikzpicture}
+\caption{Nested participant-level training, validation and test preparation in V2--V4. Inner validation selects a configuration; outer test labels enter only the final scoring step.}
+\label{fig:nested-cv}
+\end{figure}

@@ -1,0 +1,47 @@
+\chapter*{Executive Summary}
+\addcontentsline{toc}{chapter}{Executive Summary}
+
+This project investigates whether multi-way representations of resting-state
+\EEG{} can support three-class subject-level discrimination among Alzheimer's
+disease (\AD), frontotemporal dementia (\FTD), and cognitively normal controls
+(\CN). The source is the public OpenNeuro \code{ds004504} cohort: 88 people,
+19 scalp channels, 500 Hz eyes-closed recordings, and author-supplied artifact-
+cleaned derivatives \citep{miltiadous2023dataset,openneuro2026dataset}.
+
+The work evolved through four experiments. It began with a deliberately balanced
+69-person primary cohort and exploratory non-negative spectral tensor methods.
+It then corrected channel labels and EEGLAB boundary handling, introduced
+training-only TT/Tucker bases and nested subject cross-validation, expanded to all
+88 people using raw-waveform delay moments plus class/subject weighting, and
+finally performed a bounded 139-configuration comparison of logistic regression,
+RBF SVM, random forest, XGBoost, and supervised TT variants.
+
+\begin{keybox}{Headline outcome}
+The strongest observed classifier-family result is the tuned RBF SVM at
+\textbf{59.7\% mean balanced accuracy} (repeat SD 0.9 percentage points), with
+57.4\% \AD{} recall, 43.5\% \FTD{} recall, and 78.2\% \CN{} recall. The V4
+predeclared complete-pipeline endpoint is \textbf{54.5\%}. This is useful course
+evidence above the 33.3\% single-class balanced-accuracy baseline, but it is not
+an independently confirmed 60\% clinical result.
+\end{keybox}
+
+The central empirical lesson is that tensorization alone did not guarantee a
+gain. Corrected V2 Tucker/HOSVD reached 56.0\% as the strongest method family,
+while V3's same-cohort spectral control (55.8\%) exceeded every waveform-only
+branch (49.9--51.8\%). V4's TT/spectral fusion family reached 59.1\%, but
+training-only feature selection could favor spectral predictors, so the result
+does not isolate a causal TT contribution. Across versions, \FTD{} remains the
+hardest class and the principal data limitation is 23 independent \FTD{} people,
+not merely the number of four-second windows.
+
+The pipeline is methodologically stronger than its first prototype because all
+current learned stages are fitted on training people only; windows from a person
+never cross validation boundaries; per-person pooling prevents long recordings
+from becoming pseudo-replicates; class weights equalize diagnosis-level loss;
+and verification replays saved predictions, checks split membership, confirms
+training-only bases/scalers, and fingerprints source arrays.
+
+Figure~\ref{fig:executive-pipeline} summarizes how these stages connect.
+\input{figures/executive_pipeline}
+
+\clearpage

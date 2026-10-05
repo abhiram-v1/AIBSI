@@ -1,0 +1,39 @@
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+NeuroTensor developed a complete, versioned course pipeline from public
+resting-state \EEG{} to tensor representation, low-rank decomposition,
+participant-level classification, and artifact replay. The work began by solving
+a practical data-engineering problem: \FTD{} limited both people and duration.
+An \FTD{}-referenced MILP match produced a controlled 69-person cohort while
+preserving all excess windows. Signal audit, CAR, deterministic outlier rules,
+and boundary guards then made the analysis partitions explicit and reproducible.
+
+Three tensor views were tested: a non-negative
+subject-channel-frequency-time tensor, signed logPSD channel-frequency-local-
+segment tensors, and raw-waveform channel-lag-position delay tensors summarized
+by exact second-order moments. CP, graph NCP, Tucker/HOSVD, TT, and supervised TT
+were evaluated alongside spectral features and standard classifiers.
+
+The highest retained family result is 59.7\% mean balanced accuracy for tuned
+RBF SVM, while the V4 primary complete-pipeline endpoint is 54.5\%. \CN{} is the
+easiest class and \FTD{} remains the hardest. Tucker is competitive in the
+corrected 69-person experiment, but spectral controls outperform waveform-only
+methods in the 88-person experiment. Fusion is promising but does not isolate a
+TT effect. XGBoost is useful yet not best; longer optimization improves neither
+the fixed supervised TT nor the evidence base by itself.
+
+The project's strongest contribution is therefore methodological: it shows how
+to move from attractive tensor ideas to an auditable experiment while preserving
+negative results and corrections. The current models are meaningful course
+benchmarks, not clinical systems. The next credible advance is new independent
+\FTD{} data and a locked external-validation protocol, not another unbounded
+search on the same participants.
+
+\begin{keybox}{Final takeaway}
+Tensor decomposition provides a principled language for preserving multi-way
+EEG structure, but trustworthy performance depends equally on cohort design,
+subject-level validation, training-only transformations, optimization diagnostics,
+and honest endpoint reporting.
+\end{keybox}
+

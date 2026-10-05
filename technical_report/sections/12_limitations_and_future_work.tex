@@ -1,0 +1,88 @@
+\chapter{Limitations, Threats to Validity, and Future Work}
+\label{ch:limitations}
+
+\section{Internal validity}
+
+The project addresses several common leakage routes, but residual threats remain:
+
+\begin{itemize}
+  \item The same public participants were examined across multiple experiment
+  generations. Nested CV protects each run's inner fitting, but it cannot erase
+  researcher-level adaptation after earlier outer outcomes were seen.
+  \item V1 compares ranks and families without nested selection. Its maximum is
+  exploratory.
+  \item V2 calibration uses 24 windows per training person for computational
+  efficiency. This is reproducible but may underrepresent some within-person
+  variability.
+  \item V3/V4 spectral and waveform branches cover different effective bands:
+  spectra use 1--30 Hz, while waveform moments retain approximately 0.5--45 Hz.
+  The comparison is between complete pipelines, not a perfectly isolated
+  representation ablation.
+  \item Repeated CV folds are correlated. The three repeat scores are too few for
+  a reliable normal-theory confidence interval.
+\end{itemize}
+
+\section{Construct validity}
+
+Balanced accuracy measures classification, not biomarker validity. The project
+does not establish that any factor corresponds to a neurophysiological disease
+mechanism. The original proposal's MMSE correlations, ANOVA of factor loadings,
+topographic biomarker maps, dPLV connectivity, and Riemannian baselines remain
+unimplemented. Because channel order was wrong in V1, its graph/electrode
+interpretations must not be used.
+
+The waveform moment is exact for mean squared linear delay-filter energy, but it
+cannot represent arbitrary nonlinear waveform dynamics or long-range order.
+Calling it ``raw training'' without this qualification would overstate the model.
+
+\section{External validity}
+
+The cohort is single-site, limited to 88 people, and includes only 23 \FTD{}
+participants. Recording device, clinical workflow, derivative preprocessing,
+population characteristics, and label criteria may differ elsewhere. No result
+is calibrated for clinical probabilities, prospective use, or medical decisions.
+
+\section{Statistical power and uncertainty}
+
+The main unit is the person, not the window. This leaves modest test folds of
+roughly 17--18 people and creates sensitivity to which \FTD{} cases are held out.
+The 59.7\% mean is only about 5.2 percentage points above the V4 primary endpoint
+and is chosen as a best family after comparison. A formal inferential claim would
+need an external test cohort or a prespecified locked model, plus uncertainty
+quantification appropriate for participant-level clustered data.
+
+\section{Prioritized next experiments}
+
+Future work should be sequenced rather than expanded into an unlimited search.
+
+\begin{enumerate}
+  \item \textbf{Lock an external-validation protocol.} Freeze one representation,
+  one classifier, all preprocessing thresholds, and a single primary metric
+  before obtaining a new cohort.
+  \item \textbf{Acquire independent FTD participants.} New people are more valuable
+  than duplicating existing windows. Multi-site recruitment would also test
+  device/site generalization.
+  \item \textbf{Run targeted ablations.} Frequency-match waveform and spectral
+  branches; compare TT16, spectral-32, and fusion-32 under identical preprocessing
+  and one fixed classifier.
+  \item \textbf{Add the missing course baselines.} Implement tangent-space
+  Riemannian covariance features, then compare them under the same nested splits.
+  \item \textbf{Investigate connectivity carefully.} Implement dPLV or another
+  phase-connectivity tensor with leakage-safe estimation and surrogate/null
+  checks. Avoid presenting volume-conduction effects as disease connectivity.
+  \item \textbf{Stability and interpretability.} Evaluate Tucker/TT subspace
+  stability across folds, bootstrap electrode/frequency loadings by participant,
+  and correct for multiple comparisons before claiming biomarkers.
+  \item \textbf{Clinically separate objectives.} If MMSE association is studied,
+  treat it as a distinct outcome with its own validation rather than adding MMSE
+  to an EEG diagnosis classifier.
+\end{enumerate}
+
+\section{What should not be done next}
+
+The project should not repeatedly expand the same 88-person hyperparameter grid
+until 65--70\% appears. It should not split by window, oversample \FTD{} windows
+as if they were new patients, merge the leftover directory destructively, or
+report secondary family maxima as the primary endpoint. Those actions would
+increase apparent performance more readily than scientific credibility.
+

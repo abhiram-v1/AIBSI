@@ -1,0 +1,119 @@
+\chapter{Dataset Description and Initial Risk Analysis}
+\label{ch:dataset}
+
+\section{Source and acquisition}
+
+The project uses OpenNeuro dataset \code{ds004504}, local version 1.0.9, released
+under CC0. It contains routine eyes-closed resting-state recordings from 88
+people: 36 \AD{}, 23 \FTD{}, and 29 \CN{}. Data were acquired with a clinical
+Nihon Kohden system at 500 Hz using 19 scalp electrodes positioned according to
+the international 10--20 system. The accompanying dataset paper describes the
+cohort, recording protocol, BIDS structure, MMSE metadata, and author-supplied
+preprocessing \citep{miltiadous2023dataset,openneuro2026dataset}.
+
+The local derivative EEGLAB files are used because the dataset authors recommend
+their preprocessed release. Those derivatives include approximately 0.5--45 Hz
+band limitation, mastoid referencing, Artifact Subspace Reconstruction (ASR),
+ICA, and automatic ICLabel-based component removal. ICLabel is an automated
+classifier for EEG independent components \citep{piontonachini2019iclabel}. The
+project therefore does not repeat ASR or ICA and does not relabel the derivatives
+as raw unprocessed recordings.
+
+\section{Participants and demographics}
+
+Table~\ref{tab:source-demographics} reports the local participant inventory.
+Age and sex are used to audit selection, not as predictive features. MMSE is
+retained as metadata but excluded from all classifiers, preventing an outcome-
+adjacent clinical score from inflating EEG-only performance.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Group} & \textbf{People} & \textbf{Female} & \textbf{Male} & \textbf{Age range} & \textbf{Age mean}\\
+\midrule
+\AD{} & 36 & 24 & 12 & 49--79 & 66.39\\
+\FTD{} & 23 & 9 & 14 & 44--78 & 63.65\\
+\CN{} & 29 & 11 & 18 & 57--78 & 67.90\\
+\midrule
+Total & 88 & 44 & 44 & 44--79 & --\\
+\bottomrule
+\end{tabular}
+\caption{Source participant distribution. Sex coding follows the supplied metadata.}
+\label{tab:source-demographics}
+\end{table}
+
+\section{Recording-duration coverage}
+
+The source contains 70,590.3 seconds (19.61 hours) of recording. The duration
+imbalance is substantial: \FTD{} contributes both the fewest people and the
+least total time. This makes \FTD{} the correct reference margin for a controlled
+three-class primary cohort.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Group} & \textbf{People} & \textbf{Seconds} & \textbf{Hours} & \textbf{Complete 4-s windows}\\
+\midrule
+\AD{} & 36 & 29,403.3 & 8.17 & 7,267\\
+\FTD{} & 23 & 16,753.4 & 4.65 & 4,137\\
+\CN{} & 29 & 24,433.6 & 6.79 & 6,015\\
+\midrule
+Total & 88 & 70,590.3 & 19.61 & 17,419\\
+\bottomrule
+\end{tabular}
+\caption{Source duration and complete non-overlapping four-second window inventory.}
+\label{tab:duration-source}
+\end{table}
+
+Across all participants, the longest recording is \code{sub-010} (\AD{},
+1,291.1 s) and the shortest is \code{sub-003} (\AD{}, 307.1 s). Within \FTD{},
+the range is \code{sub-070} at 479.1 s to \code{sub-074} at 1,026.9 s; within
+\CN{}, it is \code{sub-060} at 751.5 s to \code{sub-040} at 1,017.1 s.
+Non-destructive duration-ranked views were created under
+\path{preprocessing/01_duration_sorted}; the source files themselves were not
+moved or renamed.
+
+\input{figures/dataset_flow}
+
+\section{Initial methodological risks}
+
+\subsection{Class count versus window count}
+
+The 17,419 complete windows are not 17,419 independent patients. Windows from
+one recording share anatomy, acquisition conditions, diagnosis, and temporal
+context. A random window split would permit near-duplicate subject signatures
+to appear in both training and test sets. Every valid experiment must therefore
+split by subject and pool predictions or features at the subject level.
+
+\subsection{Duration confounding}
+
+If all windows are used naively, \AD{} supplies 1.76 times as many complete
+windows as \FTD{}. A classifier may then learn recording exposure or obtain an
+overly stable estimate for long recordings. The controlled primary cohort uses
+duration buckets and equal windows; the later full cohort averages windows
+within person and applies diagnosis-level sample weights.
+
+\subsection{Demographic mismatch}
+
+\FTD{} is younger on average and has a different sex ratio. Exact demographic
+identity is neither feasible nor desirable with 23 people per class. The design
+uses broad matching for the controlled cohort, records remaining differences,
+and excludes age and sex from model predictors.
+
+\subsection{Reference and channel-order dependence}
+
+Graph methods are sensitive to electrode labels and coordinate order. The first
+tensorizer used a hard-coded order that did not match the EEGLAB row order.
+Later code reads and verifies \code{chanlocs} for every subject. This correction
+changes anatomical interpretation, not channel-permutation-invariant operations
+such as PCA, global statistics, or common-average reference.
+
+\subsection{Boundary discontinuities}
+
+EEGLAB \code{boundary} events indicate data cuts. Four-second windows near such
+events can contain artificial discontinuities even after amplitude QC. V2 and
+later analyses therefore remove any window intersecting a fixed 0.5 s guard on
+either side of each boundary.
+

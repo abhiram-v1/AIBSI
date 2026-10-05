@@ -1,0 +1,112 @@
+\chapter{Reproducibility, Verification, and Software Environment}
+\label{ch:reproducibility}
+
+\section{Reproducibility strategy}
+
+Reproducibility is implemented through versioned directories, frozen protocols,
+deterministic seeds, source fingerprints, explicit sample IDs, saved split
+memberships, persisted bases and complete classifier pipelines, fold-level JSON
+predictions, and separate replay verification. Earlier experiments are retained
+even when corrected later.
+
+\section{Recorded software environment}
+
+The V2 artifact manifest records Python 3.10.11, NumPy 2.2.6, SciPy 1.15.3,
+scikit-learn 1.7.2, Joblib 1.6.0, TensorLy 0.9.0, and threadpoolctl 3.6.0. V4 adds
+\code{xgboost-cpu} 3.2.0. MiKTeX 25.12 is used only to compile this report; it is
+not part of the modeling environment.
+
+\section{Deterministic settings}
+
+Key seeds are:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Purpose} & \textbf{Seed} & \textbf{Stage}\\
+\midrule
+First primary shuffle & 4504 & Stage 02\\
+First leftover shuffle & 4505 & Stage 02\\
+Clean primary shuffle & 4506 & Stage 04\\
+Clean excluded shuffle & 4507 & Stage 04\\
+V1 repeated subject CV & 5040 & Experiment 1\\
+V2 outer subject CV & 5040 & Experiment 2\\
+V2 inner subject CV & 8000 + outer index & Experiment 2\\
+V3/V4 outer subject CV & 9060 & Experiments 3--4\\
+V3/V4 inner subject CV & 90600 + outer index & Experiments 3--4\\
+Tree models & 9064 & Experiment 4\\
+\bottomrule
+\end{tabular}
+\caption{Principal deterministic seeds.}
+\label{tab:seeds}
+\end{table}
+
+Determinism does not eliminate uncertainty. These seeds make a specific analysis
+replayable; they do not guarantee that another reasonable split seed gives the
+same score.
+
+\section{Recommended execution order}
+
+The versioned scripts should be run in dependency order from the workspace root:
+
+\begin{enumerate}
+  \item \code{py -3.10 preprocessing/build\_balanced\_dataset.py}
+  \item \code{py -3.10 preprocessing/audit\_primary\_signal\_quality.py}
+  \item \code{py -3.10 preprocessing/build\_clean\_primary\_dataset.py}
+  \item \code{py -3.10 tensor\_pipeline/tensorize\_subjects.py} and the V1
+  rank benchmarks if historical reproduction is required;
+  \item \code{py -3.10 tensor\_pipeline/v2/prepare.py}, then V2 tests,
+  benchmark, verification, and reporting;
+  \item \code{py -3.10 tensor\_pipeline/v3\_waveform/prepare.py}, then V3
+  tests, run, convergence sensitivity, verification, and finalization; and
+  \item \code{py -3.10 tensor\_pipeline/v4\_tuning/test\_tuning.py}, then V4
+  benchmark and verification/report scripts.
+\end{enumerate}
+
+Exact reproduction guidance and stage-specific caveats remain in the versioned
+README and protocol files. The code deliberately refuses to overwrite some
+existing V3 outputs; this protects completed experiments from accidental
+replacement.
+
+\section{Verification matrix}
+
+\begin{longtable}{p{0.24\textwidth}p{0.28\textwidth}p{0.38\textwidth}}
+\caption{Verification evidence retained by stage.}
+\label{tab:verification}\\
+\toprule
+\textbf{Stage} & \textbf{Check} & \textbf{Evidence}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Stage} & \textbf{Check} & \textbf{Evidence}\\
+\midrule
+\endhead
+Stage 02 & Complete-window partition & Primary and leftover IDs disjoint; their union equals all 17,419 complete windows; tails separately counted.\\
+Stage 04 & Transform and balance & All values finite; 12,270 rows; 4,090 labels each; all 69 people; near-zero CAR and temporal means.\\
+V2 & Tensor numerics & TT/TensorLy agreement, orthogonality, full-rank recovery, batch invariance, source transform spot checks.\\
+V2 & Model replay & 105 classifier pipelines, 60 decompositions, 45 inner and 15 outer splits reproduced.\\
+V3 & Input lineage & All V2 windows retained; prior artifact IDs absent; stage-02 arrays fingerprinted unchanged.\\
+V3 & Waveform math & Explicit delay contraction equals moment energy; saved predictions and split memberships replayed.\\
+V4 & Complete replay & 150 model entries, 60 bases, 45 inner and 15 outer splits, scalers, weights, and selections verified.\\
+V4 & XGBoost portability & 23 UBJ boosters exported/reloaded with predictions matching complete saved pipelines.\\
+\bottomrule
+\end{longtable}
+
+\section{Why a booster file is not the whole model}
+
+An exported XGBoost booster receives already prepared features. The clinically
+meaningful pipeline also includes the training-derived TT/Tucker basis when
+applicable, feature selection, standardization, class ordering, and subject-level
+pooling. A booster must therefore be paired with its corresponding complete
+pipeline and basis provenance. Joblib artifacts should be loaded only from a
+trusted local source because deserialization can execute code.
+
+\section{Report provenance}
+
+This PDF is compiled from modular LaTeX source under
+\path{technical_report}. Numerical tables are transcribed from the versioned
+JSON reports and cross-checked against the consolidated project record. Figures
+are native TikZ/PGFPlots diagrams using those same values; no decorative AI
+image is presented as measured data.
+

@@ -28,7 +28,10 @@ This project explores distinguishing Alzheimer''s disease (AD), frontotemporal d
 - **Signals:** 19 scalp electrodes, 500 Hz, eyes-closed resting EEG
 - **Pre-processing supplied by dataset authors:** ~0.5–45 Hz bandpass, A1–A2 mastoid reference, ASR, ICA, ICLabel artifact rejection
 
-The raw dataset lives in `dataset/ds004504/` (not tracked in git — too large).
+The raw dataset lives in `dataset/ds004504/` locally and is not tracked in Git
+(about 5.8 GB). Obtain it from [OpenNeuro ds004504](https://openneuro.org/datasets/ds004504)
+before running data-dependent scripts. Generated experiment arrays and model
+checkpoints are also excluded; reports and source code are included.
 
 ---
 
@@ -76,14 +79,18 @@ AIBSI/
 │   │   ├── test_wave_models.py
 │   │   └── PROTOCOL.md
 │   │
-│   └── v4_tuning/              # Experiment 4 — bounded classifier/optimizer tuning
-│       ├── tune_models.py
-│       ├── benchmark_tuning.py
-│       ├── verify_report.py
-│       ├── test_tuning.py
-│       └── PROTOCOL.md
+│   ├── v4_tuning/              # Experiment 4 — bounded classifier/optimizer tuning
+│   │   ├── tune_models.py
+│   │   ├── benchmark_tuning.py
+│   │   ├── verify_report.py
+│   │   ├── test_tuning.py
+│   │   └── PROTOCOL.md
+│   ├── v5_connectivity/        # Additive connectivity experiment code and protocol
+│   └── v6_binary/              # Experimental binary classification script
 │
-└── PROJECT_MASTER_REPORT.md    # Consolidated record of all experiments
+├── presentation_progress/     # Slides, literature review, illustrations
+├── technical_report/          # LaTeX source and compiled technical report PDF
+└── PROJECT_MASTER_REPORT.md    # Consolidated record through V4
 ```
 
 ---
@@ -201,6 +208,11 @@ py -3.10 tensor_pipeline\v4_tuning\verify_report.py
 | V2 corrections and methodology | [`tensor_pipeline/v2/AUDIT_AND_PROTOCOL.md`](tensor_pipeline/v2/AUDIT_AND_PROTOCOL.md) |
 | V3 waveform protocol | [`tensor_pipeline/v3_waveform/PROTOCOL.md`](tensor_pipeline/v3_waveform/PROTOCOL.md) |
 | V4 tuning protocol | [`tensor_pipeline/v4_tuning/PROTOCOL.md`](tensor_pipeline/v4_tuning/PROTOCOL.md) |
+| V5 connectivity protocol | [`tensor_pipeline/v5_connectivity/PROTOCOL.md`](tensor_pipeline/v5_connectivity/PROTOCOL.md) |
+| V6 binary experiment | [`tensor_pipeline/v6_binary/README.md`](tensor_pipeline/v6_binary/README.md) |
+| Latest status presentation | [`presentation_progress/output/NeuroTensor_Status_Presentation_10_Slides_EEG_Pipeline.pptx`](presentation_progress/output/NeuroTensor_Status_Presentation_10_Slides_EEG_Pipeline.pptx) |
+| Literature review | [`presentation_progress/output/Literature_Review_EEG_Dementia.pdf`](presentation_progress/output/Literature_Review_EEG_Dementia.pdf) |
+| Technical report | [`technical_report/main.pdf`](technical_report/main.pdf) |
 
 ---
 
