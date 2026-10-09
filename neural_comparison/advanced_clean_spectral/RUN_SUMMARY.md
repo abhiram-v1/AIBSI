@@ -174,6 +174,22 @@ The validation-selected blend assigned equal weight to SVM and EEGPT probabiliti
 
 This ensemble is the strongest exploratory result, but it is not yet a publication-grade estimate. The same small held-out set has been inspected during several model iterations, and blend settings were selected using only 26 validation participants. Repeated nested participant-level cross-validation or a new locked external test set is required before claiming 70.4% as expected performance.
 
+## Tensor Train decomposition with SVM
+
+For the tensor component, each participant's log-mel windows were summarized as a four-way tensor with shape `19 electrodes x 24 mel bands x 4 statistics`. The statistics are mean, standard deviation, median, and interquartile range across resting-state windows and STFT frames. This produced an input array of shape `(174, 19, 24, 4)`.
+
+A common Tensor Train basis was fitted from training participants, with observations placed after the feature modes during TT-SVD. Validation participants were contracted against that fixed basis. This avoids comparing independently decomposed participant cores, whose signs and rotations are not aligned. Site normalization and the TT basis were both refitted inside every development fold.
+
+Two repeated five-fold development splits compared terminal TT ranks 4, 8, 16, and 32; channel ranks 4 and 8; spectral ranks 8, 16, and 24; and class-balanced linear/RBF SVM settings. Development selection chose terminal rank 4, channel rank 4, spectral rank 24, and a linear SVM with `C=0.1`. Its development macro F1 was 55.9%.
+
+| Model | Accuracy | Macro F1 | Macro recall | AD recall | FTD recall | HC recall |
+|---|---:|---:|---:|---:|---:|---:|
+| Site-normalized log-mel SVM | 66.7% | 64.3% | 64.2% | 72.7% | 50.0% | 70.0% |
+| **Tensor Train + SVM** | **51.9%** | **46.4%** | **46.8%** | 63.6% | 16.7% | 60.0% |
+| SVM + EEGPT blend | 70.4% | 67.8% | 67.6% | 72.7% | 50.0% | 80.0% |
+
+The selected rank-4 representation retained four TT features and had a centered reconstruction error of 63.7%. Higher TT ranks retained more variance but had lower development macro F1, so the reduced held-out performance cannot be fixed by reporting a larger rank after seeing test results. TT is useful here as a compact tensor-course experiment and ablation; it did not improve diagnostic separation.
+
 ## Interpretation
 
 - The current bottleneck is generalization across participants and acquisition sites, especially for FTD, which has only six held-out participants. The best cleaned CNN identified only one of those six FTD participants.
@@ -183,6 +199,7 @@ This ensemble is the strongest exploratory result, but it is not yet a publicati
 - Training-only site normalization produced the largest gain and increased FTD recall to 50%, showing that acquisition harmonization matters more here than additional neural-network depth.
 - Longer CNN training increased the validation score but reduced held-out performance. The small validation set is too noisy to use late validation peaks as evidence of a real gain.
 - EEGPT transferred useful complementary information but was not stronger than the spectral SVM by itself. Combining both representations corrected one additional held-out participant.
+- Tensor Train compression reduced the participant tensor to four selected features but removed discriminative information, especially for FTD. The undecomposed spectral SVM remains the stronger classical model.
 
 ## Reproduction
 
@@ -206,6 +223,7 @@ py -3.10 neural_comparison\advanced_clean_spectral\train_attention_pooling.py --
 py -3.10 neural_comparison\advanced_clean_spectral\prepare_eegpt_raw.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_eegpt_attention.py --warmup-epochs 6 --finetune-epochs 24 --patience 8 --bag-size 8
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_eegpt_svm_blend.py
+py -3.10 neural_comparison\advanced_clean_spectral\train_tensor_train_svm.py
 ```
 
 Prepared arrays and generated figures are under `outputs/`, which is ignored by Git because the tensors are large and reproducible.

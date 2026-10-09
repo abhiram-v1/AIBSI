@@ -30,6 +30,7 @@ py -3.10 neural_comparison\advanced_clean_spectral\train_attention_pooling.py --
 py -3.10 neural_comparison\advanced_clean_spectral\prepare_eegpt_raw.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_eegpt_attention.py --warmup-epochs 6 --finetune-epochs 24 --patience 8 --bag-size 8
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_eegpt_svm_blend.py
+py -3.10 neural_comparison\advanced_clean_spectral\train_tensor_train_svm.py
 ```
 
 `pipeline.py` performs cleaning, spectral preparation, electrode analysis, and the
@@ -40,3 +41,5 @@ and restores the best checkpoint for each seed. Longer training reduced held-out
 performance. The current best exploratory result is the validation-selected blend of the
 site-normalized log-mel SVM and the fine-tuned EEGPT participant model: 70.4% accuracy,
 67.8% macro F1, and 67.6% macro recall on the fixed 27-participant held-out split.
+The Tensor Train plus SVM ablation is included for the tensor-course component and reaches
+51.9% accuracy, 46.4% macro F1, and 46.8% macro recall on that split.
