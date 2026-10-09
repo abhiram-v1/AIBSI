@@ -1,0 +1,132 @@
+{
+  "completed_folds": 15,
+  "endpoints": {
+    "inner_selected": {
+      "repeat_metrics": [
+        {
+          "accuracy": 0.6818181818181818,
+          "balanced_accuracy": 0.6487434248977206,
+          "macro_f1": 0.6459770114942529,
+          "dementia_f1": 0.7586206896551724,
+          "dementia_recall": 0.7457627118644068,
+          "dementia_precision": 0.7719298245614035,
+          "cn_specificity": 0.5517241379310345,
+          "confusion_tn_fp_fn_tp": [
+            16,
+            13,
+            15,
+            44
+          ]
+        },
+        {
+          "accuracy": 0.8295454545454546,
+          "balanced_accuracy": 0.8202805376972531,
+          "macro_f1": 0.8118317890235209,
+          "dementia_f1": 0.8695652173913043,
+          "dementia_recall": 0.847457627118644,
+          "dementia_precision": 0.8928571428571429,
+          "cn_specificity": 0.7931034482758621,
+          "confusion_tn_fp_fn_tp": [
+            23,
+            6,
+            9,
+            50
+          ]
+        },
+        {
+          "accuracy": 0.7272727272727273,
+          "balanced_accuracy": 0.7001753360607832,
+          "macro_f1": 0.6965517241379311,
+          "dementia_f1": 0.7931034482758621,
+          "dementia_recall": 0.7796610169491526,
+          "dementia_precision": 0.8070175438596491,
+          "cn_specificity": 0.6206896551724138,
+          "confusion_tn_fp_fn_tp": [
+            18,
+            11,
+            13,
+            46
+          ]
+        }
+      ],
+      "mean_accuracy": 0.7462121212121211,
+      "mean_balanced_accuracy": 0.7230664328852523,
+      "mean_macro_f1": 0.718120174885235,
+      "mean_dementia_f1": 0.8070964517741129,
+      "mean_dementia_recall": 0.7909604519774011,
+      "mean_dementia_precision": 0.8239348370927319,
+      "mean_cn_specificity": 0.6551724137931035,
+      "sd_accuracy": 0.07566281952817497,
+      "sd_balanced_accuracy": 0.08802980746468946,
+      "sd_macro_f1": 0.08500500195900182,
+      "sd_dementia_f1": 0.056780499899392246,
+      "sd_dementia_recall": 0.051780516327184604,
+      "sd_dementia_precision": 0.06221334410960682,
+      "sd_cn_specificity": 0.12432935432634448
+    },
+    "fixed_global_logistic": {
+      "repeat_metrics": [
+        {
+          "accuracy": 0.7840909090909091,
+          "balanced_accuracy": 0.7600818234950322,
+          "macro_f1": 0.7577864696508765,
+          "dementia_f1": 0.8376068376068376,
+          "dementia_recall": 0.8305084745762712,
+          "dementia_precision": 0.8448275862068966,
+          "cn_specificity": 0.6896551724137931,
+          "confusion_tn_fp_fn_tp": [
+            20,
+            9,
+            10,
+            49
+          ]
+        },
+        {
+          "accuracy": 0.7954545454545454,
+          "balanced_accuracy": 0.7685563997662186,
+          "macro_f1": 0.7685563997662186,
+          "dementia_f1": 0.847457627118644,
+          "dementia_recall": 0.847457627118644,
+          "dementia_precision": 0.847457627118644,
+          "cn_specificity": 0.6896551724137931,
+          "confusion_tn_fp_fn_tp": [
+            20,
+            9,
+            9,
+            50
+          ]
+        },
+        {
+          "accuracy": 0.7727272727272727,
+          "balanced_accuracy": 0.7428404441846873,
+          "macro_f1": 0.7428404441846873,
+          "dementia_f1": 0.8305084745762712,
+          "dementia_recall": 0.8305084745762712,
+          "dementia_precision": 0.8305084745762712,
+          "cn_specificity": 0.6551724137931034,
+          "confusion_tn_fp_fn_tp": [
+            19,
+            10,
+            10,
+            49
+          ]
+        }
+      ],
+      "mean_accuracy": 0.7840909090909092,
+      "mean_balanced_accuracy": 0.7571595558153127,
+      "mean_macro_f1": 0.7563944378672608,
+      "mean_dementia_f1": 0.8385243131005843,
+      "mean_dementia_recall": 0.8361581920903954,
+      "mean_dementia_precision": 0.840931229300604,
+      "mean_cn_specificity": 0.6781609195402298,
+      "sd_accuracy": 0.011363636363636354,
+      "sd_balanced_accuracy": 0.013104668220209632,
+      "sd_macro_f1": 0.012914368247528396,
+      "sd_dementia_f1": 0.008511742708598231,
+      "sd_dementia_recall": 0.009785597782874987,
+      "sd_dementia_precision": 0.00912165778968202,
+      "sd_cn_specificity": 0.0199086299720561
+    }
+  },
+  "seconds_this_run": 109.48759389997576
+}

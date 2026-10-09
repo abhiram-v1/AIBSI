@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "outer_folds": 15,
+  "model_predictions_replayed": 30,
+  "participants_per_repeat": 88,
+  "subject_leakage": false,
+  "metrics_recomputed": true,
+  "source": "Direct derivative .set feature preparation; no tensor pipeline input"
+}

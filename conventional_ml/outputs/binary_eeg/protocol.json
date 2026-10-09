@@ -1,0 +1,519 @@
+{
+  "task": "AD+FTD (positive) versus CN (negative), 88 people",
+  "source": "Conventional time and spectral features extracted directly from derivative .set EEG; no tensor-pipeline input.",
+  "outer": "3 repetitions x 5 participant folds, seed 9066",
+  "inner": "5 participant folds, seed 91000 + outer index",
+  "selection": "Pooled inner macro F1, then dementia recall, balanced accuracy, candidate order",
+  "fixed_control": "Global features with class-balanced logistic regression C=1, no feature selection",
+  "learned_stages": "ANOVA feature selection and scaling fit inside each training fold",
+  "threshold": "Default classifier prediction; no test-label threshold tuning",
+  "feature_sha256": "2a229f888992c62529d55223b92bc76ce586dd1ee058442de09e934569a756da",
+  "code_sha256": "c166208d9137a3f0c1c22a4a8e3643f06f3b185112490c8671060fc1f472e7ef",
+  "candidates": [
+    {
+      "features": "global",
+      "k": null,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": null,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": null,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": null,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": null,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "global",
+      "k": null,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "global",
+      "k": null,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "channel",
+      "k": 16,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "channel",
+      "k": 32,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "channel",
+      "k": 64,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "model": "random_forest",
+      "C": 3
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "shrinkage_lda",
+      "C": null
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "model": "random_forest",
+      "C": 3
+    }
+  ],
+  "limits": "Same previously explored 88-person cohort; this is internal validation, not independent confirmation."
+}

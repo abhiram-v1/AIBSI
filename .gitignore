@@ -21,6 +21,7 @@ ENV/
 # Data files (large dataset files)
 dataset/
 tmp/
+external/
 
 # Technical report sources and final PDF are versioned; compiler byproducts are not.
 technical_report/*.aux
@@ -40,6 +41,8 @@ presentation_progress/.codex-build-*/
 
 # Pipeline outputs (generated/large files)
 tensor_pipeline/outputs/
+neural_comparison/stft_gpu_3class/outputs/
+neural_comparison/advanced_clean_spectral/outputs/
 tensor_pipeline/v2/__pycache__/
 tensor_pipeline/v3_waveform/__pycache__/
 tensor_pipeline/v4_tuning/__pycache__/

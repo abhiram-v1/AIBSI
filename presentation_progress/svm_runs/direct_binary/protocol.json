@@ -1,0 +1,196 @@
+{
+  "mode": "direct",
+  "classifier": "RBF SVM only, class balanced",
+  "task": "AD+FTD versus CN on 88 participants",
+  "outer": "3 repetitions of 5 stratified subject folds; seed 9066",
+  "inner": "3 stratified subject folds; seed 91100 + outer index",
+  "selection": "Pooled inner macro F1, then dementia recall, balanced accuracy",
+  "basis": "Direct EEG features; selection and scaling within training fold",
+  "inputs_sha256": {
+    "conventional_ml\\outputs\\binary_eeg\\subject_features.npz": "2a229f888992c62529d55223b92bc76ce586dd1ee058442de09e934569a756da"
+  },
+  "code_sha256": "d885c75191d1d3c4434a2b0e89d2a7cbe155de0041cb28f0da82f8cf9ea8de3b",
+  "candidates": [
+    {
+      "features": "global",
+      "k": 16,
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "C": 10.0
+    },
+    {
+      "features": "global",
+      "k": 16,
+      "C": 100.0
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "C": 10.0
+    },
+    {
+      "features": "global",
+      "k": 32,
+      "C": 100.0
+    },
+    {
+      "features": "global",
+      "k": null,
+      "C": 0.1
+    },
+    {
+      "features": "global",
+      "k": null,
+      "C": 1.0
+    },
+    {
+      "features": "global",
+      "k": null,
+      "C": 10.0
+    },
+    {
+      "features": "global",
+      "k": null,
+      "C": 100.0
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "C": 10.0
+    },
+    {
+      "features": "regional",
+      "k": 16,
+      "C": 100.0
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "C": 10.0
+    },
+    {
+      "features": "regional",
+      "k": 32,
+      "C": 100.0
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "C": 0.1
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "C": 1.0
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "C": 10.0
+    },
+    {
+      "features": "regional",
+      "k": 64,
+      "C": 100.0
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "C": 10.0
+    },
+    {
+      "features": "global_regional",
+      "k": 16,
+      "C": 100.0
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "C": 10.0
+    },
+    {
+      "features": "global_regional",
+      "k": 32,
+      "C": 100.0
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "C": 0.1
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "C": 1.0
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "C": 10.0
+    },
+    {
+      "features": "global_regional",
+      "k": 64,
+      "C": 100.0
+    }
+  ],
+  "limit": "Previously explored cohort; no independent external validation"
+}

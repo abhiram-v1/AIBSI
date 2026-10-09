@@ -1,0 +1,97 @@
+{
+  "mode": "tensor",
+  "classifier": "RBF SVM only, class balanced",
+  "task": "AD+FTD versus CN on 88 participants",
+  "outer": "3 repetitions of 5 stratified subject folds; seed 9066",
+  "inner": "3 stratified subject folds; seed 91100 + outer index",
+  "selection": "Pooled inner macro F1, then dementia recall, balanced accuracy",
+  "basis": "TT/Tucker fitted within training fold",
+  "inputs_sha256": {
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\index.npz": "6692e7c987c5bdadb5132c9db5a70fc982c7cae45449ae94b8d2b5005cee9c83",
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\delay_moments.npy": "010ae9cb4da3309e02cde7466eaffa8769e4ec089b0cd401179bb3de8e19a721"
+  },
+  "code_sha256": "d885c75191d1d3c4434a2b0e89d2a7cbe155de0041cb28f0da82f8cf9ea8de3b",
+  "candidates": [
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "C": 0.1
+    },
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "C": 1.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "C": 10.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "C": 100.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "C": 0.1
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "C": 1.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "C": 10.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "C": 100.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "C": 0.1
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "C": 1.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "C": 10.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "C": 100.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "C": 0.1
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "C": 1.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "C": 10.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "C": 100.0
+    }
+  ],
+  "limit": "Previously explored cohort; no independent external validation"
+}
