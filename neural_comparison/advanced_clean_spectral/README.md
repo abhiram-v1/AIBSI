@@ -22,6 +22,7 @@ py -3.10 neural_comparison\advanced_clean_spectral\train_long_logmel.py --epochs
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_site_normalized.py
 py -3.10 neural_comparison\advanced_clean_spectral\refine_site_svm.py
 py -3.10 neural_comparison\advanced_clean_spectral\calibrate_site_svm.py
+py -3.10 neural_comparison\advanced_clean_spectral\tune_site_svm_extended.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_riemannian_svm.py all
 py -3.10 neural_comparison\advanced_clean_spectral\diagnose_best_svm.py
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_site_shift.py
@@ -29,6 +30,8 @@ py -3.10 neural_comparison\advanced_clean_spectral\evaluate_binary_ensemble.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_attention_pooling.py --epochs 80 --patience 15 --bag-size 12
 py -3.10 neural_comparison\advanced_clean_spectral\prepare_eegpt_raw.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_eegpt_attention.py --warmup-epochs 6 --finetune-epochs 24 --patience 8 --bag-size 8
+py -3.10 neural_comparison\advanced_clean_spectral\train_eegpt_attention.py --warmup-epochs 6 --finetune-epochs 24 --patience 8 --bag-size 8 --extra-blocks 2
+py -3.10 neural_comparison\advanced_clean_spectral\compare_eegpt_depth.py
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_eegpt_svm_blend.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_tensor_train_svm.py
 ```

@@ -141,8 +141,9 @@ Two follow-up refinements were selected without using held-out labels:
 
 1. A repeated five-fold development-set search compared mean/standard-deviation, median/IQR, relative-power, hemispheric-asymmetry, and inter-electrode correlation features under four site-normalization strategies. It selected robust median/IQR features with 20 PCA components, linear SVM `C=0.03`, and an FTD weight of 1.5. Held-out performance was 55.6% accuracy, 52.6% macro F1, and 52.3% macro recall.
 2. Class decision offsets for the 66.7% site-normalized SVM were tuned only on validation macro F1. Validation macro F1 rose to 67.7%, but the calibrated model made exactly the same held-out predictions and therefore remained at 66.7% accuracy and 64.3% macro F1.
+3. An extended search evaluated 1,568 configurations using two repeated five-fold participant-level development splits. Every fold refitted site normalization, scaling, and PCA. The search covered 10-80 or no PCA components, linear/RBF kernels, seven `C` values, six RBF gamma settings, and four FTD class weights. It selected 60 PCA components, a linear SVM with `C=0.01`, and an FTD multiplier of 1.25. Held-out accuracy remained 66.7%, while macro F1 decreased to 61.0% and macro recall to 61.4%.
 
-Neither refinement improved the current best result. Robust and connectivity features generalized worse, while threshold calibration was neutral.
+None of these refinements improved the original configuration. Robust and connectivity features generalized worse, threshold calibration was neutral, and the broader hyperparameter search shifted errors toward AD recognition at the expense of FTD and healthy-control recall.
 
 ## Filter-bank Riemannian SVM
 
@@ -168,9 +169,12 @@ EEGPT was then evaluated as a pretrained EEG foundation model. The official 58-c
 | Site-normalized log-mel SVM | 66.7% | 64.3% | 64.2% | 72.7% | 50.0% | 70.0% |
 | CNN with electrode/window attention | 55.6% | 49.7% | 50.1% | 63.6% | 16.7% | 70.0% |
 | Fine-tuned EEGPT with window attention | 63.0% | 55.0% | 56.5% | 72.7% | 16.7% | 80.0% |
+| EEGPT with two new transformer blocks | 51.9% | 46.9% | 46.8% | 63.6% | 16.7% | 60.0% |
 | **Validation-selected SVM + EEGPT blend** | **70.4%** | **67.8%** | **67.6%** | **72.7%** | **50.0%** | **80.0%** |
 
 The validation-selected blend assigned equal weight to SVM and EEGPT probabilities after temperature scaling. Validation performance was 73.1% accuracy and 71.0% macro F1. On the held-out set it made 19 of 27 predictions correctly, one more than the SVM, and raised healthy-control recall from 70% to 80% while preserving FTD recall at 50%.
+
+The depth follow-up appended two newly initialized 512-dimensional, eight-head transformer blocks after EEGPT's 64 summary tokens and added learned token positions. This increased the model from 25.9 million to 31.8 million parameters. The new blocks were trained during the frozen-encoder warmup; the final two pretrained EEGPT blocks were then unfrozen, giving 12.9 million trainable parameters. Validation macro F1 exactly matched the original model at 64.1%, but held-out macro F1 fell from 55.0% to 46.9%. Additional transformer depth therefore increased split-specific overfitting and was rejected.
 
 This ensemble is the strongest exploratory result, but it is not yet a publication-grade estimate. The same small held-out set has been inspected during several model iterations, and blend settings were selected using only 26 validation participants. Repeated nested participant-level cross-validation or a new locked external test set is required before claiming 70.4% as expected performance.
 
@@ -190,6 +194,23 @@ Two repeated five-fold development splits compared terminal TT ranks 4, 8, 16, a
 
 The selected rank-4 representation retained four TT features and had a centered reconstruction error of 63.7%. Higher TT ranks retained more variance but had lower development macro F1, so the reduced held-out performance cannot be fixed by reporting a larger rank after seeing test results. TT is useful here as a compact tensor-course experiment and ablation; it did not improve diagnostic separation.
 
+## Electrode and frequency stability analysis
+
+A leakage-safe stability experiment tested whether removing weak electrodes could improve the spectral SVM. It used 10 repeated five-fold participant splits stratified by site and diagnosis. Site normalization, electrode ranking, feature scaling, and SVM tuning were refitted using only each training fold. Grouped permutation importance and leave-one-electrode-out ablation were also calculated inside every fold.
+
+| Electrode count | Accuracy, mean +/- fold SD | Macro F1, mean +/- fold SD | Macro recall, mean +/- fold SD |
+|---:|---:|---:|---:|
+| 5 | 50.1% +/- 7.8% | 47.4% +/- 7.6% | 47.9% +/- 7.8% |
+| 8 | 51.8% +/- 7.4% | **49.1% +/- 7.0%** | 49.3% +/- 7.0% |
+| 12 | 50.7% +/- 6.6% | 47.4% +/- 5.9% | 47.9% +/- 6.1% |
+| 19 | **51.9% +/- 6.7%** | 49.0% +/- 6.6% | **49.4% +/- 6.8%** |
+
+The eight-electrode model matched the full montage on average but did not improve it. The exact eight channels changed substantially between folds: even the most frequently selected electrodes, T8 and O2, appeared in only 62% and 60% of top-eight sets. The next channels were O1, C3, F7, P7, F3, and P8. This is weak evidence for a fixed reduced montage and does not justify permanently discarding electrodes.
+
+Theta activity from 4-8 Hz caused the largest grouped permutation decrease in macro F1 at 6.11 percentage points, followed by beta at 4.01 and gamma at 3.11. Alpha caused a 0.87-point decrease and delta only 0.10. The gamma association needs cautious interpretation because residual muscle and acquisition noise can occupy the same range.
+
+Replaying the original held-out split showed why the earlier result looked stronger. The 19-electrode model again reached 66.7% accuracy and 64.3% macro F1, while the development-selected five-electrode subset fell to 40.7% accuracy and 37.7% macro F1. Across the 50 repeated test folds, the original fixed `C=0.1` model averaged 48.1% macro F1 and ranged from 33.3% to 66.0%. The old held-out score is therefore near the optimistic edge of the observed split distribution rather than a stable estimate of expected performance.
+
 ## Interpretation
 
 - The current bottleneck is generalization across participants and acquisition sites, especially for FTD, which has only six held-out participants. The best cleaned CNN identified only one of those six FTD participants.
@@ -199,7 +220,11 @@ The selected rank-4 representation retained four TT features and had a centered 
 - Training-only site normalization produced the largest gain and increased FTD recall to 50%, showing that acquisition harmonization matters more here than additional neural-network depth.
 - Longer CNN training increased the validation score but reduced held-out performance. The small validation set is too noisy to use late validation peaks as evidence of a real gain.
 - EEGPT transferred useful complementary information but was not stronger than the spectral SVM by itself. Combining both representations corrected one additional held-out participant.
+- Appending two new transformer blocks matched validation performance but reduced held-out accuracy by 11.1 percentage points. The original partially fine-tuned EEGPT should be retained.
 - Tensor Train compression reduced the participant tensor to four selected features but removed discriminative information, especially for FTD. The undecomposed spectral SVM remains the stronger classical model.
+- Repeated participant-level evaluation showed that the 64.3% held-out macro F1 is split-sensitive. The all-electrode spectral SVM averaged 49.0% macro F1 across 50 test folds, with FTD remaining the weakest class.
+- Electrode removal did not improve generalization. T8 and O2 were the most consistent candidates, but their selection frequency was too low to claim a stable disease-specific montage.
+- Theta was the strongest frequency group in permutation analysis. A useful next experiment is to test training-fold-only regional theta features and stronger site harmonization rather than adding model depth.
 
 ## Reproduction
 
@@ -215,6 +240,7 @@ py -3.10 neural_comparison\advanced_clean_spectral\train_long_logmel.py --epochs
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_site_normalized.py
 py -3.10 neural_comparison\advanced_clean_spectral\refine_site_svm.py
 py -3.10 neural_comparison\advanced_clean_spectral\calibrate_site_svm.py
+py -3.10 neural_comparison\advanced_clean_spectral\tune_site_svm_extended.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_riemannian_svm.py all
 py -3.10 neural_comparison\advanced_clean_spectral\diagnose_best_svm.py
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_site_shift.py
@@ -222,8 +248,11 @@ py -3.10 neural_comparison\advanced_clean_spectral\evaluate_binary_ensemble.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_attention_pooling.py --epochs 80 --patience 15 --bag-size 12
 py -3.10 neural_comparison\advanced_clean_spectral\prepare_eegpt_raw.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_eegpt_attention.py --warmup-epochs 6 --finetune-epochs 24 --patience 8 --bag-size 8
+py -3.10 neural_comparison\advanced_clean_spectral\train_eegpt_attention.py --warmup-epochs 6 --finetune-epochs 24 --patience 8 --bag-size 8 --extra-blocks 2
+py -3.10 neural_comparison\advanced_clean_spectral\compare_eegpt_depth.py
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_eegpt_svm_blend.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_tensor_train_svm.py
+py -3.10 neural_comparison\advanced_clean_spectral\analyze_electrode_frequency_stability.py
 ```
 
 Prepared arrays and generated figures are under `outputs/`, which is ignored by Git because the tensors are large and reproducible.

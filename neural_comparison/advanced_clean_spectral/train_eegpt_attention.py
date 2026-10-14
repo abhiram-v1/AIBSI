@@ -125,12 +125,31 @@ class ParticipantDataset(Dataset):
 
 
 class EEGPTAttention(nn.Module):
-    def __init__(self, encoder: EEGTransformer, channels: list[str]) -> None:
+    def __init__(self, encoder: EEGTransformer, channels: list[str], extra_blocks: int = 0) -> None:
         super().__init__()
         self.encoder = encoder
+        self.extra_blocks_count = extra_blocks
         self.register_buffer("channel_ids", encoder.prepare_chan_ids(channels), persistent=False)
+        if extra_blocks:
+            layer = nn.TransformerEncoderLayer(
+                d_model=512,
+                nhead=8,
+                dim_feedforward=2048,
+                dropout=0.10,
+                activation="gelu",
+                batch_first=True,
+                norm_first=True,
+            )
+            self.extra_transformer = nn.TransformerEncoder(layer, num_layers=extra_blocks, norm=nn.LayerNorm(512))
+            self.extra_position = nn.Parameter(torch.zeros(1, 16 * 4, 512))
+            nn.init.trunc_normal_(self.extra_position, std=0.02)
+            projection_input = 512
+        else:
+            self.extra_transformer = None
+            self.register_parameter("extra_position", None)
+            projection_input = 2048
         self.projection = nn.Sequential(
-            nn.LayerNorm(2048), nn.Linear(2048, 256), nn.GELU(), nn.Dropout(0.25)
+            nn.LayerNorm(projection_input), nn.Linear(projection_input, 256), nn.GELU(), nn.Dropout(0.25)
         )
         self.attention = nn.Sequential(
             nn.Linear(256, 96), nn.Tanh(), nn.Dropout(0.10), nn.Linear(96, 1)
@@ -144,7 +163,11 @@ class EEGPTAttention(nn.Module):
         for start in range(0, len(windows), chunk_size):
             encoded = self.encoder(windows[start : start + chunk_size], self.channel_ids)
             # 16 temporal patches x 4 learned summary tokens x 512 dimensions.
-            outputs.append(encoded.mean(dim=1).flatten(1))
+            if self.extra_transformer is None:
+                outputs.append(encoded.mean(dim=1).flatten(1))
+            else:
+                tokens = encoded.flatten(1, 2) + self.extra_position
+                outputs.append(self.extra_transformer(tokens).mean(dim=1))
         return self.projection(torch.cat(outputs, dim=0))
 
     def forward(self, bags: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
@@ -203,13 +226,19 @@ def predict(model: EEGPTAttention, dataset: ParticipantDataset, device: torch.de
 
 def make_optimizer(model: EEGPTAttention, fine_tune: bool) -> torch.optim.Optimizer:
     head = list(model.projection.parameters()) + list(model.attention.parameters()) + list(model.classifier.parameters())
+    new_transformer = []
+    if model.extra_transformer is not None:
+        new_transformer = list(model.extra_transformer.parameters()) + [model.extra_position]
     if not fine_tune:
-        return torch.optim.AdamW(head, lr=3e-4, weight_decay=3e-3)
+        groups = [{"params": head, "lr": 3e-4}]
+        if new_transformer:
+            groups.append({"params": new_transformer, "lr": 6e-5})
+        return torch.optim.AdamW(groups, weight_decay=3e-3)
     encoder = [parameter for parameter in model.encoder.parameters() if parameter.requires_grad]
-    return torch.optim.AdamW(
-        [{"params": encoder, "lr": 1e-5}, {"params": head, "lr": 1.5e-4}],
-        weight_decay=3e-3,
-    )
+    groups = [{"params": encoder, "lr": 1e-5}, {"params": head, "lr": 1.5e-4}]
+    if new_transformer:
+        groups.append({"params": new_transformer, "lr": 4e-5})
+    return torch.optim.AdamW(groups, weight_decay=3e-3)
 
 
 def main() -> None:
@@ -218,6 +247,7 @@ def main() -> None:
     parser.add_argument("--finetune-epochs", type=int, default=30)
     parser.add_argument("--patience", type=int, default=10)
     parser.add_argument("--bag-size", type=int, default=8)
+    parser.add_argument("--extra-blocks", type=int, default=0)
     args = parser.parse_args()
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA GPU is required")
@@ -227,7 +257,8 @@ def main() -> None:
     if checkpoint_hash != EXPECTED_SHA256:
         raise RuntimeError(f"Checkpoint SHA256 mismatch: {checkpoint_hash}")
     seed_everything(SEED)
-    OUT.mkdir(parents=True, exist_ok=True)
+    output_dir = OUT if args.extra_blocks == 0 else OUT.parent / f"eegpt_attention_plus{args.extra_blocks}"
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     x = np.load(PREPARED / "raw_windows.npy", mmap_mode="r")
     y = np.load(PREPARED / "labels.npy", mmap_mode="r")
@@ -247,13 +278,13 @@ def main() -> None:
     )
     loader = DataLoader(train_data, batch_size=4, sampler=sampler, num_workers=0, pin_memory=True)
     device = torch.device("cuda")
-    model = EEGPTAttention(build_encoder(), manifest["channels"]).to(device)
+    model = EEGPTAttention(build_encoder(), manifest["channels"], extra_blocks=args.extra_blocks).to(device)
     total_parameters = sum(parameter.numel() for parameter in model.parameters())
     loss_function = nn.CrossEntropyLoss(label_smoothing=0.06)
     scaler = torch.amp.GradScaler("cuda")
     history = []
     best_f1, best_epoch, stale = -1.0, 0, 0
-    best_path = OUT / "best_model.pt"
+    best_path = output_dir / "best_model.pt"
     global_epoch = 0
 
     for stage_name, stage_epochs, fine_tune in [
@@ -319,7 +350,8 @@ def main() -> None:
     baseline = json.loads((HERE / "outputs" / "results" / "site_normalized_metrics.json").read_text(encoding="utf-8"))["test"]
     attention_cnn = json.loads((HERE / "outputs" / "deep_models" / "attention_pooling" / "metrics.json").read_text(encoding="utf-8"))["ensemble_test"]
     result = {
-        "architecture": "pretrained EEGPT encoder + participant window attention pooling",
+        "architecture": f"pretrained EEGPT encoder + {args.extra_blocks} new transformer blocks + participant window attention pooling",
+        "extra_transformer_blocks": args.extra_blocks,
         "checkpoint": str(CHECKPOINT),
         "checkpoint_sha256": checkpoint_hash,
         "pretrained_tensors_loaded": 102,
@@ -334,9 +366,9 @@ def main() -> None:
         "svm_baseline": baseline,
         "cnn_attention_baseline": attention_cnn,
     }
-    (OUT / "metrics.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
-    (OUT / "attention.json").write_text(json.dumps({"validation": val_attention, "test": test_attention}), encoding="utf-8")
-    np.savez_compressed(OUT / "probabilities.npz", val=val_probability, test=test_probability, val_true=val_true, test_true=test_true)
+    (output_dir / "metrics.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+    (output_dir / "attention.json").write_text(json.dumps({"validation": val_attention, "test": test_attention}), encoding="utf-8")
+    np.savez_compressed(output_dir / "probabilities.npz", val=val_probability, test=test_probability, val_true=val_true, test_true=test_true)
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), constrained_layout=True)
     matrix = np.asarray(test_metrics["confusion_matrix"])
@@ -346,7 +378,7 @@ def main() -> None:
             axes[0].text(column, row, str(matrix[row, column]), ha="center", va="center", fontsize=12)
     axes[0].set_xticks(range(3), eeg.CLASSES)
     axes[0].set_yticks(range(3), eeg.CLASSES)
-    axes[0].set(xlabel="Predicted", ylabel="True", title="EEGPT fine tune: held-out participants")
+    axes[0].set(xlabel="Predicted", ylabel="True", title=f"EEGPT + {args.extra_blocks} blocks: held-out participants")
     fig.colorbar(image, ax=axes[0], fraction=0.046, pad=0.04)
 
     names = ["SVM", "CNN + attention", "EEGPT + attention"]
@@ -365,7 +397,7 @@ def main() -> None:
     axes[1].set(ylim=(0, 1), ylabel="Score", title="Same participant split")
     axes[1].grid(axis="y", alpha=0.25)
     axes[1].legend()
-    fig.savefig(OUT / "comparison.png", dpi=180)
+    fig.savefig(output_dir / "comparison.png", dpi=180)
     plt.close(fig)
     print(json.dumps({"validation": val_metrics, "test": test_metrics}, indent=2), flush=True)
 
