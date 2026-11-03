@@ -1,0 +1,13 @@
+outputs/*
+!outputs/full_174/
+outputs/full_174/*
+!outputs/full_174/summary.json
+!outputs/full_174/verification.json
+!outputs/full_174/matched_previous_controls.json
+!outputs/full_174/optimization_notes.json
+!outputs/full_174/dependency_provenance.json
+!outputs/full_174/FINAL_REPORT.md
+!outputs/full_174/REPORT.md
+!outputs/full_174/comparison.png
+!outputs/full_174/protocol.json
+sources/

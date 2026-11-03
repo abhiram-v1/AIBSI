@@ -1,0 +1,158 @@
+{
+  "complete": true,
+  "participants": 174,
+  "folds_per_method": 5,
+  "methods": [
+    "li_cp6_gnb",
+    "rostamikia_hierarchical_svm",
+    "dice_net_3class",
+    "jiang_microstate_cascade"
+  ],
+  "replays": [
+    {
+      "fold": 0,
+      "method": "li_cp6_gnb",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 0,
+      "method": "rostamikia_hierarchical_svm",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 0,
+      "method": "dice_net_3class",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 0,
+      "method": "jiang_microstate_cascade",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 1,
+      "method": "li_cp6_gnb",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 1,
+      "method": "rostamikia_hierarchical_svm",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 1,
+      "method": "dice_net_3class",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 1,
+      "method": "jiang_microstate_cascade",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 2,
+      "method": "li_cp6_gnb",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 2,
+      "method": "rostamikia_hierarchical_svm",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 2,
+      "method": "dice_net_3class",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 2,
+      "method": "jiang_microstate_cascade",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 3,
+      "method": "li_cp6_gnb",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 3,
+      "method": "rostamikia_hierarchical_svm",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 3,
+      "method": "dice_net_3class",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 3,
+      "method": "jiang_microstate_cascade",
+      "prediction_replay": true,
+      "test_people": 35,
+      "overlap": 0
+    },
+    {
+      "fold": 4,
+      "method": "li_cp6_gnb",
+      "prediction_replay": true,
+      "test_people": 34,
+      "overlap": 0
+    },
+    {
+      "fold": 4,
+      "method": "rostamikia_hierarchical_svm",
+      "prediction_replay": true,
+      "test_people": 34,
+      "overlap": 0
+    },
+    {
+      "fold": 4,
+      "method": "dice_net_3class",
+      "prediction_replay": true,
+      "test_people": 34,
+      "overlap": 0
+    },
+    {
+      "fold": 4,
+      "method": "jiang_microstate_cascade",
+      "prediction_replay": true,
+      "test_people": 34,
+      "overlap": 0
+    }
+  ],
+  "code_hashes_verified": true,
+  "input_hashes_verified": true,
+  "each_participant_held_out_once_per_method": true,
+  "cross_participant_duplicate_windows": 0,
+  "limitation": "Internal validation on a previously explored cohort; adaptations described in README, legacy boundary-handling limitation retained."
+}

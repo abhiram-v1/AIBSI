@@ -1,0 +1,13 @@
+{
+  "cp6_outer_fits_with_no_converged_initialization": [
+    1,
+    2,
+    4
+  ],
+  "cp6_outer_fit_count": 5,
+  "best_observed_method": "li_cp6_gnb",
+  "best_accuracy_correct_people": 105,
+  "best_method_ftd_recall": 0.30952380952380953,
+  "comparison_scope": "One five-fold internal evaluation, no repeat averaging and no independent external validation.",
+  "replication_scope": "Documented adaptations; common acquisition harmonization, feature estimator and architecture departures in README."
+}

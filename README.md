@@ -6,7 +6,33 @@ This project explores distinguishing Alzheimer''s disease (AD), frontotemporal d
 
 ---
 
-## Results at a glance
+## Latest merged-cohort experiments (2026-11-03)
+
+The latest experiments use **174 participants: 71 AD, 42 FTD and 61 HC**, combining
+OpenNeuro with usable BrainLat EEG. The historical results and dataset description
+below cover the earlier OpenNeuro-only work.
+
+| Method | Accuracy | Balanced accuracy | Evaluation |
+|---|---:|---:|---|
+| Graph-NTF + SVM | 53.4% | 47.2% | Three repeats of five-fold nested participant CV |
+| CP6 + Naive Bayes adaptation | 60.3% | 56.5% | Five participant-held-out folds |
+| Handcrafted-feature SVM adaptation | 55.2% | 52.5% | Same five folds |
+| DICE-Net three-class adaptation | 51.1% | 48.3% | Same five folds |
+| Microstate CNN cascade adaptation | 41.4% | 42.7% | Same five folds |
+| Log-mel SVM + EEGPT blend | 70.4% | 67.6% | Separate exploratory 27-person fixed test split |
+
+The blend's fixed-split score is not directly comparable with cross-validation.
+The paper methods are documented adaptations, not exact reproductions. FTD
+recognition remains weak; optimizer non-convergence and repeated cohort exposure
+limit the conclusions. No independent external validation has been performed.
+
+- [Five-page comparison PDF with Matplotlib graphs](output/pdf/AIBSI_Three_Experiment_Comparison_2026-11-03.pdf)
+- [Benchmark methods, source papers and implementation differences](neural_comparison/paper_benchmark/README.md)
+- [Matched results and verification](neural_comparison/paper_benchmark/outputs/full_174/FINAL_REPORT.md)
+- [Graph-NTF five-feature CSV](output/csv/G_NTF_174_Participants_5_Features.csv)
+- [Export definitions and limitations](output/README.md)
+
+## Historical results at a glance
 
 | Experiment | Cohort | Primary auto-selection | Best observed |
 |---|---|---:|---:|

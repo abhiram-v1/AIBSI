@@ -1,0 +1,31 @@
+{
+  "python": "3.10.11",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "sklearn": "1.7.2",
+    "mne": "1.12.1",
+    "torch": "2.14.1+cu130"
+  },
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "source_hashes": {
+    "C:\\Projects\\AIBSI\\neural_comparison\\paper_benchmark\\prepare.py": "2da394a18adf6c109d8a4d0a5cf7147992dbc586f2bd3920314d512fb312b107",
+    "C:\\Projects\\AIBSI\\neural_comparison\\paper_benchmark\\prepare_native.py": "9503bdada3ea47d190823ed08ff57926570d2d0dc15fa2beb695ba9df785052a",
+    "C:\\Projects\\AIBSI\\neural_comparison\\paper_benchmark\\models.py": "32343b3c5020141274f7decaf7249535b43ec2176162c09e470e111cbc3494cf",
+    "C:\\Projects\\AIBSI\\neural_comparison\\paper_benchmark\\run.py": "c00e19a47f6f2e6ecccf052546595706604c8e0eda0d6b6f94761f2796304e29",
+    "C:\\Projects\\AIBSI\\neural_comparison\\paper_benchmark\\test_pipeline.py": "f4aeb3739ec32fbe14f4b4871b7e3417ee73b172bf872774d26ccac70739913a",
+    "C:\\Projects\\AIBSI\\neural_comparison\\paper_benchmark\\verify.py": "28766440beab9429560d50080ae2c09d61ad35747c5f7e61692b4902acc61525",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\core.py": "771387da03154e893121ce93a36e85a8d3e41ff4c66690420a4febcd341bec7c",
+    "C:\\Projects\\AIBSI\\neural_comparison\\stft_gpu_3class\\run_pipeline.py": "e1cfcb1bfe2d22b9caac125cf52f64dc8f9a2894b94bb9aebab17d994ad6bce0"
+  },
+  "paper_sources": [
+    "https://doi.org/10.1093/braincomms/fcae227",
+    "https://doi.org/10.1007/s11571-024-10152-7",
+    "https://doi.org/10.1109/ACCESS.2023.3294618",
+    "https://doi.org/10.3390/bios16050258"
+  ],
+  "dice_author_repository_tree_sha": "eef2eb009da1b39c406bebe4313b8729638cf46e",
+  "microstate_author_repository_status": "404 when checked on2026-11-03; reimplementation from article and supplement",
+  "attention_retraining_limit": "CUDA memory-efficient backward may be nondeterministic; saved-model predictions replayed successfully."
+}

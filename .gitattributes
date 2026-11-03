@@ -6,3 +6,7 @@
 *.npy binary
 *.npz binary
 *.joblib binary
+
+# Preserve byte-level code fingerprints for the new benchmark on Windows.
+/neural_comparison/paper_benchmark/*.py text eol=lf
+/technical_report/build_experiment_comparison_pdf.py text eol=lf
