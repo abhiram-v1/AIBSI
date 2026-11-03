@@ -1,0 +1,115 @@
+{
+  "direct": {
+    "accuracy": 0.5440613026819924,
+    "macro_f1": 0.450514137943909,
+    "balanced_accuracy": 0.4867511077393321,
+    "ftd_recall": 0.07142857142857142,
+    "log_loss": 0.9822720765133702,
+    "brier_multiclass_sum": 0.5821478449197599,
+    "macro_auroc": 0.6774971327279328
+  },
+  "ntf": {
+    "accuracy": 0.5287356321839081,
+    "macro_f1": 0.4233562567248074,
+    "balanced_accuracy": 0.4676003806689561,
+    "ftd_recall": 0.03968253968253968,
+    "log_loss": 1.0092073657135117,
+    "brier_multiclass_sum": 0.6009453902738279,
+    "macro_auroc": 0.6333160567944877
+  },
+  "gntf": {
+    "accuracy": 0.5344827586206896,
+    "macro_f1": 0.4109054255430147,
+    "balanced_accuracy": 0.4718212126431937,
+    "ftd_recall": 0.007936507936507936,
+    "log_loss": 1.0025039299719414,
+    "brier_multiclass_sum": 0.5970276954630122,
+    "macro_auroc": 0.642944892030887
+  },
+  "shuffled": {
+    "accuracy": 0.5440613026819924,
+    "macro_f1": 0.4378999927480236,
+    "balanced_accuracy": 0.48504872587070685,
+    "ftd_recall": 0.047619047619047616,
+    "log_loss": 0.9906186389219873,
+    "brier_multiclass_sum": 0.5889942607420174,
+    "macro_auroc": 0.663586712513191
+  },
+  "tt": {
+    "accuracy": 0.5632183908045977,
+    "macro_f1": 0.4721397709108323,
+    "balanced_accuracy": 0.5048182232435292,
+    "ftd_recall": 0.08730158730158728,
+    "log_loss": 0.9695608325897123,
+    "brier_multiclass_sum": 0.5752191413802045,
+    "macro_auroc": 0.6699797926029295
+  }
+}
+Selecting deployment gntf using inner CV on all participants
+  gntf tensor/config 1/20
+  gntf tensor/config 2/20
+  gntf tensor/config 3/20
+  gntf tensor/config 4/20
+  gntf tensor/config 5/20
+  gntf tensor/config 6/20
+  gntf tensor/config 7/20
+  gntf tensor/config 8/20
+  gntf tensor/config 9/20
+  gntf tensor/config 10/20
+  gntf tensor/config 11/20
+  gntf tensor/config 12/20
+  gntf tensor/config 13/20
+  gntf tensor/config 14/20
+  gntf tensor/config 15/20
+  gntf tensor/config 16/20
+  gntf tensor/config 17/20
+  gntf tensor/config 18/20
+  gntf tensor/config 19/20
+  gntf tensor/config 20/20
+{
+  "direct": {
+    "accuracy": 0.5440613026819924,
+    "macro_f1": 0.450514137943909,
+    "balanced_accuracy": 0.4867511077393321,
+    "ftd_recall": 0.07142857142857142,
+    "log_loss": 0.9822720765133702,
+    "brier_multiclass_sum": 0.5821478449197599,
+    "macro_auroc": 0.6774971327279328
+  },
+  "ntf": {
+    "accuracy": 0.5287356321839081,
+    "macro_f1": 0.4233562567248074,
+    "balanced_accuracy": 0.4676003806689561,
+    "ftd_recall": 0.03968253968253968,
+    "log_loss": 1.0092073657135117,
+    "brier_multiclass_sum": 0.6009453902738279,
+    "macro_auroc": 0.6333160567944877
+  },
+  "gntf": {
+    "accuracy": 0.5344827586206896,
+    "macro_f1": 0.4109054255430147,
+    "balanced_accuracy": 0.4718212126431937,
+    "ftd_recall": 0.007936507936507936,
+    "log_loss": 1.0025039299719414,
+    "brier_multiclass_sum": 0.5970276954630122,
+    "macro_auroc": 0.642944892030887
+  },
+  "shuffled": {
+    "accuracy": 0.5440613026819924,
+    "macro_f1": 0.4378999927480236,
+    "balanced_accuracy": 0.48504872587070685,
+    "ftd_recall": 0.047619047619047616,
+    "log_loss": 0.9906186389219873,
+    "brier_multiclass_sum": 0.5889942607420174,
+    "macro_auroc": 0.663586712513191
+  },
+  "tt": {
+    "accuracy": 0.5632183908045977,
+    "macro_f1": 0.4721397709108323,
+    "balanced_accuracy": 0.5048182232435292,
+    "ftd_recall": 0.08730158730158728,
+    "log_loss": 0.9695608325897123,
+    "brier_multiclass_sum": 0.5752191413802045,
+    "macro_auroc": 0.6699797926029295
+  }
+}

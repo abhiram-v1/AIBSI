@@ -1,0 +1,34 @@
+{
+  "shape": [
+    174,
+    19,
+    19,
+    5
+  ],
+  "bands_hz": [
+    [
+      1,
+      4
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      13,
+      30
+    ],
+    [
+      30,
+      40
+    ]
+  ],
+  "measure": "wPLI",
+  "diagonal": "masked in factorization",
+  "windowing": "Same moderate 8-second accepted windows, max40; analytic phase computed within each window",
+  "limitations": "19-channel BrainLat spatial interpolation can affect connectivity; sensor-space associations are not anatomical connections."
+}

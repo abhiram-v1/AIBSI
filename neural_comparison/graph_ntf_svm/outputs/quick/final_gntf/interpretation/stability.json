@@ -1,0 +1,46 @@
+{
+  "comparison": "Full-cohort reference versus overlapping outer-training fits; descriptive, not independent replication.",
+  "metric": "Product of electrode, frequency and statistic cosine similarities after Hungarian assignment; missing matches=0",
+  "folds": [
+    {
+      "fold": "repeat_00_fold_000",
+      "matched_similarities": [
+        0.9765207482972847,
+        0.8825716376398359,
+        0.7816358592870543
+      ]
+    },
+    {
+      "fold": "repeat_00_fold_001",
+      "matched_similarities": [
+        0.9616158636466057,
+        0.8720632657404505,
+        0.7817387832840521
+      ]
+    },
+    {
+      "fold": "repeat_00_fold_002",
+      "matched_similarities": [
+        0.9310896227548737,
+        0.8279868853931552,
+        0.7499064414045997
+      ]
+    },
+    {
+      "fold": "repeat_00_fold_003",
+      "matched_similarities": [
+        0.9465711615753809,
+        0.9723608181538091,
+        0.8358901554565722
+      ]
+    },
+    {
+      "fold": "repeat_00_fold_004",
+      "matched_similarities": [
+        0.942235945096325,
+        0.9234039190229598,
+        0.9633337876607558
+      ]
+    }
+  ]
+}

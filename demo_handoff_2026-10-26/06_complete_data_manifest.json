@@ -1,0 +1,1524 @@
+{
+  "created_unix": 1791375573.2065535,
+  "class_names": [
+    "AD",
+    "FTD",
+    "HC"
+  ],
+  "channels": [
+    "Fp1",
+    "Fp2",
+    "F3",
+    "F4",
+    "C3",
+    "C4",
+    "P3",
+    "P4",
+    "O1",
+    "O2",
+    "F7",
+    "F8",
+    "T7",
+    "T8",
+    "P7",
+    "P8",
+    "Fz",
+    "Cz",
+    "Pz"
+  ],
+  "sampling_rate": 128,
+  "window_seconds": 8,
+  "stft_seconds": 2,
+  "stft_hop_seconds": 0.5,
+  "frequency_min": 1.0,
+  "frequency_max": 40.0,
+  "tensor_shape": [
+    6721,
+    19,
+    79,
+    13
+  ],
+  "participants": [
+    {
+      "subject_index": 0,
+      "subject_id": "ds004504:sub-001",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 1,
+      "subject_id": "ds004504:sub-002",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 2,
+      "subject_id": "ds004504:sub-003",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 35
+    },
+    {
+      "subject_index": 3,
+      "subject_id": "ds004504:sub-004",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 4,
+      "subject_id": "ds004504:sub-005",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 5,
+      "subject_id": "ds004504:sub-006",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 6,
+      "subject_id": "ds004504:sub-007",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 7,
+      "subject_id": "ds004504:sub-008",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 8,
+      "subject_id": "ds004504:sub-009",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 9,
+      "subject_id": "ds004504:sub-010",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 10,
+      "subject_id": "ds004504:sub-011",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 11,
+      "subject_id": "ds004504:sub-012",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 12,
+      "subject_id": "ds004504:sub-013",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 13,
+      "subject_id": "ds004504:sub-014",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 14,
+      "subject_id": "ds004504:sub-015",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 15,
+      "subject_id": "ds004504:sub-016",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 16,
+      "subject_id": "ds004504:sub-017",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 17,
+      "subject_id": "ds004504:sub-018",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 18,
+      "subject_id": "ds004504:sub-019",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 19,
+      "subject_id": "ds004504:sub-020",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 20,
+      "subject_id": "ds004504:sub-021",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 21,
+      "subject_id": "ds004504:sub-022",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 22,
+      "subject_id": "ds004504:sub-023",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 23,
+      "subject_id": "ds004504:sub-024",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 24,
+      "subject_id": "ds004504:sub-025",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 25,
+      "subject_id": "ds004504:sub-026",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 26,
+      "subject_id": "ds004504:sub-027",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 27,
+      "subject_id": "ds004504:sub-028",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 28,
+      "subject_id": "ds004504:sub-029",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 29,
+      "subject_id": "ds004504:sub-030",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 30,
+      "subject_id": "ds004504:sub-031",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 31,
+      "subject_id": "ds004504:sub-032",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 32,
+      "subject_id": "ds004504:sub-033",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 33,
+      "subject_id": "ds004504:sub-034",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 34,
+      "subject_id": "ds004504:sub-035",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 35,
+      "subject_id": "ds004504:sub-036",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 36,
+      "subject_id": "ds004504:sub-037",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 37,
+      "subject_id": "ds004504:sub-038",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 38,
+      "subject_id": "ds004504:sub-039",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 39,
+      "subject_id": "ds004504:sub-040",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 40,
+      "subject_id": "ds004504:sub-041",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 41,
+      "subject_id": "ds004504:sub-042",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 42,
+      "subject_id": "ds004504:sub-043",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 43,
+      "subject_id": "ds004504:sub-044",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 44,
+      "subject_id": "ds004504:sub-045",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 45,
+      "subject_id": "ds004504:sub-046",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 46,
+      "subject_id": "ds004504:sub-047",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 47,
+      "subject_id": "ds004504:sub-048",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 48,
+      "subject_id": "ds004504:sub-049",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 49,
+      "subject_id": "ds004504:sub-050",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 50,
+      "subject_id": "ds004504:sub-051",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 51,
+      "subject_id": "ds004504:sub-052",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 52,
+      "subject_id": "ds004504:sub-053",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 53,
+      "subject_id": "ds004504:sub-054",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 54,
+      "subject_id": "ds004504:sub-055",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 55,
+      "subject_id": "ds004504:sub-056",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 56,
+      "subject_id": "ds004504:sub-057",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 57,
+      "subject_id": "ds004504:sub-058",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 58,
+      "subject_id": "ds004504:sub-059",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 59,
+      "subject_id": "ds004504:sub-060",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 60,
+      "subject_id": "ds004504:sub-061",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 61,
+      "subject_id": "ds004504:sub-062",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 62,
+      "subject_id": "ds004504:sub-063",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 63,
+      "subject_id": "ds004504:sub-064",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 64,
+      "subject_id": "ds004504:sub-065",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 65,
+      "subject_id": "ds004504:sub-066",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 66,
+      "subject_id": "ds004504:sub-067",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 67,
+      "subject_id": "ds004504:sub-068",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 68,
+      "subject_id": "ds004504:sub-069",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 69,
+      "subject_id": "ds004504:sub-070",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 70,
+      "subject_id": "ds004504:sub-071",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 71,
+      "subject_id": "ds004504:sub-072",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 72,
+      "subject_id": "ds004504:sub-073",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 73,
+      "subject_id": "ds004504:sub-074",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 74,
+      "subject_id": "ds004504:sub-075",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 75,
+      "subject_id": "ds004504:sub-076",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 76,
+      "subject_id": "ds004504:sub-077",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 77,
+      "subject_id": "ds004504:sub-078",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 78,
+      "subject_id": "ds004504:sub-079",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 79,
+      "subject_id": "ds004504:sub-080",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 80,
+      "subject_id": "ds004504:sub-081",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 81,
+      "subject_id": "ds004504:sub-082",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 82,
+      "subject_id": "ds004504:sub-083",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 83,
+      "subject_id": "ds004504:sub-084",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 84,
+      "subject_id": "ds004504:sub-085",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 85,
+      "subject_id": "ds004504:sub-086",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 86,
+      "subject_id": "ds004504:sub-087",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 87,
+      "subject_id": "ds004504:sub-088",
+      "source": "ds004504",
+      "site": "AHEPA",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 88,
+      "subject_id": "brainlat:AR:sub-30001",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 36
+    },
+    {
+      "subject_index": 89,
+      "subject_id": "brainlat:AR:sub-30002",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 37
+    },
+    {
+      "subject_index": 90,
+      "subject_id": "brainlat:AR:sub-30004",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 33
+    },
+    {
+      "subject_index": 91,
+      "subject_id": "brainlat:AR:sub-30008",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 36
+    },
+    {
+      "subject_index": 92,
+      "subject_id": "brainlat:AR:sub-30009",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 93,
+      "subject_id": "brainlat:AR:sub-30011",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 15
+    },
+    {
+      "subject_index": 94,
+      "subject_id": "brainlat:AR:sub-30012",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 25
+    },
+    {
+      "subject_index": 95,
+      "subject_id": "brainlat:AR:sub-30013",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 96,
+      "subject_id": "brainlat:AR:sub-30015",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 17
+    },
+    {
+      "subject_index": 97,
+      "subject_id": "brainlat:AR:sub-30017",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 28
+    },
+    {
+      "subject_index": 98,
+      "subject_id": "brainlat:AR:sub-30018",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 99,
+      "subject_id": "brainlat:AR:sub-30020",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 100,
+      "subject_id": "brainlat:AR:sub-30022",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 101,
+      "subject_id": "brainlat:AR:sub-30026",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 102,
+      "subject_id": "brainlat:AR:sub-30029",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 103,
+      "subject_id": "brainlat:AR:sub-30031",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 104,
+      "subject_id": "brainlat:CL:sub-30003",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 105,
+      "subject_id": "brainlat:CL:sub-30005",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 106,
+      "subject_id": "brainlat:CL:sub-30006",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 107,
+      "subject_id": "brainlat:CL:sub-30007",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 108,
+      "subject_id": "brainlat:CL:sub-30010",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 109,
+      "subject_id": "brainlat:CL:sub-30014",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 110,
+      "subject_id": "brainlat:CL:sub-30016",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 111,
+      "subject_id": "brainlat:CL:sub-30019",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 112,
+      "subject_id": "brainlat:CL:sub-30021",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 113,
+      "subject_id": "brainlat:CL:sub-30023",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 18
+    },
+    {
+      "subject_index": 114,
+      "subject_id": "brainlat:CL:sub-30024",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 115,
+      "subject_id": "brainlat:CL:sub-30025",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 116,
+      "subject_id": "brainlat:CL:sub-30027",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 117,
+      "subject_id": "brainlat:CL:sub-30028",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 118,
+      "subject_id": "brainlat:CL:sub-30030",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 119,
+      "subject_id": "brainlat:CL:sub-30032",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 120,
+      "subject_id": "brainlat:CL:sub-30033",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 121,
+      "subject_id": "brainlat:CL:sub-30034",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 122,
+      "subject_id": "brainlat:CL:sub-30035",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "AD",
+      "windows": 40
+    },
+    {
+      "subject_index": 123,
+      "subject_id": "brainlat:AR:sub-20001",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 124,
+      "subject_id": "brainlat:AR:sub-20003",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 125,
+      "subject_id": "brainlat:AR:sub-20006",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 22
+    },
+    {
+      "subject_index": 126,
+      "subject_id": "brainlat:AR:sub-20009",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 27
+    },
+    {
+      "subject_index": 127,
+      "subject_id": "brainlat:AR:sub-20010",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 31
+    },
+    {
+      "subject_index": 128,
+      "subject_id": "brainlat:AR:sub-20012",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 36
+    },
+    {
+      "subject_index": 129,
+      "subject_id": "brainlat:AR:sub-20013",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 6
+    },
+    {
+      "subject_index": 130,
+      "subject_id": "brainlat:AR:sub-20014",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 25
+    },
+    {
+      "subject_index": 131,
+      "subject_id": "brainlat:AR:sub-20015",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 132,
+      "subject_id": "brainlat:AR:sub-20016",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 133,
+      "subject_id": "brainlat:AR:sub-20017",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 32
+    },
+    {
+      "subject_index": 134,
+      "subject_id": "brainlat:AR:sub-20018",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 135,
+      "subject_id": "brainlat:AR:sub-20019",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 136,
+      "subject_id": "brainlat:CL:sub-20002",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 137,
+      "subject_id": "brainlat:CL:sub-20004",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 138,
+      "subject_id": "brainlat:CL:sub-20005",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 139,
+      "subject_id": "brainlat:CL:sub-20007",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 140,
+      "subject_id": "brainlat:CL:sub-20008",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 141,
+      "subject_id": "brainlat:CL:sub-20011",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "FTD",
+      "windows": 40
+    },
+    {
+      "subject_index": 142,
+      "subject_id": "brainlat:AR:sub-100012",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 143,
+      "subject_id": "brainlat:AR:sub-100015",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 144,
+      "subject_id": "brainlat:AR:sub-100018",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 145,
+      "subject_id": "brainlat:AR:sub-10002",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 146,
+      "subject_id": "brainlat:AR:sub-100020",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 38
+    },
+    {
+      "subject_index": 147,
+      "subject_id": "brainlat:AR:sub-100022",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 148,
+      "subject_id": "brainlat:AR:sub-100024",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 149,
+      "subject_id": "brainlat:AR:sub-100026",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 150,
+      "subject_id": "brainlat:AR:sub-100028",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 33
+    },
+    {
+      "subject_index": 151,
+      "subject_id": "brainlat:AR:sub-10003",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 152,
+      "subject_id": "brainlat:AR:sub-100030",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 153,
+      "subject_id": "brainlat:AR:sub-100031",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 154,
+      "subject_id": "brainlat:AR:sub-100033",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 155,
+      "subject_id": "brainlat:AR:sub-100035",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 31
+    },
+    {
+      "subject_index": 156,
+      "subject_id": "brainlat:AR:sub-100038",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 157,
+      "subject_id": "brainlat:AR:sub-10004",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 158,
+      "subject_id": "brainlat:AR:sub-10006",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 159,
+      "subject_id": "brainlat:AR:sub-10007",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 160,
+      "subject_id": "brainlat:AR:sub-10009",
+      "source": "brainlat",
+      "site": "AR",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 161,
+      "subject_id": "brainlat:CL:sub-10001",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 162,
+      "subject_id": "brainlat:CL:sub-100010",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 163,
+      "subject_id": "brainlat:CL:sub-100011",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 164,
+      "subject_id": "brainlat:CL:sub-100014",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 165,
+      "subject_id": "brainlat:CL:sub-100016",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 166,
+      "subject_id": "brainlat:CL:sub-100017",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 167,
+      "subject_id": "brainlat:CL:sub-100021",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 168,
+      "subject_id": "brainlat:CL:sub-100029",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 169,
+      "subject_id": "brainlat:CL:sub-100034",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 170,
+      "subject_id": "brainlat:CL:sub-100037",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 171,
+      "subject_id": "brainlat:CL:sub-100043",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 172,
+      "subject_id": "brainlat:CL:sub-10005",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    },
+    {
+      "subject_index": 173,
+      "subject_id": "brainlat:CL:sub-10008",
+      "source": "brainlat",
+      "site": "CL",
+      "label": "HC",
+      "windows": 40
+    }
+  ],
+  "source_array": "moderate_log_mel/prepared/log_mel.npy",
+  "data_kind": "full prepared derived log-mel dataset; not raw EEG",
+  "label_encoding": {
+    "0": "AD",
+    "1": "FTD",
+    "2": "HC"
+  },
+  "chunks": [
+    {
+      "file": "06_logmel_full_part_01.npz",
+      "start": 0,
+      "stop": 700,
+      "rows": 700,
+      "bytes": 7641234,
+      "sha256": "d04d3f8120dac705c564653bd72b910e52eeea5a5d2b34eb9e73ceedbda0afdf"
+    },
+    {
+      "file": "06_logmel_full_part_02.npz",
+      "start": 700,
+      "stop": 1400,
+      "rows": 700,
+      "bytes": 7631982,
+      "sha256": "8743b13d1508759575be4a8c698b6383df978aedc276726b0fee568cacfdc5dd"
+    },
+    {
+      "file": "06_logmel_full_part_03.npz",
+      "start": 1400,
+      "stop": 2100,
+      "rows": 700,
+      "bytes": 7642215,
+      "sha256": "f9383ff1bb847b77f44e7d7ee1238da51cf95a32739c53e80623f736042391ef"
+    },
+    {
+      "file": "06_logmel_full_part_04.npz",
+      "start": 2100,
+      "stop": 2800,
+      "rows": 700,
+      "bytes": 7640274,
+      "sha256": "afeb41260ab0261600f4911295579a3e1a10799f6a20f708b3eba27a269e9891"
+    },
+    {
+      "file": "06_logmel_full_part_05.npz",
+      "start": 2800,
+      "stop": 3500,
+      "rows": 700,
+      "bytes": 7643681,
+      "sha256": "737a1050b498201d1da02c274d89c1a5c14fa7428361c4721fe34f57eb29b89e"
+    },
+    {
+      "file": "06_logmel_full_part_06.npz",
+      "start": 3500,
+      "stop": 4200,
+      "rows": 700,
+      "bytes": 7619861,
+      "sha256": "85cff802dfdc97eb8defe587c6ffb6d936b3bccf1331458af47ab9a958c10554"
+    },
+    {
+      "file": "06_logmel_full_part_07.npz",
+      "start": 4200,
+      "stop": 4900,
+      "rows": 700,
+      "bytes": 7625319,
+      "sha256": "94498f9b9820f0e29e0aa302fcf1e27872ce6f84c230920354e154b1c820afa6"
+    },
+    {
+      "file": "06_logmel_full_part_08.npz",
+      "start": 4900,
+      "stop": 5600,
+      "rows": 700,
+      "bytes": 7637349,
+      "sha256": "40aaccdf864fb29e53d04c06b3eb57b4d34317fc560c8ac40c2f8ae5242d32a9"
+    },
+    {
+      "file": "06_logmel_full_part_09.npz",
+      "start": 5600,
+      "stop": 6300,
+      "rows": 700,
+      "bytes": 7630898,
+      "sha256": "9d559c1f1fcd3329e90799e2b4d98c1e37a893e58ef38c36944e7953c5902c15"
+    },
+    {
+      "file": "06_logmel_full_part_10.npz",
+      "start": 6300,
+      "stop": 6721,
+      "rows": 421,
+      "bytes": 4591051,
+      "sha256": "df1a8ab363777041508869e60791e9982b4e0bacb5d100bfc217280d65acf440"
+    }
+  ]
+}

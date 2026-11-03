@@ -1,0 +1,47 @@
+[
+  {
+    "file": "00_START_HERE.md",
+    "bytes": 4064,
+    "sha256": "93fddd2e46697afb4378f6b5fbe385caa9522af9441bb79a92666568315f3d84"
+  },
+  {
+    "file": "01_data_AD.npz",
+    "bytes": 523484,
+    "sha256": "2df5330729111abffe74a171f1b5db00497da546e0310016d17beb24f1ebffd0"
+  },
+  {
+    "file": "01_data_FTD.npz",
+    "bytes": 523882,
+    "sha256": "88c12d6346d7ede07bb68f95a55c4b7f492b5c1369e38d25349599c1ecf4670c"
+  },
+  {
+    "file": "01_data_HC.npz",
+    "bytes": 524097,
+    "sha256": "9dcdddd45bae5ffb698940b6a3db25bde8011f1488b7897bb09b5ddff820c438"
+  },
+  {
+    "file": "01_data_manifest.csv",
+    "bytes": 8745,
+    "sha256": "35c0334964a9a12105525fc97978bfe2427c066096337066cd0c146e2478b82d"
+  },
+  {
+    "file": "02_models_compact.zip",
+    "bytes": 1462601,
+    "sha256": "c98f3b7e6168fd6abb2a9119d6f90e7d1cb816a06fcbe934f431c5384cb8ebab"
+  },
+  {
+    "file": "03_results_and_proof.zip",
+    "bytes": 2023084,
+    "sha256": "f59ce571034a9d693e2238b70f76d22213ee0146c004418b58b2a8f083500a10"
+  },
+  {
+    "file": "04_project_code_and_protocols.zip",
+    "bytes": 378514,
+    "sha256": "aa6ef7606643165068fd5776a11f342bcb32929bf6e59a865338230492523e37"
+  },
+  {
+    "file": "advanced_clean_spectral_RUN_SUMMARY.md",
+    "bytes": 28512,
+    "sha256": "c3dcc25ef02c2a3b9b517a34d3bec1e7ee2a187532f91441057c0a0f4987195d"
+  }
+]

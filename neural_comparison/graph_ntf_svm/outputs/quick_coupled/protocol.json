@@ -1,0 +1,91 @@
+{
+  "profile": "quick",
+  "outer_folds": 5,
+  "repeats": 1,
+  "inner_folds": 3,
+  "outer": "stratified",
+  "methods": [
+    "coupled"
+  ],
+  "maxiter": 100,
+  "starts": 1,
+  "seed": 20261102,
+  "input_hashes": {
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\outputs\\prepared\\dataset.npz": "3f178662ee8ce27796cef73335a681c09c606c5be6cc53e691a309a16f677890",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\outputs\\prepared\\manifest.json": "ed4484977b2a7c76cf8de0161cbf6a96701af61ed788e107129665d0fa6e4e5d",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\core.py": "771387da03154e893121ce93a36e85a8d3e41ff4c66690420a4febcd341bec7c",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\data.py": "8ab4c2892e0157f3c63e7d3d819cb7c813fc165659bdc2ff252942a0d68c97f1",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\report.py": "78475b6048706aa23187b6f9ad4ae16b4a88dd6da1bc80166b5c141fa54c13a1",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\run.py": "0bf2991fdc23e950bb34e8c91d7f435415956f2795e5e1f25132b884a03e309a",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\test_pipeline.py": "789b408a89f80bb5fba5fcd910f4ca338c632342e2d6202b6a47fdb423aa1e3c",
+    "C:\\Projects\\AIBSI\\neural_comparison\\graph_ntf_svm\\outputs\\prepared\\connectivity.npy": "7f219d976e1adbad7127d6b50c205938169fb3b2f9931c7dd125ef39738b5a61"
+  },
+  "calibration": "3 one-vs-rest sigmoids on full-pipeline OOF scores; renormalized to sum1; no outer labels used",
+  "selection": "Inner macro F1, one-SE simplicity heuristic; uncalibrated SVM.predict used for tuning, probability argmax for reported endpoints",
+  "uncertainty": "Participant bootstrap conditional on fitted OOF models, repeated predictions kept together; not independent repeat observations",
+  "versions": {
+    "python": "3.10.11",
+    "sklearn": "1.7.2"
+  },
+  "interpretation": "Internal validation on a previously explored cohort; no new external validation",
+  "representation": "subject x electrode x mel x statistic; no explicit time axis",
+  "graph": "4-nearest-neighbour symmetrized distance-weighted scalp graph, Laplacian spectral norm1",
+  "rank_grid": [
+    {
+      "method": "gntf",
+      "rank": 3,
+      "lam": 0.01,
+      "coupling": 0.0
+    },
+    {
+      "method": "gntf",
+      "rank": 3,
+      "lam": 0.1,
+      "coupling": 0.0
+    },
+    {
+      "method": "gntf",
+      "rank": 8,
+      "lam": 0.01,
+      "coupling": 0.0
+    },
+    {
+      "method": "gntf",
+      "rank": 8,
+      "lam": 0.1,
+      "coupling": 0.0
+    }
+  ],
+  "svm_grid": [
+    {
+      "kernel": "linear",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 10,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 10,
+      "gamma": "scale"
+    }
+  ]
+}

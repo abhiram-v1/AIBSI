@@ -1,0 +1,195 @@
+{
+  "analysis": "Exploratory full-cohort associations; factors selected using diagnosis. Not independent clinical validation. All-group correlations can reflect diagnostic group separation. MMSE and MoCA are separate instruments.",
+  "correlations": [
+    {
+      "instrument": "MMSE",
+      "group": "all",
+      "n": 88,
+      "component": 1,
+      "rho": 0.43185879377316455,
+      "p": 2.654751146476719e-05,
+      "q_fdr": 0.0002787488703800555
+    },
+    {
+      "instrument": "MMSE",
+      "group": "all",
+      "n": 88,
+      "component": 2,
+      "rho": 0.04882744041450346,
+      "p": 0.6514401525439664,
+      "q_fdr": 0.7600135113012941
+    },
+    {
+      "instrument": "MMSE",
+      "group": "all",
+      "n": 88,
+      "component": 3,
+      "rho": -0.464797940084536,
+      "p": 5.063869980889479e-06,
+      "q_fdr": 0.00010634126959867906
+    },
+    {
+      "instrument": "MMSE",
+      "group": "AD",
+      "n": 36,
+      "component": 1,
+      "rho": 0.23767431455876112,
+      "p": 0.16277085469249483,
+      "q_fdr": 0.5416579666190705
+    },
+    {
+      "instrument": "MMSE",
+      "group": "AD",
+      "n": 36,
+      "component": 2,
+      "rho": -0.09270611385551676,
+      "p": 0.5907382409931465,
+      "q_fdr": 0.7297354741680045
+    },
+    {
+      "instrument": "MMSE",
+      "group": "AD",
+      "n": 36,
+      "component": 3,
+      "rho": -0.12776635804733402,
+      "p": 0.457726842887748,
+      "q_fdr": 0.6007664812901693
+    },
+    {
+      "instrument": "MMSE",
+      "group": "FTD",
+      "n": 23,
+      "component": 1,
+      "rho": -0.18400917580127021,
+      "p": 0.40064161053616465,
+      "q_fdr": 0.5808037063047029
+    },
+    {
+      "instrument": "MMSE",
+      "group": "FTD",
+      "n": 23,
+      "component": 2,
+      "rho": 0.37810104616699364,
+      "p": 0.07525602497685015,
+      "q_fdr": 0.526792174837951
+    },
+    {
+      "instrument": "MMSE",
+      "group": "FTD",
+      "n": 23,
+      "component": 3,
+      "rho": -0.026719140595800883,
+      "p": 0.9036785906261475,
+      "q_fdr": 0.9242837212070585
+    },
+    {
+      "instrument": "MoCA",
+      "group": "all",
+      "n": 66,
+      "component": 1,
+      "rho": 0.1397430210066623,
+      "p": 0.26310261396159296,
+      "q_fdr": 0.5808037063047029
+    },
+    {
+      "instrument": "MoCA",
+      "group": "all",
+      "n": 66,
+      "component": 2,
+      "rho": 0.011925965260338003,
+      "p": 0.9242837212070585,
+      "q_fdr": 0.9242837212070585
+    },
+    {
+      "instrument": "MoCA",
+      "group": "all",
+      "n": 66,
+      "component": 3,
+      "rho": -0.1996657657533431,
+      "p": 0.10798195094454356,
+      "q_fdr": 0.5416579666190705
+    },
+    {
+      "instrument": "MoCA",
+      "group": "AD",
+      "n": 29,
+      "component": 1,
+      "rho": 0.2515884285733481,
+      "p": 0.1879915721663471,
+      "q_fdr": 0.5416579666190705
+    },
+    {
+      "instrument": "MoCA",
+      "group": "AD",
+      "n": 29,
+      "component": 2,
+      "rho": -0.1662369301224292,
+      "p": 0.38876736660130495,
+      "q_fdr": 0.5808037063047029
+    },
+    {
+      "instrument": "MoCA",
+      "group": "AD",
+      "n": 29,
+      "component": 3,
+      "rho": 0.05210411242643304,
+      "p": 0.7883690506947513,
+      "q_fdr": 0.8713552665573567
+    },
+    {
+      "instrument": "MoCA",
+      "group": "FTD",
+      "n": 14,
+      "component": 1,
+      "rho": -0.27152582515531326,
+      "p": 0.3477076277709592,
+      "q_fdr": 0.5808037063047029
+    },
+    {
+      "instrument": "MoCA",
+      "group": "FTD",
+      "n": 14,
+      "component": 2,
+      "rho": 0.35982690650663457,
+      "p": 0.2063458920453602,
+      "q_fdr": 0.5416579666190705
+    },
+    {
+      "instrument": "MoCA",
+      "group": "FTD",
+      "n": 14,
+      "component": 3,
+      "rho": -0.24062044668235077,
+      "p": 0.4072974456989965,
+      "q_fdr": 0.5808037063047029
+    },
+    {
+      "instrument": "MoCA",
+      "group": "HC",
+      "n": 23,
+      "component": 1,
+      "rho": -0.17860326253724937,
+      "p": 0.41485979021764496,
+      "q_fdr": 0.5808037063047029
+    },
+    {
+      "instrument": "MoCA",
+      "group": "HC",
+      "n": 23,
+      "component": 2,
+      "rho": 0.3236871452705892,
+      "p": 0.13189221950348393,
+      "q_fdr": 0.5416579666190705
+    },
+    {
+      "instrument": "MoCA",
+      "group": "HC",
+      "n": 23,
+      "component": 3,
+      "rho": -0.1951128078138018,
+      "p": 0.3723050315218579,
+      "q_fdr": 0.5808037063047029
+    }
+  ],
+  "fdr_family": "All reported components, instruments and diagnostic strata"
+}

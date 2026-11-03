@@ -211,6 +211,31 @@ Theta activity from 4-8 Hz caused the largest grouped permutation decrease in ma
 
 Replaying the original held-out split showed why the earlier result looked stronger. The 19-electrode model again reached 66.7% accuracy and 64.3% macro F1, while the development-selected five-electrode subset fell to 40.7% accuracy and 37.7% macro F1. Across the 50 repeated test folds, the original fixed `C=0.1` model averaged 48.1% macro F1 and ranged from 33.3% to 66.0%. The old held-out score is therefore near the optimistic edge of the observed split distribution rather than a stable estimate of expected performance.
 
+## Preprocessing and compact-feature SVM audit
+
+A paired experiment compared the moderate preprocessing stream with the advanced stream on identical participant-level folds. It extracted relative spectral power, theta/alpha ratios, individual alpha peak, hemispheric asymmetry, regional spectral summaries, and regional band-envelope correlations. Feature family, site normalization, PCA, SVM `C`, and FTD class weight were selected only inside each outer training fold. A fixed equal-probability fusion combined the two independently selected models without tuning on outer-fold labels.
+
+| Model | Accuracy | Macro F1 | Macro recall | FTD recall |
+|---|---:|---:|---:|---:|
+| Moderate preprocessing | 54.3% +/- 7.0% | 50.9% +/- 7.6% | 51.6% +/- 7.2% | 31.3% +/- 16.4% |
+| Advanced preprocessing | 51.6% +/- 7.7% | 48.9% +/- 8.0% | 49.6% +/- 7.8% | 34.8% +/- 18.7% |
+| **Fixed 50/50 fusion** | **54.3% +/- 7.8%** | **51.4% +/- 8.9%** | **52.4% +/- 8.3%** | **36.4% +/- 21.3%** |
+
+Advanced cleaning interpolated 238 channels in 114 of 174 participants and removed 87 ICA components from 76 participants. Relative-band features were selected in 16 of 25 moderate-cleaning folds and 13 of 25 advanced-cleaning folds; regional connectivity was selected only four and seven times. Advanced cleaning reduced paired-fold macro F1 by 1.98 percentage points while increasing FTD recall by 3.56 points. The fusion recovered some complementary decisions, but its 51.4% repeated macro F1 remains far below the exploratory fixed-split result.
+
+This audit rejects the idea that more aggressive automatic cleaning, broad connectivity features, or a simple preprocessing ensemble can reliably produce 70% macro F1. The most credible next performance gain requires additional well-matched FTD participants or external pretraining data, followed by a locked external evaluation.
+
+## Compact-feature Random Forest
+
+A Random Forest baseline used the same moderate-preprocessing compact feature families and the same 25 repeated participant folds as the compact SVM audit. Four-fold training-only selection compared feature family, global versus shrunk site normalization, minimum leaf sizes of 2 and 5, and square-root versus 50% feature subsampling. Each final forest used 800 trees and class weights with a modest FTD boost.
+
+| Evaluation | Accuracy | Macro F1 | Macro recall | FTD recall |
+|---|---:|---:|---:|---:|
+| 5 x 5 repeated participant folds | 56.2% +/- 6.8% | 51.7% +/- 7.8% | 52.8% +/- 6.9% | 26.7% +/- 16.4% |
+| Original fixed test split | 55.6% | 48.9% | 50.4% | 16.7% |
+
+Random Forest exceeded the compact SVM fusion by only 0.35 percentage points of repeated macro F1 while reducing FTD recall from 36.4% to 26.7%. On the original fixed test split it identified only one of six FTD participants. The fixed-split SVM + EEGPT blend remains the final exploratory benchmark at 70.4% accuracy, 67.8% macro F1, and 67.6% macro recall. Random Forest is retained as a classical baseline rather than the final model.
+
 ## Interpretation
 
 - The current bottleneck is generalization across participants and acquisition sites, especially for FTD, which has only six held-out participants. The best cleaned CNN identified only one of those six FTD participants.
@@ -225,6 +250,8 @@ Replaying the original held-out split showed why the earlier result looked stron
 - Repeated participant-level evaluation showed that the 64.3% held-out macro F1 is split-sensitive. The all-electrode spectral SVM averaged 49.0% macro F1 across 50 test folds, with FTD remaining the weakest class.
 - Electrode removal did not improve generalization. T8 and O2 were the most consistent candidates, but their selection frequency was too low to claim a stable disease-specific montage.
 - Theta was the strongest frequency group in permutation analysis. A useful next experiment is to test training-fold-only regional theta features and stronger site harmonization rather than adding model depth.
+- Compact regional and connectivity features improved the repeated estimate slightly, and a fixed fusion reached 51.4% macro F1, but advanced cleaning was counterproductive overall. Automatic interpolation affected 65.5% of participants and should be made less aggressive before reuse.
+- Random Forest matched the compact SVM on average but weakened FTD recognition. It does not challenge the SVM + EEGPT blend as the final fixed-split benchmark.
 
 ## Reproduction
 
@@ -253,6 +280,8 @@ py -3.10 neural_comparison\advanced_clean_spectral\compare_eegpt_depth.py
 py -3.10 neural_comparison\advanced_clean_spectral\evaluate_eegpt_svm_blend.py
 py -3.10 neural_comparison\advanced_clean_spectral\train_tensor_train_svm.py
 py -3.10 neural_comparison\advanced_clean_spectral\analyze_electrode_frequency_stability.py
+py -3.10 neural_comparison\advanced_clean_spectral\audit_preprocessing_feature_svm.py --repeats 5
+py -3.10 neural_comparison\advanced_clean_spectral\evaluate_compact_random_forest.py --repeats 5
 ```
 
 Prepared arrays and generated figures are under `outputs/`, which is ignored by Git because the tensors are large and reproducible.

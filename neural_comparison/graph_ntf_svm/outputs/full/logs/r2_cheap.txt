@@ -1,0 +1,100 @@
+Outer repeat 3/3, fold 1/5: direct
+  direct tensor/config 1/4
+  direct tensor/config 2/4
+  direct tensor/config 3/4
+  direct tensor/config 4/4
+  complete 0.41630591630591635
+Outer repeat 3/3, fold 1/5: ntf
+  ntf tensor/config 1/5
+  ntf tensor/config 2/5
+  ntf tensor/config 3/5
+  ntf tensor/config 4/5
+  ntf tensor/config 5/5
+  complete 0.3686868686868687
+Outer repeat 3/3, fold 1/5: tt
+  tt tensor/config 1/5
+  tt tensor/config 2/5
+  tt tensor/config 3/5
+  tt tensor/config 4/5
+  tt tensor/config 5/5
+  complete 0.48985042735042733
+Outer repeat 3/3, fold 2/5: direct
+  direct tensor/config 1/4
+  direct tensor/config 2/4
+  direct tensor/config 3/4
+  direct tensor/config 4/4
+  complete 0.5153256704980843
+Outer repeat 3/3, fold 2/5: ntf
+  ntf tensor/config 1/5
+  ntf tensor/config 2/5
+  ntf tensor/config 3/5
+  ntf tensor/config 4/5
+  ntf tensor/config 5/5
+  complete 0.45905172413793105
+Outer repeat 3/3, fold 2/5: tt
+  tt tensor/config 1/5
+  tt tensor/config 2/5
+  tt tensor/config 3/5
+  tt tensor/config 4/5
+  tt tensor/config 5/5
+  complete 0.45905172413793105
+Outer repeat 3/3, fold 3/5: direct
+  direct tensor/config 1/4
+  direct tensor/config 2/4
+  direct tensor/config 3/4
+  direct tensor/config 4/4
+  complete 0.3657262277951933
+Outer repeat 3/3, fold 3/5: ntf
+  ntf tensor/config 1/5
+  ntf tensor/config 2/5
+  ntf tensor/config 3/5
+  ntf tensor/config 4/5
+  ntf tensor/config 5/5
+  complete 0.49908103592314124
+Outer repeat 3/3, fold 3/5: tt
+  tt tensor/config 1/5
+  tt tensor/config 2/5
+  tt tensor/config 3/5
+  tt tensor/config 4/5
+  tt tensor/config 5/5
+  complete 0.5003663003663004
+Outer repeat 3/3, fold 4/5: direct
+  direct tensor/config 1/4
+  direct tensor/config 2/4
+  direct tensor/config 3/4
+  direct tensor/config 4/4
+  complete 0.42997198879551823
+Outer repeat 3/3, fold 4/5: ntf
+  ntf tensor/config 1/5
+  ntf tensor/config 2/5
+  ntf tensor/config 3/5
+  ntf tensor/config 4/5
+  ntf tensor/config 5/5
+  complete 0.4780701754385965
+Outer repeat 3/3, fold 4/5: tt
+  tt tensor/config 1/5
+  tt tensor/config 2/5
+  tt tensor/config 3/5
+  tt tensor/config 4/5
+  tt tensor/config 5/5
+  complete 0.4317460317460317
+Outer repeat 3/3, fold 5/5: direct
+  direct tensor/config 1/4
+  direct tensor/config 2/4
+  direct tensor/config 3/4
+  direct tensor/config 4/4
+  complete 0.4872463768115942
+Outer repeat 3/3, fold 5/5: ntf
+  ntf tensor/config 1/5
+  ntf tensor/config 2/5
+  ntf tensor/config 3/5
+  ntf tensor/config 4/5
+  ntf tensor/config 5/5
+  complete 0.3711301044634378
+Outer repeat 3/3, fold 5/5: tt
+  tt tensor/config 1/5
+  tt tensor/config 2/5
+  tt tensor/config 3/5
+  tt tensor/config 4/5
+  tt tensor/config 5/5
+  complete 0.41478129713423834

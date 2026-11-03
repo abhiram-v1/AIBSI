@@ -1,0 +1,832 @@
+{
+  "best": {
+    "features": {
+      "method": "ntf",
+      "rank": 3,
+      "lam": 0.0,
+      "coupling": 0.0
+    },
+    "svm": {
+      "kernel": "rbf",
+      "C": 1,
+      "gamma": "scale"
+    },
+    "f1": [
+      0.549874686716792,
+      0.6299719887955182,
+      0.5448637491981145
+    ],
+    "balanced": [
+      0.5494886949995309,
+      0.6671717171717172,
+      0.5532407407407408
+    ],
+    "ftd": [
+      0.36363636363636365,
+      0.8181818181818182,
+      0.25
+    ],
+    "mean_f1": 0.5749034749034748,
+    "se_f1": 0.02757222811944806
+  },
+  "one_se_threshold": 0.5473312467840268,
+  "candidates": [
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 3,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "linear",
+        "C": 0.1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.508209025236889,
+        0.5557223890557225,
+        0.4906796906796907
+      ],
+      "balanced": [
+        0.5144009757012853,
+        0.5676767676767677,
+        0.5069444444444444
+      ],
+      "ftd": [
+        0.36363636363636365,
+        0.6363636363636364,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.518203701657434,
+      "se_f1": 0.019429859500027364
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 3,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "rbf",
+        "C": 0.1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.4050884516000795,
+        0.38021505376344084,
+        0.5093681917211329
+      ],
+      "balanced": [
+        0.4674922600619195,
+        0.4611111111111111,
+        0.5277777777777778
+      ],
+      "ftd": [
+        0.0,
+        0.0,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.4315572323615511,
+      "se_f1": 0.03956252657641571
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 3,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "linear",
+        "C": 1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.546031746031746,
+        0.5047791893526922,
+        0.5056480629236048
+      ],
+      "balanced": [
+        0.551552678487663,
+        0.507070707070707,
+        0.5254629629629629
+      ],
+      "ftd": [
+        0.36363636363636365,
+        0.45454545454545453,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.518819666102681,
+      "se_f1": 0.01360835167424677
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 3,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "rbf",
+        "C": 1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.549874686716792,
+        0.6299719887955182,
+        0.5448637491981145
+      ],
+      "balanced": [
+        0.5494886949995309,
+        0.6671717171717172,
+        0.5532407407407408
+      ],
+      "ftd": [
+        0.36363636363636365,
+        0.8181818181818182,
+        0.25
+      ],
+      "mean_f1": 0.5749034749034748,
+      "se_f1": 0.02757222811944806
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 3,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "linear",
+        "C": 10,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.5290448343079922,
+        0.5546264034068913,
+        0.48668172816779626
+      ],
+      "balanced": [
+        0.5319448353504082,
+        0.5545454545454546,
+        0.5046296296296297
+      ],
+      "ftd": [
+        0.36363636363636365,
+        0.36363636363636365,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.5234509886275599,
+      "se_f1": 0.019812353515411305
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 3,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "rbf",
+        "C": 10,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.38753038753038754,
+        0.6463924963924964,
+        0.5592592592592592
+      ],
+      "balanced": [
+        0.38812271320011255,
+        0.6621212121212122,
+        0.5625
+      ],
+      "ftd": [
+        0.2727272727272727,
+        0.6363636363636364,
+        0.3333333333333333
+      ],
+      "mean_f1": 0.5310607143940477,
+      "se_f1": 0.07604552649678806
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 8,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "linear",
+        "C": 0.1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.5137844611528822,
+        0.46560846560846564,
+        0.3516594516594516
+      ],
+      "balanced": [
+        0.5150576977202365,
+        0.4762626262626262,
+        0.34722222222222215
+      ],
+      "ftd": [
+        0.2727272727272727,
+        0.5454545454545454,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.4436841261402665,
+      "se_f1": 0.048068136263880214
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 8,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "rbf",
+        "C": 0.1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.37272727272727274,
+        0.16393442622950818,
+        0.13793103448275862
+      ],
+      "balanced": [
+        0.456140350877193,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "ftd": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mean_f1": 0.22486424447984654,
+      "se_f1": 0.07431161963304284
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 8,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "linear",
+        "C": 1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.5129937142321043,
+        0.46384479717813054,
+        0.3009541799864381
+      ],
+      "balanced": [
+        0.5129937142321043,
+        0.48434343434343435,
+        0.3055555555555555
+      ],
+      "ftd": [
+        0.2727272727272727,
+        0.6363636363636364,
+        0.08333333333333333
+      ],
+      "mean_f1": 0.42593089713222426,
+      "se_f1": 0.06407882875359586
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 8,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "rbf",
+        "C": 1,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.5491827860248913,
+        0.6108140225787285,
+        0.3814814814814815
+      ],
+      "balanced": [
+        0.5474247115113988,
+        0.6121212121212122,
+        0.3865740740740741
+      ],
+      "ftd": [
+        0.36363636363636365,
+        0.6363636363636364,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.5138260966950338,
+      "se_f1": 0.0685223204797925
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 8,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "linear",
+        "C": 10,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.5482831009146799,
+        0.44040017028522777,
+        0.28935185185185186
+      ],
+      "balanced": [
+        0.552209400506614,
+        0.454040404040404,
+        0.29398148148148145
+      ],
+      "ftd": [
+        0.2727272727272727,
+        0.5454545454545454,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.4260117076839198,
+      "se_f1": 0.07509242932841943
+    },
+    {
+      "features": {
+        "method": "ntf",
+        "rank": 8,
+        "lam": 0.0,
+        "coupling": 0.0
+      },
+      "svm": {
+        "kernel": "rbf",
+        "C": 10,
+        "gamma": "scale"
+      },
+      "f1": [
+        0.36985236985236986,
+        0.4787307938095635,
+        0.45716984801755994
+      ],
+      "balanced": [
+        0.39056196641335955,
+        0.4712121212121212,
+        0.4791666666666667
+      ],
+      "ftd": [
+        0.36363636363636365,
+        0.36363636363636365,
+        0.16666666666666666
+      ],
+      "mean_f1": 0.43525100389316446,
+      "se_f1": 0.033286406618231616
+    }
+  ],
+  "inner_splits": [
+    {
+      "train": [
+        "ds004504:sub-002",
+        "ds004504:sub-004",
+        "ds004504:sub-005",
+        "ds004504:sub-007",
+        "ds004504:sub-008",
+        "ds004504:sub-009",
+        "ds004504:sub-013",
+        "ds004504:sub-015",
+        "ds004504:sub-016",
+        "ds004504:sub-020",
+        "ds004504:sub-021",
+        "ds004504:sub-023",
+        "ds004504:sub-024",
+        "ds004504:sub-027",
+        "ds004504:sub-029",
+        "ds004504:sub-030",
+        "ds004504:sub-031",
+        "ds004504:sub-032",
+        "ds004504:sub-035",
+        "ds004504:sub-037",
+        "ds004504:sub-038",
+        "ds004504:sub-039",
+        "ds004504:sub-040",
+        "ds004504:sub-041",
+        "ds004504:sub-042",
+        "ds004504:sub-044",
+        "ds004504:sub-045",
+        "ds004504:sub-048",
+        "ds004504:sub-049",
+        "ds004504:sub-050",
+        "ds004504:sub-054",
+        "ds004504:sub-061",
+        "ds004504:sub-063",
+        "ds004504:sub-064",
+        "ds004504:sub-067",
+        "ds004504:sub-069",
+        "ds004504:sub-071",
+        "ds004504:sub-073",
+        "ds004504:sub-075",
+        "ds004504:sub-076",
+        "ds004504:sub-078",
+        "ds004504:sub-081",
+        "ds004504:sub-083",
+        "ds004504:sub-085",
+        "ds004504:sub-086",
+        "ds004504:sub-088",
+        "brainlat:AR:sub-30001",
+        "brainlat:AR:sub-30002",
+        "brainlat:AR:sub-30011",
+        "brainlat:AR:sub-30012",
+        "brainlat:AR:sub-30013",
+        "brainlat:AR:sub-30017",
+        "brainlat:AR:sub-30018",
+        "brainlat:AR:sub-30022",
+        "brainlat:AR:sub-30026",
+        "brainlat:CL:sub-30003",
+        "brainlat:CL:sub-30005",
+        "brainlat:CL:sub-30006",
+        "brainlat:CL:sub-30007",
+        "brainlat:CL:sub-30016",
+        "brainlat:CL:sub-30019",
+        "brainlat:CL:sub-30021",
+        "brainlat:CL:sub-30025",
+        "brainlat:CL:sub-30030",
+        "brainlat:CL:sub-30034",
+        "brainlat:AR:sub-20001",
+        "brainlat:AR:sub-20006",
+        "brainlat:AR:sub-20010",
+        "brainlat:AR:sub-20012",
+        "brainlat:AR:sub-20014",
+        "brainlat:AR:sub-20015",
+        "brainlat:AR:sub-20018",
+        "brainlat:CL:sub-20002",
+        "brainlat:CL:sub-20007",
+        "brainlat:CL:sub-20008",
+        "brainlat:CL:sub-20011",
+        "brainlat:AR:sub-100018",
+        "brainlat:AR:sub-10002",
+        "brainlat:AR:sub-100022",
+        "brainlat:AR:sub-10003",
+        "brainlat:AR:sub-100033",
+        "brainlat:AR:sub-100035",
+        "brainlat:AR:sub-100038",
+        "brainlat:AR:sub-10006",
+        "brainlat:AR:sub-10007",
+        "brainlat:AR:sub-10009",
+        "brainlat:CL:sub-10001",
+        "brainlat:CL:sub-100010",
+        "brainlat:CL:sub-100014",
+        "brainlat:CL:sub-100021",
+        "brainlat:CL:sub-100029",
+        "brainlat:CL:sub-100034"
+      ],
+      "val": [
+        "ds004504:sub-001",
+        "ds004504:sub-003",
+        "ds004504:sub-006",
+        "ds004504:sub-011",
+        "ds004504:sub-012",
+        "ds004504:sub-018",
+        "ds004504:sub-022",
+        "ds004504:sub-025",
+        "ds004504:sub-028",
+        "ds004504:sub-034",
+        "ds004504:sub-043",
+        "ds004504:sub-046",
+        "ds004504:sub-051",
+        "ds004504:sub-053",
+        "ds004504:sub-057",
+        "ds004504:sub-059",
+        "ds004504:sub-062",
+        "ds004504:sub-065",
+        "ds004504:sub-066",
+        "ds004504:sub-070",
+        "ds004504:sub-072",
+        "ds004504:sub-077",
+        "ds004504:sub-079",
+        "ds004504:sub-080",
+        "brainlat:AR:sub-30004",
+        "brainlat:AR:sub-30008",
+        "brainlat:AR:sub-30029",
+        "brainlat:AR:sub-30031",
+        "brainlat:CL:sub-30010",
+        "brainlat:CL:sub-30023",
+        "brainlat:CL:sub-30024",
+        "brainlat:CL:sub-30028",
+        "brainlat:CL:sub-30035",
+        "brainlat:AR:sub-20009",
+        "brainlat:AR:sub-20013",
+        "brainlat:AR:sub-20017",
+        "brainlat:AR:sub-20019",
+        "brainlat:CL:sub-20004",
+        "brainlat:AR:sub-100012",
+        "brainlat:AR:sub-100020",
+        "brainlat:AR:sub-100030",
+        "brainlat:AR:sub-100031",
+        "brainlat:AR:sub-10004",
+        "brainlat:CL:sub-100016",
+        "brainlat:CL:sub-100017",
+        "brainlat:CL:sub-100043",
+        "brainlat:CL:sub-10005"
+      ]
+    },
+    {
+      "train": [
+        "ds004504:sub-001",
+        "ds004504:sub-003",
+        "ds004504:sub-004",
+        "ds004504:sub-006",
+        "ds004504:sub-007",
+        "ds004504:sub-008",
+        "ds004504:sub-009",
+        "ds004504:sub-011",
+        "ds004504:sub-012",
+        "ds004504:sub-015",
+        "ds004504:sub-016",
+        "ds004504:sub-018",
+        "ds004504:sub-022",
+        "ds004504:sub-025",
+        "ds004504:sub-028",
+        "ds004504:sub-030",
+        "ds004504:sub-031",
+        "ds004504:sub-034",
+        "ds004504:sub-035",
+        "ds004504:sub-037",
+        "ds004504:sub-038",
+        "ds004504:sub-043",
+        "ds004504:sub-046",
+        "ds004504:sub-048",
+        "ds004504:sub-049",
+        "ds004504:sub-050",
+        "ds004504:sub-051",
+        "ds004504:sub-053",
+        "ds004504:sub-057",
+        "ds004504:sub-059",
+        "ds004504:sub-061",
+        "ds004504:sub-062",
+        "ds004504:sub-063",
+        "ds004504:sub-064",
+        "ds004504:sub-065",
+        "ds004504:sub-066",
+        "ds004504:sub-069",
+        "ds004504:sub-070",
+        "ds004504:sub-071",
+        "ds004504:sub-072",
+        "ds004504:sub-075",
+        "ds004504:sub-076",
+        "ds004504:sub-077",
+        "ds004504:sub-079",
+        "ds004504:sub-080",
+        "ds004504:sub-083",
+        "ds004504:sub-088",
+        "brainlat:AR:sub-30001",
+        "brainlat:AR:sub-30004",
+        "brainlat:AR:sub-30008",
+        "brainlat:AR:sub-30011",
+        "brainlat:AR:sub-30022",
+        "brainlat:AR:sub-30026",
+        "brainlat:AR:sub-30029",
+        "brainlat:AR:sub-30031",
+        "brainlat:CL:sub-30003",
+        "brainlat:CL:sub-30005",
+        "brainlat:CL:sub-30006",
+        "brainlat:CL:sub-30007",
+        "brainlat:CL:sub-30010",
+        "brainlat:CL:sub-30019",
+        "brainlat:CL:sub-30023",
+        "brainlat:CL:sub-30024",
+        "brainlat:CL:sub-30028",
+        "brainlat:CL:sub-30035",
+        "brainlat:AR:sub-20001",
+        "brainlat:AR:sub-20009",
+        "brainlat:AR:sub-20013",
+        "brainlat:AR:sub-20014",
+        "brainlat:AR:sub-20015",
+        "brainlat:AR:sub-20017",
+        "brainlat:AR:sub-20018",
+        "brainlat:AR:sub-20019",
+        "brainlat:CL:sub-20002",
+        "brainlat:CL:sub-20004",
+        "brainlat:CL:sub-20007",
+        "brainlat:AR:sub-100012",
+        "brainlat:AR:sub-10002",
+        "brainlat:AR:sub-100020",
+        "brainlat:AR:sub-100022",
+        "brainlat:AR:sub-100030",
+        "brainlat:AR:sub-100031",
+        "brainlat:AR:sub-100035",
+        "brainlat:AR:sub-100038",
+        "brainlat:AR:sub-10004",
+        "brainlat:AR:sub-10007",
+        "brainlat:CL:sub-100014",
+        "brainlat:CL:sub-100016",
+        "brainlat:CL:sub-100017",
+        "brainlat:CL:sub-100021",
+        "brainlat:CL:sub-100034",
+        "brainlat:CL:sub-100043",
+        "brainlat:CL:sub-10005"
+      ],
+      "val": [
+        "ds004504:sub-002",
+        "ds004504:sub-005",
+        "ds004504:sub-013",
+        "ds004504:sub-020",
+        "ds004504:sub-021",
+        "ds004504:sub-023",
+        "ds004504:sub-024",
+        "ds004504:sub-027",
+        "ds004504:sub-029",
+        "ds004504:sub-032",
+        "ds004504:sub-039",
+        "ds004504:sub-040",
+        "ds004504:sub-041",
+        "ds004504:sub-042",
+        "ds004504:sub-044",
+        "ds004504:sub-045",
+        "ds004504:sub-054",
+        "ds004504:sub-067",
+        "ds004504:sub-073",
+        "ds004504:sub-078",
+        "ds004504:sub-081",
+        "ds004504:sub-085",
+        "ds004504:sub-086",
+        "brainlat:AR:sub-30002",
+        "brainlat:AR:sub-30012",
+        "brainlat:AR:sub-30013",
+        "brainlat:AR:sub-30017",
+        "brainlat:AR:sub-30018",
+        "brainlat:CL:sub-30016",
+        "brainlat:CL:sub-30021",
+        "brainlat:CL:sub-30025",
+        "brainlat:CL:sub-30030",
+        "brainlat:CL:sub-30034",
+        "brainlat:AR:sub-20006",
+        "brainlat:AR:sub-20010",
+        "brainlat:AR:sub-20012",
+        "brainlat:CL:sub-20008",
+        "brainlat:CL:sub-20011",
+        "brainlat:AR:sub-100018",
+        "brainlat:AR:sub-10003",
+        "brainlat:AR:sub-100033",
+        "brainlat:AR:sub-10006",
+        "brainlat:AR:sub-10009",
+        "brainlat:CL:sub-10001",
+        "brainlat:CL:sub-100010",
+        "brainlat:CL:sub-100029"
+      ]
+    },
+    {
+      "train": [
+        "ds004504:sub-001",
+        "ds004504:sub-002",
+        "ds004504:sub-003",
+        "ds004504:sub-005",
+        "ds004504:sub-006",
+        "ds004504:sub-011",
+        "ds004504:sub-012",
+        "ds004504:sub-013",
+        "ds004504:sub-018",
+        "ds004504:sub-020",
+        "ds004504:sub-021",
+        "ds004504:sub-022",
+        "ds004504:sub-023",
+        "ds004504:sub-024",
+        "ds004504:sub-025",
+        "ds004504:sub-027",
+        "ds004504:sub-028",
+        "ds004504:sub-029",
+        "ds004504:sub-032",
+        "ds004504:sub-034",
+        "ds004504:sub-039",
+        "ds004504:sub-040",
+        "ds004504:sub-041",
+        "ds004504:sub-042",
+        "ds004504:sub-043",
+        "ds004504:sub-044",
+        "ds004504:sub-045",
+        "ds004504:sub-046",
+        "ds004504:sub-051",
+        "ds004504:sub-053",
+        "ds004504:sub-054",
+        "ds004504:sub-057",
+        "ds004504:sub-059",
+        "ds004504:sub-062",
+        "ds004504:sub-065",
+        "ds004504:sub-066",
+        "ds004504:sub-067",
+        "ds004504:sub-070",
+        "ds004504:sub-072",
+        "ds004504:sub-073",
+        "ds004504:sub-077",
+        "ds004504:sub-078",
+        "ds004504:sub-079",
+        "ds004504:sub-080",
+        "ds004504:sub-081",
+        "ds004504:sub-085",
+        "ds004504:sub-086",
+        "brainlat:AR:sub-30002",
+        "brainlat:AR:sub-30004",
+        "brainlat:AR:sub-30008",
+        "brainlat:AR:sub-30012",
+        "brainlat:AR:sub-30013",
+        "brainlat:AR:sub-30017",
+        "brainlat:AR:sub-30018",
+        "brainlat:AR:sub-30029",
+        "brainlat:AR:sub-30031",
+        "brainlat:CL:sub-30010",
+        "brainlat:CL:sub-30016",
+        "brainlat:CL:sub-30021",
+        "brainlat:CL:sub-30023",
+        "brainlat:CL:sub-30024",
+        "brainlat:CL:sub-30025",
+        "brainlat:CL:sub-30028",
+        "brainlat:CL:sub-30030",
+        "brainlat:CL:sub-30034",
+        "brainlat:CL:sub-30035",
+        "brainlat:AR:sub-20006",
+        "brainlat:AR:sub-20009",
+        "brainlat:AR:sub-20010",
+        "brainlat:AR:sub-20012",
+        "brainlat:AR:sub-20013",
+        "brainlat:AR:sub-20017",
+        "brainlat:AR:sub-20019",
+        "brainlat:CL:sub-20004",
+        "brainlat:CL:sub-20008",
+        "brainlat:CL:sub-20011",
+        "brainlat:AR:sub-100012",
+        "brainlat:AR:sub-100018",
+        "brainlat:AR:sub-100020",
+        "brainlat:AR:sub-10003",
+        "brainlat:AR:sub-100030",
+        "brainlat:AR:sub-100031",
+        "brainlat:AR:sub-100033",
+        "brainlat:AR:sub-10004",
+        "brainlat:AR:sub-10006",
+        "brainlat:AR:sub-10009",
+        "brainlat:CL:sub-10001",
+        "brainlat:CL:sub-100010",
+        "brainlat:CL:sub-100016",
+        "brainlat:CL:sub-100017",
+        "brainlat:CL:sub-100029",
+        "brainlat:CL:sub-100043",
+        "brainlat:CL:sub-10005"
+      ],
+      "val": [
+        "ds004504:sub-004",
+        "ds004504:sub-007",
+        "ds004504:sub-008",
+        "ds004504:sub-009",
+        "ds004504:sub-015",
+        "ds004504:sub-016",
+        "ds004504:sub-030",
+        "ds004504:sub-031",
+        "ds004504:sub-035",
+        "ds004504:sub-037",
+        "ds004504:sub-038",
+        "ds004504:sub-048",
+        "ds004504:sub-049",
+        "ds004504:sub-050",
+        "ds004504:sub-061",
+        "ds004504:sub-063",
+        "ds004504:sub-064",
+        "ds004504:sub-069",
+        "ds004504:sub-071",
+        "ds004504:sub-075",
+        "ds004504:sub-076",
+        "ds004504:sub-083",
+        "ds004504:sub-088",
+        "brainlat:AR:sub-30001",
+        "brainlat:AR:sub-30011",
+        "brainlat:AR:sub-30022",
+        "brainlat:AR:sub-30026",
+        "brainlat:CL:sub-30003",
+        "brainlat:CL:sub-30005",
+        "brainlat:CL:sub-30006",
+        "brainlat:CL:sub-30007",
+        "brainlat:CL:sub-30019",
+        "brainlat:AR:sub-20001",
+        "brainlat:AR:sub-20014",
+        "brainlat:AR:sub-20015",
+        "brainlat:AR:sub-20018",
+        "brainlat:CL:sub-20002",
+        "brainlat:CL:sub-20007",
+        "brainlat:AR:sub-10002",
+        "brainlat:AR:sub-100022",
+        "brainlat:AR:sub-100035",
+        "brainlat:AR:sub-100038",
+        "brainlat:AR:sub-10007",
+        "brainlat:CL:sub-100014",
+        "brainlat:CL:sub-100021",
+        "brainlat:CL:sub-100034"
+      ]
+    }
+  ]
+}
