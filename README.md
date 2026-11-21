@@ -12,10 +12,13 @@ repository corresponds to that report, how to run it, and how much of it has bee
 > **`research-validated-experiments`** branch:
 >
 > ```
-> git clone https://github.com/abhiram-v1/AIBSI.git
-> cd AIBSI
+> git clone https://github.com/abhiram-v1/AIBSI_course.git
+> cd AIBSI_course
 > git checkout research-validated-experiments
 > ```
+>
+> `abhiram-v1/AIBSI_course` is the main course-project repository. The same branch is mirrored
+> in the working repository `abhiram-v1/AIBSI`.
 >
 > "Validated" has a limited meaning here, set out in [Validated results](#7-validated-results).
 > Twelve headline numbers were recomputed from saved per-participant predictions and matched
@@ -85,7 +88,7 @@ checkpoints and per-participant records. This branch adds only **aggregate** evi
 `REPORT.md`/`RESULTS.md`, `metrics.json`, `summary.json`, `protocol.json`, `verification.json`
 and figures. This branch does **not add** files containing participant IDs, predictions,
 probabilities, splits, feature matrices or model weights. Note that two folders committed
-earlier on `master` already contain such files and were left unchanged:
+earlier in this branch's history already contain such files and were left unchanged:
 `neural_comparison/graph_ntf_svm/outputs/` (per-fold caches, models and predictions, about
 500 MB) and `demo_handoff_2026-10-26/` (participant-level log-mel arrays).
 
@@ -310,7 +313,7 @@ CNN and EEGPT training should be run on a CUDA GPU.
 * **GPU non-determinism.** CNN and EEGPT re-runs may differ slightly from recorded values.
 * **Earlier materials.** `technical_report/`, `presentation_progress/` and
   `demo_handoff_2026-10-26/` pre-date the final report and are kept for history.
-* **History size.** Earlier commits on `master` contain large generated files
+* **History size.** Earlier commits in this branch's history contain large generated files
   (`graph_ntf_svm/outputs`, presentation build caches), so a full clone is several hundred MB.
   Use `git clone --depth 1 --branch research-validated-experiments …` for a lighter checkout.
 
