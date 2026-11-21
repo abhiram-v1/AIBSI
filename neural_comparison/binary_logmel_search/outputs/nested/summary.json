@@ -1,0 +1,410 @@
+{
+  "participants": 174,
+  "class_counts": {
+    "HC": 61,
+    "Dementia": 113
+  },
+  "mean": {
+    "accuracy": 0.7203065134099617,
+    "macro_f1": 0.6985299256804632,
+    "balanced_accuracy": 0.702935345036027,
+    "healthy_recall": 0.6448087431693988,
+    "dementia_recall": 0.7610619469026548,
+    "healthy_f1": 0.6177209886887306,
+    "dementia_f1": 0.779338862672196,
+    "log_loss": 0.5498408306840873,
+    "roc_auc": 0.7717974756999855,
+    "brier": 0.18431939960595525
+  },
+  "repeat_sd": {
+    "accuracy": 0.006636209990685345,
+    "macro_f1": 0.003343920877341274,
+    "balanced_accuracy": 0.001915499039638122,
+    "healthy_recall": 0.025041397240195815,
+    "dementia_recall": 0.023413728416500777,
+    "healthy_f1": 0.004310382442131168,
+    "dementia_f1": 0.0094202757459076,
+    "log_loss": 0.03749706861961387,
+    "roc_auc": 0.021952349760706404,
+    "brier": 0.013233873385916441
+  },
+  "repeat_metrics": [
+    {
+      "accuracy": 0.7241379310344828,
+      "macro_f1": 0.7014157014157014,
+      "balanced_accuracy": 0.7046278833599304,
+      "healthy_recall": 0.639344262295082,
+      "dementia_recall": 0.7699115044247787,
+      "healthy_f1": 0.6190476190476191,
+      "dementia_f1": 0.7837837837837838,
+      "confusion_matrix": [
+        [
+          39,
+          22
+        ],
+        [
+          26,
+          87
+        ]
+      ],
+      "log_loss": 0.5396823344767934,
+      "roc_auc": 0.7678804584360945,
+      "brier": 0.18226318674249384
+    },
+    {
+      "accuracy": 0.7241379310344828,
+      "macro_f1": 0.6993087557603687,
+      "balanced_accuracy": 0.700855940809517,
+      "healthy_recall": 0.6229508196721312,
+      "dementia_recall": 0.7787610619469026,
+      "healthy_f1": 0.6129032258064516,
+      "dementia_f1": 0.7857142857142857,
+      "confusion_matrix": [
+        [
+          38,
+          23
+        ],
+        [
+          25,
+          88
+        ]
+      ],
+      "log_loss": 0.591370509116728,
+      "roc_auc": 0.7520673146670536,
+      "brier": 0.1984610256373041
+    },
+    {
+      "accuracy": 0.7126436781609196,
+      "macro_f1": 0.6948653198653199,
+      "balanced_accuracy": 0.7033222109386335,
+      "healthy_recall": 0.6721311475409836,
+      "dementia_recall": 0.7345132743362832,
+      "healthy_f1": 0.6212121212121212,
+      "dementia_f1": 0.7685185185185185,
+      "confusion_matrix": [
+        [
+          41,
+          20
+        ],
+        [
+          30,
+          83
+        ]
+      ],
+      "log_loss": 0.5184696484587404,
+      "roc_auc": 0.7954446539968083,
+      "brier": 0.1722339864380678
+    }
+  ],
+  "conditional_participant_bootstrap95": {
+    "macro_f1": [
+      0.6472028575690676,
+      0.7516908057386879
+    ],
+    "balanced_accuracy": [
+      0.6506292615697085,
+      0.7589384157841289
+    ]
+  },
+  "groups": {
+    "site": {
+      "AHEPA": {
+        "participants": 88,
+        "mean": {
+          "accuracy": 0.7840909090909091,
+          "macro_f1": 0.7595895222983701,
+          "balanced_accuracy": 0.7659263588544712,
+          "healthy_recall": 0.7126436781609197,
+          "dementia_recall": 0.8192090395480226,
+          "healthy_f1": 0.6835716031280548,
+          "dementia_f1": 0.8356074414686855
+        }
+      },
+      "AR": {
+        "participants": 48,
+        "mean": {
+          "accuracy": 0.6458333333333334,
+          "macro_f1": 0.6360873694207027,
+          "balanced_accuracy": 0.6403508771929826,
+          "healthy_recall": 0.6140350877192983,
+          "dementia_recall": 0.6666666666666666,
+          "healthy_f1": 0.5772893772893773,
+          "dementia_f1": 0.6948853615520282
+        }
+      },
+      "CL": {
+        "participants": 38,
+        "mean": {
+          "accuracy": 0.6666666666666666,
+          "macro_f1": 0.6329285930917486,
+          "balanced_accuracy": 0.635897435897436,
+          "healthy_recall": 0.5384615384615384,
+          "dementia_recall": 0.7333333333333334,
+          "healthy_f1": 0.5234142188165177,
+          "dementia_f1": 0.7424429673669796
+        }
+      }
+    },
+    "label": {
+      "AD": {
+        "participants": 71,
+        "mean_correct_classification_rate": 0.8309859154929576,
+        "repeat_rates": [
+          0.8309859154929577,
+          0.8450704225352113,
+          0.8169014084507042
+        ]
+      },
+      "FTD": {
+        "participants": 42,
+        "mean_correct_classification_rate": 0.6428571428571428,
+        "repeat_rates": [
+          0.6666666666666666,
+          0.6666666666666666,
+          0.5952380952380952
+        ]
+      },
+      "HC": {
+        "participants": 61,
+        "mean_correct_classification_rate": 0.6448087431693988,
+        "repeat_rates": [
+          0.639344262295082,
+          0.6229508196721312,
+          0.6721311475409836
+        ]
+      }
+    }
+  },
+  "fixed_sampling_controls": {
+    "128": {
+      "repeat_metrics": [
+        {
+          "accuracy": 0.7126436781609196,
+          "macro_f1": 0.6948653198653199,
+          "balanced_accuracy": 0.7033222109386335,
+          "healthy_recall": 0.6721311475409836,
+          "dementia_recall": 0.7345132743362832,
+          "healthy_f1": 0.6212121212121212,
+          "dementia_f1": 0.7685185185185185,
+          "confusion_matrix": [
+            [
+              41,
+              20
+            ],
+            [
+              30,
+              83
+            ]
+          ]
+        },
+        {
+          "accuracy": 0.7183908045977011,
+          "macro_f1": 0.7000738734301897,
+          "balanced_accuracy": 0.7077469896996953,
+          "healthy_recall": 0.6721311475409836,
+          "dementia_recall": 0.7433628318584071,
+          "healthy_f1": 0.6259541984732825,
+          "dementia_f1": 0.7741935483870968,
+          "confusion_matrix": [
+            [
+              41,
+              20
+            ],
+            [
+              29,
+              84
+            ]
+          ]
+        },
+        {
+          "accuracy": 0.7011494252873564,
+          "macro_f1": 0.6844748221509276,
+          "balanced_accuracy": 0.6944726534165095,
+          "healthy_recall": 0.6721311475409836,
+          "dementia_recall": 0.7168141592920354,
+          "healthy_f1": 0.6119402985074627,
+          "dementia_f1": 0.7570093457943925,
+          "confusion_matrix": [
+            [
+              41,
+              20
+            ],
+            [
+              32,
+              81
+            ]
+          ]
+        }
+      ],
+      "mean": {
+        "macro_f1": 0.6931380051488123,
+        "balanced_accuracy": 0.7018472846849461,
+        "accuracy": 0.710727969348659,
+        "healthy_recall": 0.6721311475409836,
+        "dementia_recall": 0.7315634218289085
+      }
+    },
+    "256": {
+      "repeat_metrics": [
+        {
+          "accuracy": 0.7126436781609196,
+          "macro_f1": 0.6948653198653199,
+          "balanced_accuracy": 0.7033222109386335,
+          "healthy_recall": 0.6721311475409836,
+          "dementia_recall": 0.7345132743362832,
+          "healthy_f1": 0.6212121212121212,
+          "dementia_f1": 0.7685185185185185,
+          "confusion_matrix": [
+            [
+              41,
+              20
+            ],
+            [
+              30,
+              83
+            ]
+          ]
+        },
+        {
+          "accuracy": 0.7183908045977011,
+          "macro_f1": 0.7000738734301897,
+          "balanced_accuracy": 0.7077469896996953,
+          "healthy_recall": 0.6721311475409836,
+          "dementia_recall": 0.7433628318584071,
+          "healthy_f1": 0.6259541984732825,
+          "dementia_f1": 0.7741935483870968,
+          "confusion_matrix": [
+            [
+              41,
+              20
+            ],
+            [
+              29,
+              84
+            ]
+          ]
+        },
+        {
+          "accuracy": 0.7011494252873564,
+          "macro_f1": 0.6844748221509276,
+          "balanced_accuracy": 0.6944726534165095,
+          "healthy_recall": 0.6721311475409836,
+          "dementia_recall": 0.7168141592920354,
+          "healthy_f1": 0.6119402985074627,
+          "dementia_f1": 0.7570093457943925,
+          "confusion_matrix": [
+            [
+              41,
+              20
+            ],
+            [
+              32,
+              81
+            ]
+          ]
+        }
+      ],
+      "mean": {
+        "macro_f1": 0.6931380051488123,
+        "balanced_accuracy": 0.7018472846849461,
+        "accuracy": 0.710727969348659,
+        "healthy_recall": 0.6721311475409836,
+        "dementia_recall": 0.7315634218289085
+      }
+    }
+  },
+  "always_dementia": {
+    "accuracy": 0.6494252873563219,
+    "macro_f1": 0.39372822299651566,
+    "balanced_accuracy": 0.5,
+    "healthy_recall": 0.0,
+    "dementia_recall": 1.0,
+    "healthy_f1": 0.0,
+    "dementia_f1": 0.7874564459930313,
+    "confusion_matrix": [
+      [
+        0,
+        61
+      ],
+      [
+        0,
+        113
+      ]
+    ]
+  },
+  "probability_argmax_secondary": {
+    "repeat_metrics": [
+      {
+        "accuracy": 0.7471264367816092,
+        "macro_f1": 0.6982976040353089,
+        "balanced_accuracy": 0.6883795154504571,
+        "healthy_recall": 0.4918032786885246,
+        "dementia_recall": 0.8849557522123894,
+        "healthy_f1": 0.5769230769230769,
+        "dementia_f1": 0.819672131147541,
+        "confusion_matrix": [
+          [
+            30,
+            31
+          ],
+          [
+            13,
+            100
+          ]
+        ],
+        "log_loss": 0.5396823344767934,
+        "roc_auc": 0.7678804584360945,
+        "brier": 0.18226318674249384
+      },
+      {
+        "accuracy": 0.7068965517241379,
+        "macro_f1": 0.6626753335614095,
+        "balanced_accuracy": 0.6574060641230233,
+        "healthy_recall": 0.4918032786885246,
+        "dementia_recall": 0.8230088495575221,
+        "healthy_f1": 0.5405405405405406,
+        "dementia_f1": 0.7848101265822784,
+        "confusion_matrix": [
+          [
+            30,
+            31
+          ],
+          [
+            20,
+            93
+          ]
+        ],
+        "log_loss": 0.591370509116728,
+        "roc_auc": 0.7520673146670536,
+        "brier": 0.1984610256373041
+      },
+      {
+        "accuracy": 0.7528735632183908,
+        "macro_f1": 0.7155890067282472,
+        "balanced_accuracy": 0.7078920644131728,
+        "healthy_recall": 0.5573770491803278,
+        "dementia_recall": 0.8584070796460177,
+        "healthy_f1": 0.6126126126126126,
+        "dementia_f1": 0.8185654008438819,
+        "confusion_matrix": [
+          [
+            34,
+            27
+          ],
+          [
+            16,
+            97
+          ]
+        ],
+        "log_loss": 0.5184696484587404,
+        "roc_auc": 0.7954446539968083,
+        "brier": 0.1722339864380678
+      }
+    ]
+  },
+  "selected_sampling_hz_counts": {
+    "256": 7,
+    "128": 8
+  },
+  "note": "Main labels use inner-selected decision-score thresholds. Probability argmax is a distinct secondary endpoint. Intervals condition on fitted models; repeated predictions do not add participants."
+}

@@ -1,0 +1,86 @@
+{
+  "scope": "exploratory EEG frequency analysis, OpenNeuro only, all88 participants; no new independent cohort",
+  "outer": "3repeats x5fold; stratified by original AD/FTD/HC; each participant held out once per repeat",
+  "inner": "3fold; stratified original diagnosis; ANOVA ranking and StandardScaler trained within each fold",
+  "seeds": [
+    2026110501,
+    2026110502,
+    2026110503
+  ],
+  "feature_families": [
+    "amplitude",
+    "summary",
+    "relative_summary",
+    "absolute_spectrum",
+    "relative_spectrum"
+  ],
+  "feature_counts": [
+    5,
+    15,
+    40,
+    "all"
+  ],
+  "svm_grid": [
+    {
+      "kernel": "linear",
+      "C": 0.01
+    },
+    {
+      "kernel": "linear",
+      "C": 0.1
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0
+    },
+    {
+      "kernel": "linear",
+      "C": 10.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0
+    }
+  ],
+  "binary_score_thresholds": [
+    -0.5,
+    0.0,
+    0.5
+  ],
+  "class_weights": "balanced",
+  "pca": "none",
+  "selection": "macro F1, balanced accuracy, fewer features, smaller C; families chosen by inner scores only",
+  "tasks": {
+    "binary": [
+      "HC",
+      "AD_or_FTD"
+    ],
+    "three_class": [
+      "HC",
+      "AD",
+      "FTD"
+    ]
+  },
+  "statistics": "full-cohort descriptive associations NEVER used to choose classifier features",
+  "clinical_metadata": "age,sex,MMSE excluded from classifier input",
+  "features_sha256": "8ba56c0fcd55ff09bf15c7b6bb5b0b0232f4aa0c0bea592224cbb67c1a679c5b",
+  "plan_sha256": "2a4c864fdbf7e63db3ffb7164910f5a484ec8f91ff810f0da1b65538e0b551f3",
+  "code_sha256": {
+    "spectral_data.py": "187b5ca596a8c2441eab6fd56279fe2d2b1bdfcee4ab4dd4844fac2004847643",
+    "prepare.py": "09858788f4a196eb5fd1ee278ad7f60dd1f43ca284e747bb09a3c04356025d46",
+    "fourier_model.py": "ed35599214a123718230004d81632b82bc8a6bb863c92542313701c8796f7f8f",
+    "evaluate.py": "c1ccbfbe31b68dbdc1947ca6a3820b703b8dc57e6bcae0f31e0bb823ea0669db"
+  }
+}

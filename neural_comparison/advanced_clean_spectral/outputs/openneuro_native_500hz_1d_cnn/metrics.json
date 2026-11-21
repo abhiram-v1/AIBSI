@@ -1,0 +1,3800 @@
+{
+  "protocol": {
+    "participants": 88,
+    "classes": {
+      "AD": 36,
+      "FTD": 23,
+      "HC": 29
+    },
+    "sampling_hz": 500,
+    "electrodes": 19,
+    "interpolation": false,
+    "resampling": false,
+    "train_participants": 60,
+    "validation_participants": 14,
+    "test_participants": 14,
+    "selection_uses_test": false
+  },
+  "selected_seed": 20261125,
+  "selected_epoch": 20,
+  "selected_validation": {
+    "subjects": 14,
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.48888888888888893,
+    "macro_f1": 0.48888888888888893,
+    "per_class": {
+      "AD": {
+        "precision": 0.6666666666666666,
+        "recall": 0.3333333333333333,
+        "f1": 0.4444444444444444,
+        "support": 6
+      },
+      "FTD": {
+        "precision": 0.16666666666666666,
+        "recall": 0.3333333333333333,
+        "f1": 0.2222222222222222,
+        "support": 3
+      },
+      "HC": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8,
+        "support": 5
+      }
+    },
+    "confusion_matrix": [
+      [
+        2,
+        4,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        4
+      ]
+    ]
+  },
+  "selected_test": {
+    "subjects": 14,
+    "accuracy": 0.42857142857142855,
+    "balanced_accuracy": 0.47222222222222215,
+    "macro_f1": 0.42676767676767674,
+    "per_class": {
+      "AD": {
+        "precision": 0.5,
+        "recall": 0.16666666666666666,
+        "f1": 0.25,
+        "support": 6
+      },
+      "FTD": {
+        "precision": 0.2857142857142857,
+        "recall": 0.5,
+        "f1": 0.36363636363636365,
+        "support": 4
+      },
+      "HC": {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.6666666666666666,
+        "support": 4
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        4,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        3
+      ]
+    ]
+  },
+  "three_seed_ensemble_validation": {
+    "subjects": 14,
+    "accuracy": 0.42857142857142855,
+    "balanced_accuracy": 0.37777777777777777,
+    "macro_f1": 0.35327635327635326,
+    "per_class": {
+      "AD": {
+        "precision": 0.6666666666666666,
+        "recall": 0.3333333333333333,
+        "f1": 0.4444444444444444,
+        "support": 6
+      },
+      "FTD": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3
+      },
+      "HC": {
+        "precision": 0.5,
+        "recall": 0.8,
+        "f1": 0.6153846153846154,
+        "support": 5
+      }
+    },
+    "confusion_matrix": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        4
+      ]
+    ]
+  },
+  "three_seed_ensemble_test": {
+    "subjects": 14,
+    "accuracy": 0.42857142857142855,
+    "balanced_accuracy": 0.47222222222222215,
+    "macro_f1": 0.41038961038961036,
+    "per_class": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "support": 6
+      },
+      "FTD": {
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "f1": 0.4,
+        "support": 4
+      },
+      "HC": {
+        "precision": 0.42857142857142855,
+        "recall": 0.75,
+        "f1": 0.5454545454545454,
+        "support": 4
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        3,
+        2
+      ],
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ]
+    ]
+  },
+  "runs": [
+    {
+      "seed": 20261124,
+      "best_epoch": 8,
+      "validation": {
+        "subjects": 14,
+        "accuracy": 0.35714285714285715,
+        "balanced_accuracy": 0.4222222222222222,
+        "macro_f1": 0.3247863247863248,
+        "per_class": {
+          "AD": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "FTD": {
+            "precision": 0.2,
+            "recall": 0.6666666666666666,
+            "f1": 0.3076923076923077,
+            "support": 3
+          },
+          "HC": {
+            "precision": 0.75,
+            "recall": 0.6,
+            "f1": 0.6666666666666666,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ]
+      },
+      "test": {
+        "subjects": 14,
+        "accuracy": 0.35714285714285715,
+        "balanced_accuracy": 0.4166666666666667,
+        "macro_f1": 0.3111111111111111,
+        "per_class": {
+          "AD": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "FTD": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1": 0.3333333333333333,
+            "support": 4
+          },
+          "HC": {
+            "precision": 0.5,
+            "recall": 0.75,
+            "f1": 0.6,
+            "support": 4
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ]
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.130417250298165,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 2,
+          "loss": 1.1033524758106954,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 3,
+          "loss": 1.097927212715149,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 4,
+          "loss": 1.0951927030408704,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 5,
+          "loss": 1.083213284208968,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 6,
+          "loss": 1.0258837600012083,
+          "subjects": 14,
+          "accuracy": 0.2857142857142857,
+          "balanced_accuracy": 0.39999999999999997,
+          "macro_f1": 0.23611111111111108,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.23076923076923078,
+              "recall": 1.0,
+              "f1": 0.375,
+              "support": 3
+            },
+            "HC": {
+              "precision": 1.0,
+              "recall": 0.2,
+              "f1": 0.3333333333333333,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "epoch": 7,
+          "loss": 0.9798846132046467,
+          "subjects": 14,
+          "accuracy": 0.2857142857142857,
+          "balanced_accuracy": 0.39999999999999997,
+          "macro_f1": 0.23611111111111108,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.23076923076923078,
+              "recall": 1.0,
+              "f1": 0.375,
+              "support": 3
+            },
+            "HC": {
+              "precision": 1.0,
+              "recall": 0.2,
+              "f1": 0.3333333333333333,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "epoch": 8,
+          "loss": 0.9216564507097811,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.4222222222222222,
+          "macro_f1": 0.3247863247863248,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.6666666666666666,
+              "f1": 0.3076923076923077,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 9,
+          "loss": 0.8816007198514165,
+          "subjects": 14,
+          "accuracy": 0.14285714285714285,
+          "balanced_accuracy": 0.2222222222222222,
+          "macro_f1": 0.08333333333333333,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.15384615384615385,
+              "recall": 0.6666666666666666,
+              "f1": 0.25,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 10,
+          "loss": 0.8606212686847996,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.3090909090909091,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.14285714285714285,
+              "recall": 0.3333333333333333,
+              "f1": 0.2,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "f1": 0.7272727272727273,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              5,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 11,
+          "loss": 0.8174140388901169,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.4222222222222222,
+          "macro_f1": 0.3247863247863248,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.6666666666666666,
+              "f1": 0.3076923076923077,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 12,
+          "loss": 0.7739423400646931,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.4222222222222222,
+          "macro_f1": 0.3247863247863248,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.6666666666666666,
+              "f1": 0.3076923076923077,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 13,
+          "loss": 0.7565998435020447,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2888888888888889,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.14285714285714285,
+              "recall": 0.3333333333333333,
+              "f1": 0.2,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              5,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 14,
+          "loss": 0.7742014865617495,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.32222222222222224,
+          "macro_f1": 0.3055555555555555,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              4,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 15,
+          "loss": 0.737115054517179,
+          "subjects": 14,
+          "accuracy": 0.2857142857142857,
+          "balanced_accuracy": 0.26666666666666666,
+          "macro_f1": 0.19047619047619047,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.4444444444444444,
+              "recall": 0.8,
+              "f1": 0.5714285714285714,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              3
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 16,
+          "loss": 0.7406598410090884,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4444444444444444,
+          "macro_f1": 0.3194444444444444,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.45454545454545453,
+              "recall": 1.0,
+              "f1": 0.625,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 20261125,
+      "best_epoch": 20,
+      "validation": {
+        "subjects": 14,
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.48888888888888893,
+        "macro_f1": 0.48888888888888893,
+        "per_class": {
+          "AD": {
+            "precision": 0.6666666666666666,
+            "recall": 0.3333333333333333,
+            "f1": 0.4444444444444444,
+            "support": 6
+          },
+          "FTD": {
+            "precision": 0.16666666666666666,
+            "recall": 0.3333333333333333,
+            "f1": 0.2222222222222222,
+            "support": 3
+          },
+          "HC": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            4,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ]
+      },
+      "test": {
+        "subjects": 14,
+        "accuracy": 0.42857142857142855,
+        "balanced_accuracy": 0.47222222222222215,
+        "macro_f1": 0.42676767676767674,
+        "per_class": {
+          "AD": {
+            "precision": 0.5,
+            "recall": 0.16666666666666666,
+            "f1": 0.25,
+            "support": 6
+          },
+          "FTD": {
+            "precision": 0.2857142857142857,
+            "recall": 0.5,
+            "f1": 0.36363636363636365,
+            "support": 4
+          },
+          "HC": {
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666666,
+            "support": 4
+          }
+        },
+        "confusion_matrix": [
+          [
+            1,
+            4,
+            1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            3
+          ]
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.1220327583519187,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 2,
+          "loss": 1.098267497243108,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 3,
+          "loss": 1.0944859143849965,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 4,
+          "loss": 1.0919374388617438,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 5,
+          "loss": 1.0751085925746608,
+          "subjects": 14,
+          "accuracy": 0.2857142857142857,
+          "balanced_accuracy": 0.39999999999999997,
+          "macro_f1": 0.23611111111111108,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.23076923076923078,
+              "recall": 1.0,
+              "f1": 0.375,
+              "support": 3
+            },
+            "HC": {
+              "precision": 1.0,
+              "recall": 0.2,
+              "f1": 0.3333333333333333,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "epoch": 6,
+          "loss": 1.071147541742067,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 7,
+          "loss": 1.070452345384134,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.17543859649122806,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.35714285714285715,
+              "recall": 1.0,
+              "f1": 0.5263157894736842,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 8,
+          "loss": 1.0092921434222042,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4444444444444444,
+          "macro_f1": 0.3194444444444444,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.45454545454545453,
+              "recall": 1.0,
+              "f1": 0.625,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 9,
+          "loss": 0.9650381400778487,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 10,
+          "loss": 0.9115856128769952,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4444444444444444,
+          "macro_f1": 0.31746031746031744,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.25,
+              "recall": 0.3333333333333333,
+              "f1": 0.2857142857142857,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              3
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 11,
+          "loss": 0.8629805783967714,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.4222222222222222,
+          "macro_f1": 0.3247863247863248,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.6666666666666666,
+              "f1": 0.3076923076923077,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 12,
+          "loss": 0.8408313039186839,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4444444444444444,
+          "macro_f1": 0.31746031746031744,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.25,
+              "recall": 0.3333333333333333,
+              "f1": 0.2857142857142857,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              3
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 13,
+          "loss": 0.7735489929044569,
+          "subjects": 14,
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5444444444444444,
+          "macro_f1": 0.4831168831168831,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.25,
+              "recall": 0.6666666666666666,
+              "f1": 0.36363636363636365,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 14,
+          "loss": 0.7412682417276744,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.32222222222222224,
+          "macro_f1": 0.2884615384615385,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 15,
+          "loss": 0.7512378128799232,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.43333333333333335,
+          "macro_f1": 0.38369963369963367,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.3333333333333333,
+              "f1": 0.25,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 16,
+          "loss": 0.7379350130622452,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.35555555555555557,
+          "macro_f1": 0.37542087542087543,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.125,
+              "recall": 0.3333333333333333,
+              "f1": 0.18181818181818182,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.6666666666666666,
+              "recall": 0.4,
+              "f1": 0.5,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "epoch": 17,
+          "loss": 0.7119867978869258,
+          "subjects": 14,
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.42857142857142855,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 18,
+          "loss": 0.7417155600882865,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.3703703703703704,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 19,
+          "loss": 0.6813800189946149,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.43333333333333335,
+          "macro_f1": 0.38369963369963367,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.3333333333333333,
+              "f1": 0.25,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 20,
+          "loss": 0.6896989522753535,
+          "subjects": 14,
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.48888888888888893,
+          "macro_f1": 0.48888888888888893,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 21,
+          "loss": 0.6604825870410816,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4444444444444444,
+          "macro_f1": 0.3194444444444444,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.45454545454545453,
+              "recall": 1.0,
+              "f1": 0.625,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 22,
+          "loss": 0.6610266558221869,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.35555555555555557,
+          "macro_f1": 0.37542087542087543,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.125,
+              "recall": 0.3333333333333333,
+              "f1": 0.18181818181818182,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.6666666666666666,
+              "recall": 0.4,
+              "f1": 0.5,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              3,
+              2
+            ]
+          ]
+        },
+        {
+          "epoch": 23,
+          "loss": 0.6517592958501868,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.39057239057239057,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "f1": 0.7272727272727273,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 24,
+          "loss": 0.6686618473078754,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4222222222222222,
+          "macro_f1": 0.43703703703703695,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.14285714285714285,
+              "recall": 0.3333333333333333,
+              "f1": 0.2,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 25,
+          "loss": 0.6332832558734997,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.39057239057239057,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "f1": 0.7272727272727273,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 26,
+          "loss": 0.6125976950735659,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.32222222222222224,
+          "macro_f1": 0.3055555555555555,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              4,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 27,
+          "loss": 0.5674999581800925,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.3703703703703704,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 28,
+          "loss": 0.5953199573465295,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.32222222222222224,
+          "macro_f1": 0.3055555555555555,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              4,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 20261126,
+      "best_epoch": 22,
+      "validation": {
+        "subjects": 14,
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.4369047619047619,
+        "per_class": {
+          "AD": {
+            "precision": 1.0,
+            "recall": 0.16666666666666666,
+            "f1": 0.2857142857142857,
+            "support": 6
+          },
+          "FTD": {
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4,
+            "support": 3
+          },
+          "HC": {
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625,
+            "support": 5
+          }
+        },
+        "confusion_matrix": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            5
+          ]
+        ]
+      },
+      "test": {
+        "subjects": 14,
+        "accuracy": 0.42857142857142855,
+        "balanced_accuracy": 0.47222222222222215,
+        "macro_f1": 0.38888888888888884,
+        "per_class": {
+          "AD": {
+            "precision": 0.5,
+            "recall": 0.16666666666666666,
+            "f1": 0.25,
+            "support": 6
+          },
+          "FTD": {
+            "precision": 0.25,
+            "recall": 0.25,
+            "f1": 0.25,
+            "support": 4
+          },
+          "HC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 4
+          }
+        },
+        "confusion_matrix": [
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.1370172983891256,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 2,
+          "loss": 1.097926201047124,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 3,
+          "loss": 1.0976033951785114,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 4,
+          "loss": 1.0897662059680835,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 5,
+          "loss": 1.0909412616008036,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 6,
+          "loss": 1.0848651318936735,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 7,
+          "loss": 1.0689075991914079,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 8,
+          "loss": 1.068923570014335,
+          "subjects": 14,
+          "accuracy": 0.21428571428571427,
+          "balanced_accuracy": 0.3333333333333333,
+          "macro_f1": 0.11764705882352942,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.21428571428571427,
+              "recall": 1.0,
+              "f1": 0.35294117647058826,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "epoch": 9,
+          "loss": 1.0462035456219234,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.5333333333333333,
+          "macro_f1": 0.39285714285714285,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2727272727272727,
+              "recall": 1.0,
+              "f1": 0.42857142857142855,
+              "support": 3
+            },
+            "HC": {
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1": 0.75,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 10,
+          "loss": 0.9817007957278071,
+          "subjects": 14,
+          "accuracy": 0.2857142857142857,
+          "balanced_accuracy": 0.3444444444444444,
+          "macro_f1": 0.2896825396825397,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.18181818181818182,
+              "recall": 0.6666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 3
+            },
+            "HC": {
+              "precision": 1.0,
+              "recall": 0.2,
+              "f1": 0.3333333333333333,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              0,
+              4,
+              1
+            ]
+          ]
+        },
+        {
+          "epoch": 11,
+          "loss": 0.9249200466516856,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 12,
+          "loss": 0.8910048652339626,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.43333333333333335,
+          "macro_f1": 0.38888888888888884,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.3333333333333333,
+              "f1": 0.25,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 13,
+          "loss": 0.8325822240597492,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.48888888888888893,
+          "macro_f1": 0.37777777777777777,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2222222222222222,
+              "recall": 0.6666666666666666,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 14,
+          "loss": 0.8101230086507024,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.48888888888888893,
+          "macro_f1": 0.3636363636363636,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.25,
+              "recall": 0.6666666666666666,
+              "f1": 0.36363636363636365,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "f1": 0.7272727272727273,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              5,
+              1
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 15,
+          "loss": 0.7963287266525062,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.48888888888888893,
+          "macro_f1": 0.37777777777777777,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2222222222222222,
+              "recall": 0.6666666666666666,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 16,
+          "loss": 0.7684793246758951,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 17,
+          "loss": 0.7777547659100713,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4777777777777777,
+          "macro_f1": 0.42857142857142855,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2222222222222222,
+              "recall": 0.6666666666666666,
+              "f1": 0.3333333333333333,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 18,
+          "loss": 0.7306257985733651,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 19,
+          "loss": 0.7218992661785435,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 20,
+          "loss": 0.6778865424362389,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 21,
+          "loss": 0.6832689481812555,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 22,
+          "loss": 0.6335977887785113,
+          "subjects": 14,
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.4369047619047619,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.5,
+              "recall": 0.3333333333333333,
+              "f1": 0.4,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.45454545454545453,
+              "recall": 1.0,
+              "f1": 0.625,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              1,
+              4
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 23,
+          "loss": 0.662639674302694,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.2792022792022792,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              4,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 24,
+          "loss": 0.6514196444202114,
+          "subjects": 14,
+          "accuracy": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.42857142857142855,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.25,
+              "recall": 0.3333333333333333,
+              "f1": 0.2857142857142857,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5555555555555556,
+              "recall": 1.0,
+              "f1": 0.7142857142857143,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 25,
+          "loss": 0.6041108224842999,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.3666666666666667,
+          "macro_f1": 0.36616161616161613,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.125,
+              "recall": 0.3333333333333333,
+              "f1": 0.18181818181818182,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              5,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "epoch": 26,
+          "loss": 0.6211582816935874,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.4444444444444444,
+          "macro_f1": 0.31746031746031744,
+          "per_class": {
+            "AD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.25,
+              "recall": 0.3333333333333333,
+              "f1": 0.2857142857142857,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              3,
+              3
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "epoch": 27,
+          "loss": 0.5889186359740592,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.43333333333333335,
+          "macro_f1": 0.39153439153439146,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              4,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 28,
+          "loss": 0.5848226080069671,
+          "subjects": 14,
+          "accuracy": 0.35714285714285715,
+          "balanced_accuracy": 0.32222222222222224,
+          "macro_f1": 0.3055555555555555,
+          "per_class": {
+            "AD": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              4,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 29,
+          "loss": 0.578715826208527,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.43333333333333335,
+          "macro_f1": 0.38369963369963367,
+          "per_class": {
+            "AD": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.2,
+              "recall": 0.3333333333333333,
+              "f1": 0.25,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5,
+              "recall": 0.8,
+              "f1": 0.6153846153846154,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "epoch": 30,
+          "loss": 0.5501842861239975,
+          "subjects": 14,
+          "accuracy": 0.42857142857142855,
+          "balanced_accuracy": 0.37777777777777777,
+          "macro_f1": 0.3703703703703704,
+          "per_class": {
+            "AD": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.4444444444444444,
+              "support": 6
+            },
+            "FTD": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            },
+            "HC": {
+              "precision": 0.5714285714285714,
+              "recall": 0.8,
+              "f1": 0.6666666666666666,
+              "support": 5
+            }
+          },
+          "confusion_matrix": [
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "completed_folds": 15,
+  "repeat_metrics": [
+    {
+      "accuracy": 0.7159090909090909,
+      "balanced_accuracy": 0.7004675628287551,
+      "macro_f1": 0.6909678325607529,
+      "dementia_f1": 0.7787610619469026,
+      "dementia_recall": 0.7457627118644068,
+      "dementia_precision": 0.8148148148148148,
+      "cn_specificity": 0.6551724137931034,
+      "confusion_tn_fp_fn_tp": [
+        19,
+        10,
+        15,
+        44
+      ]
+    },
+    {
+      "accuracy": 0.7272727272727273,
+      "balanced_accuracy": 0.7089421390999415,
+      "macro_f1": 0.701188455008489,
+      "dementia_f1": 0.7894736842105263,
+      "dementia_recall": 0.7627118644067796,
+      "dementia_precision": 0.8181818181818182,
+      "cn_specificity": 0.6551724137931034,
+      "confusion_tn_fp_fn_tp": [
+        19,
+        10,
+        14,
+        45
+      ]
+    },
+    {
+      "accuracy": 0.7386363636363636,
+      "balanced_accuracy": 0.7261835184102864,
+      "macro_f1": 0.7156904059558926,
+      "dementia_f1": 0.7964601769911505,
+      "dementia_recall": 0.7627118644067796,
+      "dementia_precision": 0.8333333333333334,
+      "cn_specificity": 0.6896551724137931,
+      "confusion_tn_fp_fn_tp": [
+        20,
+        9,
+        14,
+        45
+      ]
+    }
+  ],
+  "mean_accuracy": 0.7272727272727274,
+  "mean_balanced_accuracy": 0.711864406779661,
+  "mean_macro_f1": 0.7026155645083781,
+  "mean_dementia_f1": 0.7882316410495265,
+  "mean_dementia_recall": 0.7570621468926554,
+  "mean_dementia_precision": 0.8221099887766554,
+  "mean_cn_specificity": 0.6666666666666666,
+  "sd_accuracy": 0.011363636363636354,
+  "sd_balanced_accuracy": 0.013104668220209632,
+  "sd_macro_f1": 0.012422917932717057,
+  "sd_dementia_f1": 0.008914688539019168,
+  "sd_dementia_recall": 0.009785597782874987,
+  "sd_dementia_precision": 0.009864419658387764,
+  "sd_cn_specificity": 0.0199086299720561,
+  "difference_vs_v6_mean": {
+    "accuracy": -0.022727272727272596,
+    "balanced_accuracy": -0.008182349503214392,
+    "macro_f1": -0.01547488672086883,
+    "dementia_f1": -0.02431952138578486,
+    "dementia_recall": -0.05084745762711873,
+    "dementia_precision": 0.004053422630106329,
+    "cn_specificity": 0.03448275862068961
+  },
+  "seconds_this_run": 19.815128599992022
+}

@@ -1,0 +1,55 @@
+{
+  "subjects": 27,
+  "accuracy": 0.48148148148148145,
+  "balanced_accuracy": 0.4404040404040404,
+  "macro_f1": 0.4304891015417331,
+  "macro_recall": 0.4404040404040404,
+  "per_class": {
+    "AD": {
+      "precision": 0.625,
+      "recall": 0.45454545454545453,
+      "f1": 0.5263157894736842,
+      "support": 11
+    },
+    "FTD": {
+      "precision": 0.2,
+      "recall": 0.16666666666666666,
+      "f1": 0.18181818181818182,
+      "support": 6
+    },
+    "HC": {
+      "precision": 0.5,
+      "recall": 0.7,
+      "f1": 0.5833333333333334,
+      "support": 10
+    }
+  },
+  "confusion_matrix": [
+    [
+      5,
+      2,
+      4
+    ],
+    [
+      2,
+      1,
+      3
+    ],
+    [
+      1,
+      2,
+      7
+    ]
+  ],
+  "selected_electrodes": [
+    "C3",
+    "P7",
+    "P8",
+    "Fp1",
+    "P4",
+    "Fz"
+  ],
+  "model": "Direct class-balanced RBF SVM",
+  "representation": "log_stft",
+  "selection_val_macro_f1": 0.7130647130647131
+}

@@ -1,0 +1,881 @@
+{
+  "method": "robust periodic/aperiodic spectral biomarkers plus four training-only polarity-invariant microstates, ANOVA feature selection, and class-balanced SVM",
+  "participant_split": {
+    "train": 121,
+    "val": 26,
+    "test": 27
+  },
+  "spectral_feature_count": 468,
+  "microstate_feature_count": 28,
+  "candidate_count": 208,
+  "selected": {
+    "feature_set": "spectral",
+    "normalization": "site_center",
+    "selected_features": 80,
+    "C": 10.0,
+    "kernel": "linear",
+    "input_features": 468,
+    "accuracy": 0.8461538461538461,
+    "balanced_accuracy": 0.8380952380952381,
+    "macro_f1": 0.8380952380952381
+  },
+  "best_validation_configuration_by_feature_set": {
+    "spectral": {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8461538461538461,
+      "balanced_accuracy": 0.8380952380952381,
+      "macro_f1": 0.8380952380952381
+    },
+    "microstates": {
+      "feature_set": "microstates",
+      "normalization": "global",
+      "selected_features": 20,
+      "C": 0.01,
+      "kernel": "linear",
+      "input_features": 28,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.565079365079365,
+      "macro_f1": 0.5722943722943722
+    },
+    "combined": {
+      "feature_set": "combined",
+      "normalization": "site_center",
+      "selected_features": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.8461538461538461,
+      "balanced_accuracy": 0.8380952380952381,
+      "macro_f1": 0.8380952380952381
+    }
+  },
+  "branch_results": {
+    "spectral": {
+      "validation_selected_configuration": {
+        "feature_set": "spectral",
+        "normalization": "site_center",
+        "selected_features": 80,
+        "C": 10.0,
+        "kernel": "linear",
+        "input_features": 468,
+        "accuracy": 0.8461538461538461,
+        "balanced_accuracy": 0.8380952380952381,
+        "macro_f1": 0.8380952380952381
+      },
+      "test": {
+        "subjects": 27,
+        "accuracy": 0.5925925925925926,
+        "balanced_accuracy": 0.5787878787878787,
+        "macro_f1": 0.5833333333333334,
+        "macro_recall": 0.5787878787878787,
+        "per_class": {
+          "AD": {
+            "precision": 0.5384615384615384,
+            "recall": 0.6363636363636364,
+            "f1": 0.5833333333333334,
+            "support": 11
+          },
+          "FTD": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 6
+          },
+          "HC": {
+            "precision": 0.75,
+            "recall": 0.6,
+            "f1": 0.6666666666666666,
+            "support": 10
+          }
+        },
+        "confusion_matrix": [
+          [
+            7,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            1,
+            6
+          ]
+        ]
+      },
+      "test_predictions": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ]
+    },
+    "microstates": {
+      "validation_selected_configuration": {
+        "feature_set": "microstates",
+        "normalization": "global",
+        "selected_features": 20,
+        "C": 0.01,
+        "kernel": "linear",
+        "input_features": 28,
+        "accuracy": 0.5769230769230769,
+        "balanced_accuracy": 0.565079365079365,
+        "macro_f1": 0.5722943722943722
+      },
+      "test": {
+        "subjects": 27,
+        "accuracy": 0.48148148148148145,
+        "balanced_accuracy": 0.44343434343434346,
+        "macro_f1": 0.4231791600212653,
+        "macro_recall": 0.44343434343434346,
+        "per_class": {
+          "AD": {
+            "precision": 0.5,
+            "recall": 0.36363636363636365,
+            "f1": 0.42105263157894735,
+            "support": 11
+          },
+          "FTD": {
+            "precision": 0.2,
+            "recall": 0.16666666666666666,
+            "f1": 0.18181818181818182,
+            "support": 6
+          },
+          "HC": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "f1": 0.6666666666666666,
+            "support": 10
+          }
+        },
+        "confusion_matrix": [
+          [
+            4,
+            3,
+            4
+          ],
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            8
+          ]
+        ]
+      },
+      "test_predictions": [
+        2,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        0,
+        2,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        2
+      ]
+    },
+    "combined": {
+      "validation_selected_configuration": {
+        "feature_set": "combined",
+        "normalization": "site_center",
+        "selected_features": 80,
+        "C": 10.0,
+        "kernel": "linear",
+        "input_features": 496,
+        "accuracy": 0.8461538461538461,
+        "balanced_accuracy": 0.8380952380952381,
+        "macro_f1": 0.8380952380952381
+      },
+      "test": {
+        "subjects": 27,
+        "accuracy": 0.5925925925925926,
+        "balanced_accuracy": 0.5787878787878787,
+        "macro_f1": 0.5833333333333334,
+        "macro_recall": 0.5787878787878787,
+        "per_class": {
+          "AD": {
+            "precision": 0.5384615384615384,
+            "recall": 0.6363636363636364,
+            "f1": 0.5833333333333334,
+            "support": 11
+          },
+          "FTD": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 6
+          },
+          "HC": {
+            "precision": 0.75,
+            "recall": 0.6,
+            "f1": 0.6666666666666666,
+            "support": 10
+          }
+        },
+        "confusion_matrix": [
+          [
+            7,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            3,
+            1,
+            6
+          ]
+        ]
+      },
+      "test_predictions": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ]
+    }
+  },
+  "selected_feature_names": [
+    "channel__Fp1__aperiodic_offset",
+    "channel__Fp1__relative_theta_power",
+    "channel__Fp1__log_theta_alpha_ratio",
+    "channel__Fp1__beta_peak_width_hz",
+    "channel__Fp2__aperiodic_offset",
+    "channel__Fp2__log_theta_alpha_ratio",
+    "channel__F3__aperiodic_offset",
+    "channel__F3__relative_theta_power",
+    "channel__F3__log_theta_alpha_ratio",
+    "channel__F4__aperiodic_offset",
+    "channel__F4__relative_theta_power",
+    "channel__F4__log_theta_alpha_ratio",
+    "channel__C3__aperiodic_offset",
+    "channel__C3__relative_theta_power",
+    "channel__C3__log_theta_alpha_ratio",
+    "channel__C4__aperiodic_offset",
+    "channel__P3__aperiodic_offset",
+    "channel__P3__relative_theta_power",
+    "channel__P3__log_theta_alpha_ratio",
+    "channel__P4__aperiodic_offset",
+    "channel__P4__log_theta_alpha_ratio",
+    "channel__O1__aperiodic_offset",
+    "channel__O1__relative_theta_power",
+    "channel__O1__log_theta_alpha_ratio",
+    "channel__O1__theta_peak_width_hz",
+    "channel__O2__aperiodic_offset",
+    "channel__O2__relative_theta_power",
+    "channel__O2__log_theta_alpha_ratio",
+    "channel__F7__aperiodic_offset",
+    "channel__F7__log_theta_alpha_ratio",
+    "channel__F8__aperiodic_offset",
+    "channel__T7__aperiodic_offset",
+    "channel__T7__relative_theta_power",
+    "channel__T7__log_theta_alpha_ratio",
+    "channel__T7__log_slow_fast_ratio",
+    "channel__T7__theta_peak_width_hz",
+    "channel__T8__aperiodic_offset",
+    "channel__T8__log_theta_alpha_ratio",
+    "channel__P7__aperiodic_offset",
+    "channel__P7__relative_theta_power",
+    "channel__P7__log_theta_alpha_ratio",
+    "channel__P7__log_slow_fast_ratio",
+    "channel__P7__theta_peak_width_hz",
+    "channel__P7__beta_peak_width_hz",
+    "channel__P8__aperiodic_offset",
+    "channel__P8__relative_theta_power",
+    "channel__P8__log_theta_alpha_ratio",
+    "channel__P8__theta_peak_width_hz",
+    "channel__Fz__aperiodic_offset",
+    "channel__Fz__relative_theta_power",
+    "channel__Fz__log_theta_alpha_ratio",
+    "channel__Cz__aperiodic_offset",
+    "channel__Pz__aperiodic_offset",
+    "channel__Pz__log_theta_alpha_ratio",
+    "region__frontal__aperiodic_offset",
+    "region__frontal__relative_theta_power",
+    "region__frontal__log_theta_alpha_ratio",
+    "region__frontal__theta_peak_width_hz",
+    "region__frontal__beta_peak_width_hz",
+    "region__temporal__aperiodic_offset",
+    "region__temporal__relative_theta_power",
+    "region__temporal__log_theta_alpha_ratio",
+    "region__temporal__theta_peak_width_hz",
+    "region__temporal__beta_peak_width_hz",
+    "region__central__aperiodic_offset",
+    "region__central__log_theta_alpha_ratio",
+    "region__parietal__aperiodic_offset",
+    "region__parietal__relative_theta_power",
+    "region__parietal__log_theta_alpha_ratio",
+    "region__occipital__aperiodic_offset",
+    "region__occipital__relative_theta_power",
+    "region__occipital__log_theta_alpha_ratio",
+    "region__occipital__theta_peak_width_hz",
+    "region__occipital__beta_peak_width_hz",
+    "global__channel_mean__aperiodic_offset",
+    "global__channel_mean__relative_theta_power",
+    "global__channel_mean__log_theta_alpha_ratio",
+    "global__channel_mean__theta_peak_width_hz",
+    "global__channel_mean__beta_peak_width_hz",
+    "global__channel_std__relative_theta_power"
+  ],
+  "top_anova_features": [
+    {
+      "name": "channel__T7__aperiodic_offset",
+      "anova_f": 38.37456881771538
+    },
+    {
+      "name": "channel__F7__aperiodic_offset",
+      "anova_f": 37.540227029975966
+    },
+    {
+      "name": "channel__Fp1__aperiodic_offset",
+      "anova_f": 37.435031920740094
+    },
+    {
+      "name": "region__frontal__aperiodic_offset",
+      "anova_f": 37.124142099772996
+    },
+    {
+      "name": "global__channel_mean__aperiodic_offset",
+      "anova_f": 35.021969382662476
+    },
+    {
+      "name": "channel__Fz__aperiodic_offset",
+      "anova_f": 34.74974272521178
+    },
+    {
+      "name": "region__temporal__aperiodic_offset",
+      "anova_f": 32.83132417626658
+    },
+    {
+      "name": "channel__Fp2__aperiodic_offset",
+      "anova_f": 32.80351256226976
+    },
+    {
+      "name": "channel__O1__aperiodic_offset",
+      "anova_f": 30.878613342100234
+    },
+    {
+      "name": "channel__Cz__aperiodic_offset",
+      "anova_f": 29.448071234302212
+    },
+    {
+      "name": "region__occipital__aperiodic_offset",
+      "anova_f": 29.401032450308485
+    },
+    {
+      "name": "region__central__aperiodic_offset",
+      "anova_f": 28.841008583500777
+    },
+    {
+      "name": "region__parietal__aperiodic_offset",
+      "anova_f": 27.550580101364556
+    },
+    {
+      "name": "channel__P7__log_theta_alpha_ratio",
+      "anova_f": 27.186814017321762
+    },
+    {
+      "name": "channel__Pz__aperiodic_offset",
+      "anova_f": 26.932139781700112
+    },
+    {
+      "name": "region__temporal__log_theta_alpha_ratio",
+      "anova_f": 26.637563320488894
+    },
+    {
+      "name": "channel__F8__aperiodic_offset",
+      "anova_f": 26.293068641563295
+    },
+    {
+      "name": "channel__T8__aperiodic_offset",
+      "anova_f": 26.03952480512564
+    },
+    {
+      "name": "channel__O2__aperiodic_offset",
+      "anova_f": 25.94805638679584
+    },
+    {
+      "name": "channel__C3__aperiodic_offset",
+      "anova_f": 25.844520030532696
+    },
+    {
+      "name": "channel__O1__relative_theta_power",
+      "anova_f": 25.630248532084916
+    },
+    {
+      "name": "channel__P7__aperiodic_offset",
+      "anova_f": 25.61874814109525
+    },
+    {
+      "name": "channel__P4__aperiodic_offset",
+      "anova_f": 25.60568034509218
+    },
+    {
+      "name": "channel__F3__aperiodic_offset",
+      "anova_f": 25.379488156715627
+    },
+    {
+      "name": "channel__P3__aperiodic_offset",
+      "anova_f": 25.24574997739987
+    },
+    {
+      "name": "region__occipital__relative_theta_power",
+      "anova_f": 25.146466872764933
+    },
+    {
+      "name": "channel__P7__beta_peak_width_hz",
+      "anova_f": 25.1088609354488
+    },
+    {
+      "name": "global__channel_mean__beta_peak_width_hz",
+      "anova_f": 25.060738123385782
+    },
+    {
+      "name": "channel__P8__log_theta_alpha_ratio",
+      "anova_f": 25.02833684441983
+    },
+    {
+      "name": "channel__Fz__relative_theta_power",
+      "anova_f": 24.851951766211364
+    }
+  ],
+  "test": {
+    "subjects": 27,
+    "accuracy": 0.5925925925925926,
+    "balanced_accuracy": 0.5787878787878787,
+    "macro_f1": 0.5833333333333334,
+    "macro_recall": 0.5787878787878787,
+    "per_class": {
+      "AD": {
+        "precision": 0.5384615384615384,
+        "recall": 0.6363636363636364,
+        "f1": 0.5833333333333334,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 6
+      },
+      "HC": {
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666666,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        7,
+        2,
+        2
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        3,
+        1,
+        6
+      ]
+    ]
+  },
+  "test_subjects": [
+    60,
+    125,
+    84,
+    168,
+    80,
+    102,
+    147,
+    22,
+    49,
+    135,
+    1,
+    73,
+    123,
+    36,
+    108,
+    150,
+    25,
+    19,
+    57,
+    14,
+    152,
+    104,
+    6,
+    100,
+    95,
+    154,
+    38
+  ],
+  "test_truth": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    0,
+    2,
+    0,
+    2,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2
+  ],
+  "test_predictions": [
+    0,
+    1,
+    0,
+    2,
+    0,
+    0,
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2,
+    2,
+    2,
+    1,
+    0,
+    2,
+    0,
+    0,
+    2
+  ],
+  "top_candidates": [
+    {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8461538461538461,
+      "balanced_accuracy": 0.8380952380952381,
+      "macro_f1": 0.8380952380952381
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "site_center",
+      "selected_features": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.8461538461538461,
+      "balanced_accuracy": 0.8380952380952381,
+      "macro_f1": 0.8380952380952381
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "global",
+      "selected_features": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.801058201058201,
+      "macro_f1": 0.8066748066748066
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "global",
+      "selected_features": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.801058201058201,
+      "macro_f1": 0.8066748066748066
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 80,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.8047619047619047,
+      "macro_f1": 0.8011695906432749
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "site_center",
+      "selected_features": 80,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.8047619047619047,
+      "macro_f1": 0.8011695906432749
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "global",
+      "selected_features": 40,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7867724867724868,
+      "macro_f1": 0.7915809680515563
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "global",
+      "selected_features": 40,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7867724867724868,
+      "macro_f1": 0.7915809680515563
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "global",
+      "selected_features": 160,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7761904761904761,
+      "macro_f1": 0.7766590389016018
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "global",
+      "selected_features": 160,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7761904761904761,
+      "macro_f1": 0.7766590389016018
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "global",
+      "selected_features": 80,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7714285714285714,
+      "macro_f1": 0.7638888888888888
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "global",
+      "selected_features": 80,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7714285714285714,
+      "macro_f1": 0.7638888888888888
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "global",
+      "selected_features": 80,
+      "C": 0.1,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7714285714285714,
+      "macro_f1": 0.7602339181286549
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "global",
+      "selected_features": 80,
+      "C": 0.1,
+      "kernel": "linear",
+      "input_features": 496,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7714285714285714,
+      "macro_f1": 0.7602339181286549
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 20,
+      "C": 10.0,
+      "kernel": "rbf",
+      "input_features": 468,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7534391534391535,
+      "macro_f1": 0.7555555555555555
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "site_center",
+      "selected_features": 20,
+      "C": 10.0,
+      "kernel": "rbf",
+      "input_features": 496,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7534391534391535,
+      "macro_f1": 0.7555555555555555
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 40,
+      "C": 10.0,
+      "kernel": "rbf",
+      "input_features": 468,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7534391534391535,
+      "macro_f1": 0.7534391534391535
+    },
+    {
+      "feature_set": "combined",
+      "normalization": "site_center",
+      "selected_features": 40,
+      "C": 10.0,
+      "kernel": "rbf",
+      "input_features": 496,
+      "accuracy": 0.7692307692307693,
+      "balanced_accuracy": 0.7534391534391535,
+      "macro_f1": 0.7534391534391535
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 160,
+      "C": 1.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7619047619047619,
+      "macro_f1": 0.7481481481481481
+    },
+    {
+      "feature_set": "spectral",
+      "normalization": "site_center",
+      "selected_features": 160,
+      "C": 10.0,
+      "kernel": "linear",
+      "input_features": 468,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7619047619047619,
+      "macro_f1": 0.7481481481481481
+    }
+  ],
+  "runtime_seconds": 15.359004199999617,
+  "limitations": [
+    "This uses a transparent robust log-log background fit inspired by periodic/aperiodic parameterization; the optional specparam package was not installed.",
+    "The fixed test set was inspected in prior project iterations, so the score is exploratory rather than an unbiased publication estimate.",
+    "The validation set contains only 26 participants and model selection can overfit it.",
+    "Microstate templates are fold-safe for this fixed split, but repeated nested participant-level evaluation is required for a publication claim."
+  ]
+}

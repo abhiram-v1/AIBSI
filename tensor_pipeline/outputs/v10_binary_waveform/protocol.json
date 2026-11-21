@@ -1,0 +1,114 @@
+{
+  "task": "AD+FTD positive versus CN negative; 88 people",
+  "input": "V3 cleaned waveform delay moments; no spectral or connectivity control features",
+  "decomposition": "Training-only class-balanced waveform TT/Tucker basis",
+  "outer": "3x5 stratified participant CV, seed 9066",
+  "inner": "3 stratified participant folds, seed 91100 + outer index",
+  "selection": "Pooled inner macro F1, then dementia recall, balanced accuracy",
+  "classifiers": "Class-balanced logistic regression or RBF SVM; scaler fitted in training fold",
+  "inputs_sha256": {
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\index.npz": "6692e7c987c5bdadb5132c9db5a70fc982c7cae45449ae94b8d2b5005cee9c83",
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\delay_moments.npy": "010ae9cb4da3309e02cde7466eaffa8769e4ec089b0cd401179bb3de8e19a721",
+    "tensor_pipeline\\v10_binary_waveform\\run.py": "727ef4975b7ef95682a6a5fa16d3070a1b3829df05a2633001e9cfea2c42d359",
+    "tensor_pipeline\\v3_waveform\\wave_models.py": "58d0866dba87837bc50794a5f9cfa3fb91fa1da51b930549139bcac96147fd35"
+  },
+  "candidates": [
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "classifier": "logistic",
+      "C": 0.1
+    },
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "classifier": "logistic",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "classifier": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 8,
+      "classifier": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "classifier": "logistic",
+      "C": 0.1
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "classifier": "logistic",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "classifier": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tt",
+      "rank": 16,
+      "classifier": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "classifier": "logistic",
+      "C": 0.1
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "classifier": "logistic",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "classifier": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 4,
+      "classifier": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "classifier": "logistic",
+      "C": 0.1
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "classifier": "logistic",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "classifier": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "decomposition": "tucker",
+      "rank": 6,
+      "classifier": "rbf_svm",
+      "C": 10.0
+    }
+  ],
+  "limits": "Existing previously explored 88-person cohort; no external validation."
+}

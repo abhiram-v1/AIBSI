@@ -1,0 +1,17 @@
+{
+  "config": {
+    "rank": 4,
+    "channel_rank": 4,
+    "spectral_rank": 24,
+    "C": 0.1,
+    "kernel": "linear"
+  },
+  "source_config": "C:\\Projects\\AIBSI\\neural_comparison\\advanced_clean_spectral\\outputs\\tensor_train_svm\\metrics.json",
+  "source_sha256": "7030ebdaee1086e71549233a801c3b64d32140e6122308d08692fd2594e8a4ec",
+  "timing": "Historical-configuration control added after the fresh training-CV-selected TT ensemble was evaluated. Both results are retained, not selected by test score.",
+  "selection_history": "TT/SVM settings inherited from the earlier 147-person development-CV experiment. They are fixed for this control, not a new training-only hyperparameter search.",
+  "validation": "Fit TT/SVM on 121 participants, tune 420 blend settings on 26 validation participants.",
+  "test": "Refit TT/SVM on 147 development participants; evaluate the original 27-person test set.",
+  "eegpt_retrained": false,
+  "caveat": "Exploratory historical split; validation also influenced the inherited TT/SVM settings in the earlier experiment."
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "participants": 174,
+  "features_per_person": 912,
+  "main_outer_folds": 15,
+  "main_diagnosis_pipelines_per_fold": 6,
+  "repeats": 3,
+  "checks": [
+    "feature dimensions/finiteness",
+    "fixed participant IDs and metadata alignment",
+    "code/snapshot/feature/plan hashes",
+    "one held-out prediction per person per repeat",
+    "disjoint train/test folds",
+    "saved metrics and score-threshold consistency",
+    "source-only transfer partitions",
+    "native metadata warning confirmed for all86 BrainLat records",
+    "exploratory one-feature probe train/test coverage"
+  ]
+}

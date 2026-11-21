@@ -1,0 +1,812 @@
+{
+  "task": "AD+FTD positive versus CN negative; 88 participants",
+  "design": "Exploratory V7 optimization following inspected V6 results.",
+  "outer": "Same V6 3x5 stratified participant folds; seed 9066, enabling paired comparison.",
+  "inner": "3 stratified participant folds; seed 90660 + outer index.",
+  "selection": "Pooled inner macro F1, then dementia recall, then balanced accuracy; default prediction thresholds.",
+  "secondary_endpoint": "Fixed three-family hard majority vote: inner-best spectral, power and graph pipelines.",
+  "inputs_sha256": {
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\index.npz": "6692e7c987c5bdadb5132c9db5a70fc982c7cae45449ae94b8d2b5005cee9c83",
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\spectral_controls.npy": "6029e865dd53b80e2f98a9f8b096bccc64060ad8ad457c2b6a1ae30298425e73",
+    "tensor_pipeline\\outputs\\v5_connectivity\\bags_1.npz": "234419062fa7c5cbd132c0e702321f92744b560a90e7a735d8595b6ee5a5ef00",
+    "tensor_pipeline\\outputs\\v5_connectivity\\bags_4.npz": "f2b897ee479aec07a9dbf5fac6b7b50af744ef9e3806e20211a5d794fa2ec7eb",
+    "tensor_pipeline\\outputs\\v5_connectivity\\bags_8.npz": "58aaa0d36a2da7c0ea7ca07674d46da890427dc9536e902849e5ec6109b7e656",
+    "tensor_pipeline\\v7_binary_optimization\\run.py": "def9931c8559519370d1ea444fb6c0adc92c35067374b43e4678121c63877274"
+  },
+  "features": "Label-blind subject summaries, single-observation SPD matrix log and bag mean/std; ANOVA and scaler fit in each train split.",
+  "candidates": [
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "logcov",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "logcov",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "logcov",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "logcov",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "logcov",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "logcov",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "logcov",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "logcov",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "logcov",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "logcov",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "logcov",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "logcov",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_power",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_power",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_connectivity",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral_logcov",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_logcov",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_logcov",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_logcov",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_logcov",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_bag4",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_bag4",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_bag4",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag4",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_bag8",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_bag8",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power_bag8",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power_bag8",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity_bag4",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    }
+  ],
+  "limits": "Repeated use of the same 88 subjects is adaptively biased; no external test cohort."
+}

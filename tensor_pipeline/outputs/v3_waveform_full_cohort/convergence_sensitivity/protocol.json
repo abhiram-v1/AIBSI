@@ -1,0 +1,14 @@
+{
+  "original_signature": "7c815456a24b374f",
+  "check_code_sha": "c2252e46de3e7e275cc092fae6e2a8f78418fb532967ea203382b0d3eecff28e",
+  "reason": "All 120 original supervised fits hit their fixed iteration limit. A training-only pilot also hit 2000; quantify budget sensitivity without selecting the better test score.",
+  "status": "Post-hoc sensitivity after original outcomes; does not replace original primary endpoint.",
+  "fixed_penalty": 0.1,
+  "budgets": [
+    100,
+    2000
+  ],
+  "new_hyperparameter_selection": false,
+  "design": "Same 15 full-training outer splits, plus the 10 smaller first-repeat learning-curve subsets.",
+  "test_scores_not_used_to_change_protocol": true
+}

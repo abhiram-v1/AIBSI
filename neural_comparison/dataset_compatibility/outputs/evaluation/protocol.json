@@ -1,0 +1,72 @@
+{
+  "seeds": [
+    2026110501,
+    2026110502,
+    2026110503
+  ],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "arms": [
+    "raw",
+    "common",
+    "gain",
+    "relative",
+    "site_z",
+    "site_coral"
+  ],
+  "grid": [
+    {
+      "kernel": "linear",
+      "C": 0.01
+    },
+    {
+      "kernel": "linear",
+      "C": 0.1
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0
+    },
+    {
+      "kernel": "linear",
+      "C": 10.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.01
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0
+    }
+  ],
+  "thresholds": [
+    -0.5,
+    0,
+    0.5
+  ],
+  "pca_dimensions": 20,
+  "coral_covariance_shrinkage": 0.3,
+  "primary_metric": "macro_f1",
+  "tie_break": "balanced_accuracy then smaller C",
+  "harmonization_input": "site metadata only, never test diagnosis; all learned transforms fit on training participants",
+  "domain_probe": "balanced linear and RBF SVM C1 after each transform; dataset0=OpenNeuro,1=BrainLat; site labels allowed in harmonizer",
+  "transfer": "select deterministic arm and SVM within source cohort only; target never used to fit normalization or select settings",
+  "caveat": "Both cohorts explored earlier; not an untouched prospective external validation",
+  "features_sha256": "c7b52503bfd97aa4d0fbff3f59f7008b1f46990231b7e757717d5880ddf04432",
+  "plan_sha256": "f2ba9680b00e73ead67322202a94294bf1a11dbb71ed7665132da0765d0557a6",
+  "code_sha256": {
+    "audit_data.py": "fe028a621dba878f5270fd772291203424594a598e85879f59eac4ae6cfa43b4",
+    "prepare.py": "397b2c3938d446562aed3613503d84c3867ffb7e28af52aee042b008840849b2",
+    "compat_model.py": "61a1204b954ad9b8a9a71029c6e40f2c7c3d398017e15405cb7e55724e265321",
+    "evaluate.py": "09e6755fa16a6febf4790f42ae47758d236b20d289abc2b3acdaa0fa23ac9b73"
+  }
+}

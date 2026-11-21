@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "joint_records_verified": 302400,
+  "svm_configurations": 720,
+  "blend_choices_per_svm": 420,
+  "checks": [
+    "complete unique 720x420 joint grid retained",
+    "selected combination is global winner under declared validation selection rule",
+    "inner folds partition training participants only",
+    "saved model reload reproduces probability vectors and confusion matrix",
+    "all final probabilities sum to one",
+    "all input and source hashes unchanged"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "disjoint_source_test": true,
+  "frozen_model_hash_unchanged": true,
+  "probabilities_valid": true,
+  "inference_independent_of_target_batch_statistics": true,
+  "saved_model_reloads_identically": true,
+  "source_calibration_oof_predictions_reproduced": true
+}

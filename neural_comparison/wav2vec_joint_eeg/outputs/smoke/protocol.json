@@ -1,0 +1,29 @@
+{
+  "input": "C:\\Projects\\AIBSI\\neural_comparison\\advanced_clean_spectral\\outputs\\prepared\\log_mel.npy",
+  "input_shape": [
+    6719,
+    19,
+    24,
+    13
+  ],
+  "classes": [
+    "AD",
+    "FTD",
+    "HC"
+  ],
+  "outer_split": "same participants as G-NTF repeat 0",
+  "inner_validation": "20% of outer training participants, stratified by label and source when feasible",
+  "selection": "best participant-level validation macro F1, then balanced accuracy, then log loss",
+  "arms": [
+    "supervised",
+    "masked",
+    "masked_contrastive"
+  ],
+  "epochs_max": 2,
+  "bag_size": 6,
+  "seed": 20261116,
+  "loss": "CE + 0.2 masked latent SmoothL1 + 0.1 supervised contrastive (terms included by arm)",
+  "mask": "one contiguous span of 3/13 frames per window",
+  "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "caveat": "wav2vec-inspired on cached log-mel frames; no raw waveform or quantizer"
+}

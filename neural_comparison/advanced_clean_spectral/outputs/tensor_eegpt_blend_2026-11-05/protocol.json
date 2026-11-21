@@ -1,0 +1,165 @@
+{
+  "task": "AD / FTD / HC",
+  "classes": [
+    "AD",
+    "FTD",
+    "HC"
+  ],
+  "tensor_shape": [
+    174,
+    19,
+    24,
+    4
+  ],
+  "split_counts": {
+    "train": 121,
+    "val": 26,
+    "test": 27
+  },
+  "tensor": "Participant electrode x mel band x mean/SD/median/IQR of windows and STFT frames",
+  "branch_search": "5-fold diagnosis/source-stratified CV on the 121 training participants only",
+  "fold_fits": "Refit site normalization, common TT basis and SVM scaler on each training fold",
+  "svm_candidates": 288,
+  "rank_grid": [
+    [
+      4,
+      4,
+      8
+    ],
+    [
+      4,
+      4,
+      16
+    ],
+    [
+      4,
+      4,
+      24
+    ],
+    [
+      4,
+      8,
+      8
+    ],
+    [
+      4,
+      8,
+      16
+    ],
+    [
+      4,
+      8,
+      24
+    ],
+    [
+      8,
+      4,
+      8
+    ],
+    [
+      8,
+      4,
+      16
+    ],
+    [
+      8,
+      4,
+      24
+    ],
+    [
+      8,
+      8,
+      8
+    ],
+    [
+      8,
+      8,
+      16
+    ],
+    [
+      8,
+      8,
+      24
+    ],
+    [
+      16,
+      4,
+      8
+    ],
+    [
+      16,
+      4,
+      16
+    ],
+    [
+      16,
+      4,
+      24
+    ],
+    [
+      16,
+      8,
+      8
+    ],
+    [
+      16,
+      8,
+      16
+    ],
+    [
+      16,
+      8,
+      24
+    ],
+    [
+      32,
+      4,
+      8
+    ],
+    [
+      32,
+      4,
+      16
+    ],
+    [
+      32,
+      4,
+      24
+    ],
+    [
+      32,
+      8,
+      8
+    ],
+    [
+      32,
+      8,
+      16
+    ],
+    [
+      32,
+      8,
+      24
+    ]
+  ],
+  "C": [
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "kernels": [
+    "linear",
+    "rbf"
+  ],
+  "gamma": "scale",
+  "class_weight": "balanced",
+  "seed": 20261009,
+  "blend_search": "420 combinations on 26 validation participants, selected by macro F1 then accuracy then closeness to equal weight",
+  "final_refit": "TT and SVM refit on 147 development participants after selecting all settings; EEGPT stays unchanged",
+  "evaluation": "Previously examined 27-participant test set; exploratory, not a new independent estimate or full nested EEGPT CV",
+  "eegpt_retrained": false,
+  "threads": 4
+}

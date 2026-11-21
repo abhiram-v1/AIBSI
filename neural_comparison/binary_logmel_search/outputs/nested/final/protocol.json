@@ -1,0 +1,12 @@
+{
+  "validation_protocol_sha256": "005644b7db3975505ce55d53fa283699ce1e9fc7a96c38e529d657583164fdc6",
+  "source_hashes": {
+    "C:\\Projects\\AIBSI\\neural_comparison\\binary_logmel_search\\features.py": "ee8a03c82937030f3808a42ef595f768276868591d259d9ff66f7437a93ac988",
+    "C:\\Projects\\AIBSI\\neural_comparison\\binary_logmel_search\\model.py": "2508ab36ca84da77fe7c6b883069f4b09df1332223ff08c22128ff250a64f61e",
+    "C:\\Projects\\AIBSI\\neural_comparison\\binary_logmel_search\\plot_sampling.py": "c1e62fb4a1cbdfc8834112921ea7501f392e69a7c8be91c17d5ec5ce94cff951",
+    "C:\\Projects\\AIBSI\\neural_comparison\\binary_logmel_search\\report.py": "7cf49570225c8f7c9dfd56e85a5cdadbc355005bf188aa6bb34e9331a3ced7e6",
+    "C:\\Projects\\AIBSI\\neural_comparison\\binary_logmel_search\\run.py": "2e301d7796bb30bf92fbc13530d1f31a0dcee065391f03850210775445b22e18",
+    "C:\\Projects\\AIBSI\\neural_comparison\\binary_logmel_search\\test_pipeline.py": "c07eff911b1722d6dcb5570e5a7cf843a1d1fff96c03ffc5ca2ac084a659e957"
+  },
+  "note": "Final refit uses the same full PCA with gesvd fallback on a gesdd convergence failure. Original validation source archived separately; validation predictions are unchanged."
+}

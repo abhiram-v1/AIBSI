@@ -1,0 +1,40 @@
+{
+  "participants": 86,
+  "class_counts": [
+    32,
+    54
+  ],
+  "repeats": 3,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "arms": [
+    "native128",
+    "native19",
+    "legacy19",
+    "aligned19"
+  ],
+  "seed": 20261106,
+  "selection": "pooled inner macro F1, balanced accuracy tie-break; threshold selected only using inner OOF",
+  "calibration": "non-negative-slope sigmoid on fresh training-only full-pipeline OOF scores; flat boundary yields training prevalence, main SVM predictions unchanged",
+  "refit_solver_retry_limits": [
+    200000,
+    2000000,
+    10000000
+  ],
+  "hashes": {
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\outputs\\prepared\\plan.json": "35a493725a176dea9d5fca4f3402fe2b7c4309b9ac6caeaef778bea3559bafdb",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\outputs\\prepared\\features.npz": "7984bb3e854c7988efca24636283ac15e7cc93c1bac0ad108df5051ac93cbf3a",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\outputs\\prepared\\operators.npz": "30d2c62561b2ec64fb3cd86efb365ce625ff9b0a609c5f680b951dc76ede53ab",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\brainlat_data.py": "df4aa807d11539818d9631db94c6e87bd2bf13b4d1457ab31a1a2c7b076761f4",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\brainlat_model.py": "b1a0b82220b617ef473140f63c3833e80fe829f1c5c850857f82eb2e6d109006",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\report.py": "d39643358c542e2682014c33a55116d44219d38c602959df171f12ab988fc10e",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\run.py": "155eb4e2d74be4ded0c5ed2d5ed0b5267cb7334bb8c9b7dde417c08f23c064dd",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\test_pipeline.py": "bcb9cf6db91e375d464f2726aa9c915437831667c30a51ef56a88b42107025b7"
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "sklearn": "1.7.2",
+    "mne": "1.12.1"
+  },
+  "caveat": "Previously explored cohort; native19 locations only approximate the interpolated19 locations. All arms share native128 reference and window-gain normalization."
+}

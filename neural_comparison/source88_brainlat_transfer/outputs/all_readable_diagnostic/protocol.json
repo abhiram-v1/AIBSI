@@ -1,0 +1,8 @@
+{
+  "original_source_frozen_sha256": "b2933cc125032301823f1d3b8551a9f90affc9db28e2b90c2dcf3c5e4378b7f3",
+  "strict_summary_sha256": "7125e820a6f655d6e26fa0e58029e88100bc244ca3cdf080a968211146b1d4bf",
+  "diagnostic_code_sha256": "7afadcc8b3f6fd948aadf528a7aba0d4e42e7c31d7686dace41b55273fc20c96",
+  "extraction_code_sha256": "79dfdbe523a41d024102e07a607b7ecb41eaf2afa638a5dd675c7c3c88061c37",
+  "model_hashes_unchanged": true,
+  "rule": "Retain original source-policy windows for76 scorable cases; only previously unscorable files use0.1uV floor instead of1uV. This is a flagged post-primary coverage diagnostic, not a newly tuned performance result."
+}

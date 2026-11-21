@@ -1,0 +1,154 @@
+{
+  "log_stft_cnn_bilstm": {
+    "members": [
+      "log_stft_cnn",
+      "log_stft_cnn_bilstm"
+    ],
+    "test": {
+      "subjects": 27,
+      "accuracy": 0.5185185185185185,
+      "balanced_accuracy": 0.4737373737373738,
+      "macro_f1": 0.4582668793195109,
+      "macro_recall": 0.4737373737373738,
+      "per_class": {
+        "AD": {
+          "precision": 0.625,
+          "recall": 0.45454545454545453,
+          "f1": 0.5263157894736842,
+          "support": 11
+        },
+        "FTD": {
+          "precision": 0.2,
+          "recall": 0.16666666666666666,
+          "f1": 0.18181818181818182,
+          "support": 6
+        },
+        "HC": {
+          "precision": 0.5714285714285714,
+          "recall": 0.8,
+          "f1": 0.6666666666666666,
+          "support": 10
+        }
+      },
+      "confusion_matrix": [
+        [
+          5,
+          2,
+          4
+        ],
+        [
+          3,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          8
+        ]
+      ]
+    }
+  },
+  "log_mel_cnn_bilstm": {
+    "members": [
+      "log_mel_cnn",
+      "log_mel_cnn_bilstm"
+    ],
+    "test": {
+      "subjects": 27,
+      "accuracy": 0.5925925925925926,
+      "balanced_accuracy": 0.5343434343434343,
+      "macro_f1": 0.5176767676767676,
+      "macro_recall": 0.5343434343434343,
+      "per_class": {
+        "AD": {
+          "precision": 0.6363636363636364,
+          "recall": 0.6363636363636364,
+          "f1": 0.6363636363636364,
+          "support": 11
+        },
+        "FTD": {
+          "precision": 0.5,
+          "recall": 0.16666666666666666,
+          "f1": 0.25,
+          "support": 6
+        },
+        "HC": {
+          "precision": 0.5714285714285714,
+          "recall": 0.8,
+          "f1": 0.6666666666666666,
+          "support": 10
+        }
+      },
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          4
+        ],
+        [
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          8
+        ]
+      ]
+    }
+  },
+  "all_four_uniform": {
+    "members": [
+      "log_stft_cnn",
+      "log_stft_cnn_bilstm",
+      "log_mel_cnn",
+      "log_mel_cnn_bilstm"
+    ],
+    "test": {
+      "subjects": 27,
+      "accuracy": 0.5925925925925926,
+      "balanced_accuracy": 0.5343434343434343,
+      "macro_f1": 0.5180793441663006,
+      "macro_recall": 0.5343434343434343,
+      "per_class": {
+        "AD": {
+          "precision": 0.6363636363636364,
+          "recall": 0.6363636363636364,
+          "f1": 0.6363636363636364,
+          "support": 11
+        },
+        "FTD": {
+          "precision": 0.3333333333333333,
+          "recall": 0.16666666666666666,
+          "f1": 0.2222222222222222,
+          "support": 6
+        },
+        "HC": {
+          "precision": 0.6153846153846154,
+          "recall": 0.8,
+          "f1": 0.6956521739130435,
+          "support": 10
+        }
+      },
+      "confusion_matrix": [
+        [
+          7,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          8
+        ]
+      ]
+    }
+  }
+}

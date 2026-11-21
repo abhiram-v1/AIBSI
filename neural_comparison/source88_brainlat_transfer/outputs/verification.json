@@ -1,0 +1,16 @@
+{
+  "frozen_models_unchanged": true,
+  "original_source_code_hashes_verified": {
+    "C:\\Projects\\AIBSI\\neural_comparison\\source88_brainlat_transfer\\run.py": true,
+    "C:\\Projects\\AIBSI\\neural_comparison\\source88_brainlat_transfer\\transfer_data.py": true,
+    "C:\\Projects\\AIBSI\\neural_comparison\\source88_brainlat_transfer\\transfer_model.py": true,
+    "C:\\Projects\\AIBSI\\tensor_pipeline\\v6_binary\\run.py": true,
+    "C:\\Projects\\AIBSI\\tensor_pipeline\\v3_waveform\\prepare.py": true,
+    "C:\\Projects\\AIBSI\\tensor_pipeline\\v5_connectivity\\prepare_features.py": true
+  },
+  "strict_participants": 76,
+  "all_readable_diagnostic_participants": 86,
+  "missing_signal_files": 14,
+  "all_readable_probability_sums_valid": true,
+  "caption_revision_sha256": "fc9d59dcd949ff489325141db825db454c755766a5b77ec02acee0aa25c473e7"
+}

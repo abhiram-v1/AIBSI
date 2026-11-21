@@ -1,0 +1,62 @@
+{
+  "raw_inference_replay": {
+    "native128": {
+      "raw_cached_probability_difference": 0.0,
+      "feature_difference": 0.0,
+      "uninformative_final_calibration": false,
+      "config": {
+        "site_adjustment": "zscore",
+        "scaler": "standard",
+        "pca": 40,
+        "C": 1.0,
+        "kernel": "rbf",
+        "weight": "balanced",
+        "threshold": 0.0
+      }
+    },
+    "native19": {
+      "raw_cached_probability_difference": 0.0,
+      "feature_difference": 0.0,
+      "uninformative_final_calibration": false,
+      "config": {
+        "site_adjustment": "zscore",
+        "scaler": "robust",
+        "pca": 20,
+        "C": 0.1,
+        "kernel": "linear",
+        "weight": null,
+        "threshold": 0.5
+      }
+    },
+    "legacy19": {
+      "raw_cached_probability_difference": 0.0,
+      "feature_difference": 0.0,
+      "uninformative_final_calibration": false,
+      "config": {
+        "site_adjustment": "none",
+        "scaler": "standard",
+        "pca": 20,
+        "C": 1.0,
+        "kernel": "linear",
+        "weight": "balanced",
+        "threshold": 0.5
+      }
+    },
+    "aligned19": {
+      "raw_cached_probability_difference": 0.0,
+      "feature_difference": 0.0,
+      "uninformative_final_calibration": false,
+      "config": {
+        "site_adjustment": "none",
+        "scaler": "standard",
+        "pca": 10,
+        "C": 0.01,
+        "kernel": "linear",
+        "weight": "balanced",
+        "threshold": 0.0
+      }
+    }
+  },
+  "original40_result_hashes_unchanged": true,
+  "completed_arm_fold_evaluations": 60
+}

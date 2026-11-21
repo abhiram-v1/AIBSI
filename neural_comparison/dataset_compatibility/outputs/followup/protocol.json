@@ -1,0 +1,8 @@
+{
+  "status": "exploratory follow-up prompted by amplitude separation observed in the main audit",
+  "native_audit": "fixed60s native montage segment per record; no interpolation; metadata versions are provenance clues, not causal proof",
+  "probe": "single log10 matched median-channel RMS feature, same nested SVM grid and thresholds as main audit",
+  "cv": "3repeats5outer3inner, stratify site x original diagnosis; separate OpenNeuro,BrainLat and pooled runs",
+  "code_sha256": "b3c40f96efa45d1d9463525be187a8af40e0993df56215f766a5285bf0dafd61",
+  "compat_model_sha256": "61a1204b954ad9b8a9a71029c6e40f2c7c3d398017e15405cb7e55724e265321"
+}

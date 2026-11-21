@@ -1,0 +1,238 @@
+{
+  "task": "AD+FTD (positive) versus CN (negative)",
+  "participants": {
+    "AD": 36,
+    "FTD": 23,
+    "CN": 29
+  },
+  "inputs_sha256": {
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\index.npz": "6692e7c987c5bdadb5132c9db5a70fc982c7cae45449ae94b8d2b5005cee9c83",
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\spectral_controls.npy": "6029e865dd53b80e2f98a9f8b096bccc64060ad8ad457c2b6a1ae30298425e73",
+    "tensor_pipeline\\outputs\\v5_connectivity\\bags_1.npz": "234419062fa7c5cbd132c0e702321f92744b560a90e7a735d8595b6ee5a5ef00",
+    "tensor_pipeline\\v6_binary\\run.py": "be034445338ff2858a9cdefbf767bc04c2f117aadc8e93610d2998e672a8e385"
+  },
+  "outer": "3 repeats x 5 stratified participant folds, seed 9066",
+  "inner": "3 stratified participant folds, seed 90660 + outer split",
+  "selection": "Maximize inner pooled macro F1; tie-break by dementia recall, then balanced accuracy, then candidate order.",
+  "threshold": "Default classifier predict threshold; no outer-test threshold tuning.",
+  "features": "Previously computed label-blind participant summaries; ANOVA selection and scaling fit inside training folds.",
+  "candidates": [
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "spectral",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 16,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 32,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "rbf_svm",
+      "C": 10.0
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "logistic",
+      "C": 0.1
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "logistic",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 1.0
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "rbf_svm",
+      "C": 10.0
+    }
+  ],
+  "interpretation": "Internal nested CV on previously explored participants, not independent external validation."
+}

@@ -1,0 +1,93 @@
+{
+  "source_participants": 88,
+  "target_headers": 100,
+  "target_scored": 86,
+  "models": {
+    "original_procedure": {
+      "accuracy": 0.5813953488372093,
+      "balanced_accuracy": 0.5775462962962963,
+      "macro_f1": 0.5700000000000001,
+      "dementia_f1": 0.64,
+      "dementia_recall": 0.5925925925925926,
+      "dementia_precision": 0.6956521739130435,
+      "cn_specificity": 0.5625,
+      "confusion_tn_fp_fn_tp": [
+        18,
+        14,
+        22,
+        32
+      ],
+      "source_config": {
+        "features": "spectral",
+        "k": 32,
+        "model": "logistic",
+        "C": 1.0
+      }
+    },
+    "svm_only": {
+      "accuracy": 0.627906976744186,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.38571428571428573,
+      "dementia_f1": 0.7714285714285715,
+      "dementia_recall": 1.0,
+      "dementia_precision": 0.627906976744186,
+      "cn_specificity": 0.0,
+      "confusion_tn_fp_fn_tp": [
+        0,
+        32,
+        0,
+        54
+      ],
+      "source_config": {
+        "features": "connectivity",
+        "k": 128,
+        "model": "rbf_svm",
+        "C": 10.0
+      }
+    },
+    "spectral_svm_control": {
+      "accuracy": 0.4883720930232558,
+      "balanced_accuracy": 0.39525462962962965,
+      "macro_f1": 0.347135955831608,
+      "dementia_f1": 0.6507936507936508,
+      "dementia_recall": 0.7592592592592593,
+      "dementia_precision": 0.5694444444444444,
+      "cn_specificity": 0.03125,
+      "confusion_tn_fp_fn_tp": [
+        1,
+        31,
+        13,
+        41
+      ],
+      "source_config": {
+        "features": "spectral",
+        "k": 64,
+        "model": "rbf_svm",
+        "C": 10.0
+      }
+    }
+  },
+  "readable_class_counts": {
+    "AD": 35,
+    "FTD": 19,
+    "HC": 32
+  },
+  "quality_flagged": 10,
+  "missing_signal": 14,
+  "note": "Coverage diagnostic only: source-policy76 plus10 low-amplitude controls using pre-existing0.1uV minimum; frozen models, no target fitting or selection. Strict-QC results remain the primary endpoint.",
+  "always_dementia": {
+    "accuracy": 0.627906976744186,
+    "balanced_accuracy": 0.5,
+    "macro_f1": 0.38571428571428573,
+    "dementia_f1": 0.7714285714285715,
+    "dementia_recall": 1.0,
+    "dementia_precision": 0.627906976744186,
+    "cn_specificity": 0.0,
+    "confusion_tn_fp_fn_tp": [
+      0,
+      32,
+      0,
+      54
+    ]
+  }
+}

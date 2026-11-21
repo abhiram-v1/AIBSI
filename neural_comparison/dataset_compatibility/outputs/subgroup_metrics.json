@@ -1,0 +1,261 @@
+{
+  "raw": {
+    "OpenNeuro": {
+      "macro_f1": 0.6386764523340688,
+      "balanced_accuracy": 0.6369569452561855,
+      "accuracy": 0.6856060606060606,
+      "healthy_recall": 0.4942528735632184,
+      "dementia_recall": 0.7796610169491526
+    },
+    "BrainLat": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "healthy_recall": 1.0,
+      "dementia_recall": 1.0
+    },
+    "AHEPA": {
+      "macro_f1": 0.6386764523340688,
+      "balanced_accuracy": 0.6369569452561855,
+      "accuracy": 0.6856060606060606,
+      "healthy_recall": 0.4942528735632184,
+      "dementia_recall": 0.7796610169491526
+    },
+    "AR": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "healthy_recall": 1.0,
+      "dementia_recall": 1.0
+    },
+    "CL": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "healthy_recall": 1.0,
+      "dementia_recall": 1.0
+    }
+  },
+  "common": {
+    "OpenNeuro": {
+      "macro_f1": 0.6264785611140268,
+      "balanced_accuracy": 0.6221507890122736,
+      "accuracy": 0.6931818181818182,
+      "healthy_recall": 0.41379310344827586,
+      "dementia_recall": 0.8305084745762712
+    },
+    "BrainLat": {
+      "macro_f1": 0.95524229420964,
+      "balanced_accuracy": 0.9639274691358025,
+      "accuracy": 0.9573643410852714,
+      "healthy_recall": 0.9895833333333334,
+      "dementia_recall": 0.9382716049382717
+    },
+    "AHEPA": {
+      "macro_f1": 0.6264785611140268,
+      "balanced_accuracy": 0.6221507890122736,
+      "accuracy": 0.6931818181818182,
+      "healthy_recall": 0.41379310344827586,
+      "dementia_recall": 0.8305084745762712
+    },
+    "AR": {
+      "macro_f1": 0.9572307737904658,
+      "balanced_accuracy": 0.9655172413793104,
+      "accuracy": 0.9583333333333334,
+      "healthy_recall": 1.0,
+      "dementia_recall": 0.9310344827586207
+    },
+    "CL": {
+      "macro_f1": 0.9520894141132237,
+      "balanced_accuracy": 0.9605128205128205,
+      "accuracy": 0.956140350877193,
+      "healthy_recall": 0.9743589743589745,
+      "dementia_recall": 0.9466666666666667
+    }
+  },
+  "gain": {
+    "OpenNeuro": {
+      "macro_f1": 0.7560497891285545,
+      "balanced_accuracy": 0.754139879212936,
+      "accuracy": 0.7878787878787877,
+      "healthy_recall": 0.6551724137931035,
+      "dementia_recall": 0.8531073446327683
+    },
+    "BrainLat": {
+      "macro_f1": 0.6232212084787601,
+      "balanced_accuracy": 0.6248070987654321,
+      "accuracy": 0.6434108527131782,
+      "healthy_recall": 0.5520833333333334,
+      "dementia_recall": 0.6975308641975309
+    },
+    "AHEPA": {
+      "macro_f1": 0.7560497891285545,
+      "balanced_accuracy": 0.754139879212936,
+      "accuracy": 0.7878787878787877,
+      "healthy_recall": 0.6551724137931035,
+      "dementia_recall": 0.8531073446327683
+    },
+    "AR": {
+      "macro_f1": 0.6364052601905434,
+      "balanced_accuracy": 0.6403508771929824,
+      "accuracy": 0.6458333333333334,
+      "healthy_recall": 0.6140350877192983,
+      "dementia_recall": 0.6666666666666666
+    },
+    "CL": {
+      "macro_f1": 0.5986910148674854,
+      "balanced_accuracy": 0.5974358974358974,
+      "accuracy": 0.6403508771929824,
+      "healthy_recall": 0.4615384615384615,
+      "dementia_recall": 0.7333333333333333
+    }
+  },
+  "relative": {
+    "OpenNeuro": {
+      "macro_f1": 0.7519558204993245,
+      "balanced_accuracy": 0.7573543736606273,
+      "accuracy": 0.7765151515151515,
+      "healthy_recall": 0.7011494252873564,
+      "dementia_recall": 0.8135593220338984
+    },
+    "BrainLat": {
+      "macro_f1": 0.599129251355953,
+      "balanced_accuracy": 0.6086033950617283,
+      "accuracy": 0.6124031007751938,
+      "healthy_recall": 0.59375,
+      "dementia_recall": 0.6234567901234568
+    },
+    "AHEPA": {
+      "macro_f1": 0.7519558204993245,
+      "balanced_accuracy": 0.7573543736606273,
+      "accuracy": 0.7765151515151515,
+      "healthy_recall": 0.7011494252873564,
+      "dementia_recall": 0.8135593220338984
+    },
+    "AR": {
+      "macro_f1": 0.5923076865474375,
+      "balanced_accuracy": 0.603145795523291,
+      "accuracy": 0.5972222222222222,
+      "healthy_recall": 0.6315789473684211,
+      "dementia_recall": 0.5747126436781609
+    },
+    "CL": {
+      "macro_f1": 0.600466975726129,
+      "balanced_accuracy": 0.6092307692307691,
+      "accuracy": 0.631578947368421,
+      "healthy_recall": 0.5384615384615384,
+      "dementia_recall": 0.68
+    }
+  },
+  "site_z": {
+    "OpenNeuro": {
+      "macro_f1": 0.7081386140209266,
+      "balanced_accuracy": 0.7055328268069355,
+      "accuracy": 0.7462121212121212,
+      "healthy_recall": 0.5862068965517241,
+      "dementia_recall": 0.824858757062147
+    },
+    "BrainLat": {
+      "macro_f1": 0.5692734721892937,
+      "balanced_accuracy": 0.5711805555555556,
+      "accuracy": 0.624031007751938,
+      "healthy_recall": 0.3645833333333333,
+      "dementia_recall": 0.7777777777777778
+    },
+    "AHEPA": {
+      "macro_f1": 0.7081386140209266,
+      "balanced_accuracy": 0.7055328268069355,
+      "accuracy": 0.7462121212121212,
+      "healthy_recall": 0.5862068965517241,
+      "dementia_recall": 0.824858757062147
+    },
+    "AR": {
+      "macro_f1": 0.5605271573269083,
+      "balanced_accuracy": 0.5662431941923775,
+      "accuracy": 0.611111111111111,
+      "healthy_recall": 0.3508771929824561,
+      "dementia_recall": 0.7816091954022988
+    },
+    "CL": {
+      "macro_f1": 0.579915037758175,
+      "balanced_accuracy": 0.5789743589743589,
+      "accuracy": 0.6403508771929824,
+      "healthy_recall": 0.38461538461538464,
+      "dementia_recall": 0.7733333333333334
+    }
+  },
+  "site_coral": {
+    "OpenNeuro": {
+      "macro_f1": 0.7475290228583599,
+      "balanced_accuracy": 0.7516072472238458,
+      "accuracy": 0.7727272727272728,
+      "healthy_recall": 0.689655172413793,
+      "dementia_recall": 0.8135593220338984
+    },
+    "BrainLat": {
+      "macro_f1": 0.5857690202517789,
+      "balanced_accuracy": 0.5848765432098765,
+      "accuracy": 0.627906976744186,
+      "healthy_recall": 0.4166666666666667,
+      "dementia_recall": 0.7530864197530863
+    },
+    "AHEPA": {
+      "macro_f1": 0.7475290228583599,
+      "balanced_accuracy": 0.7516072472238458,
+      "accuracy": 0.7727272727272728,
+      "healthy_recall": 0.689655172413793,
+      "dementia_recall": 0.8135593220338984
+    },
+    "AR": {
+      "macro_f1": 0.5835065136476426,
+      "balanced_accuracy": 0.5865093768905021,
+      "accuracy": 0.6319444444444445,
+      "healthy_recall": 0.3684210526315789,
+      "dementia_recall": 0.8045977011494253
+    },
+    "CL": {
+      "macro_f1": 0.5881115779645192,
+      "balanced_accuracy": 0.5902564102564103,
+      "accuracy": 0.6228070175438597,
+      "healthy_recall": 0.4871794871794872,
+      "dementia_recall": 0.6933333333333334
+    }
+  },
+  "selected": {
+    "OpenNeuro": {
+      "macro_f1": 0.6309090481945253,
+      "balanced_accuracy": 0.6282875511396844,
+      "accuracy": 0.6818181818181818,
+      "healthy_recall": 0.471264367816092,
+      "dementia_recall": 0.7853107344632768
+    },
+    "BrainLat": {
+      "macro_f1": 0.9794396359728753,
+      "balanced_accuracy": 0.9824459876543209,
+      "accuracy": 0.9806201550387597,
+      "healthy_recall": 0.9895833333333334,
+      "dementia_recall": 0.9753086419753085
+    },
+    "AHEPA": {
+      "macro_f1": 0.6309090481945253,
+      "balanced_accuracy": 0.6282875511396844,
+      "accuracy": 0.6818181818181818,
+      "healthy_recall": 0.471264367816092,
+      "dementia_recall": 0.7853107344632768
+    },
+    "AR": {
+      "macro_f1": 0.9856050382366172,
+      "balanced_accuracy": 0.9885057471264368,
+      "accuracy": 0.986111111111111,
+      "healthy_recall": 1.0,
+      "dementia_recall": 0.9770114942528737
+    },
+    "CL": {
+      "macro_f1": 0.9709386204624301,
+      "balanced_accuracy": 0.9738461538461539,
+      "accuracy": 0.9736842105263158,
+      "healthy_recall": 0.9743589743589745,
+      "dementia_recall": 0.9733333333333333
+    }
+  }
+}

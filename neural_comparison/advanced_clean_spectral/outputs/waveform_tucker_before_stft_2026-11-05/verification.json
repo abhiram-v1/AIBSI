@@ -1,0 +1,43 @@
+{
+  "unit_checks": {
+    "fast_matches_explicit_hankel_diagonal_average_max_abs": 4.440892098500626e-16,
+    "edge_counts_match_explicit": true,
+    "edge_counts_first_last": [
+      1.0,
+      1.0,
+      32.0,
+      32.0
+    ],
+    "constant_signal_identity_projectors_max_abs": 1.7763568394002505e-15,
+    "output_samples_unchanged": true,
+    "full_rank_eigenbasis_identity_max_abs_volts": 6.098637220230962e-20,
+    "full_rank_eigenbasis_identity_max_rel": 1.0028912930859593e-15,
+    "full_rank_float32_bitwise_equal_fraction": 1.0,
+    "orthonormal_channel_basis_error": 1.9984014443252818e-15,
+    "orthonormal_delay_basis_error": 1.3322676295501878e-15
+  },
+  "eegpt_retrained": false,
+  "test_not_used_for_selection": true,
+  "participant_ids_labels_and_eegpt_order_aligned": true,
+  "split_matches_saved_split": true,
+  "reload_P2_max_abs_probability_difference": 5.226681171199843e-09,
+  "reload_P2_prediction_identical": true,
+  "reload_P2_metrics_identical": true,
+  "reload_P1_max_abs_probability_difference": 5.573773442790753e-09,
+  "reload_P1_prediction_identical": true,
+  "reload_P1_metrics_identical": true,
+  "all_validation_candidates_saved": 126000,
+  "expected_validation_candidates": 126000,
+  "rebuilt_raw_vs_stored_participant_feature_max_abs_diff": 1.4483928680419922e-05,
+  "full_rank_identity_vs_stored_participant_feature_max_abs_diff": 1.4483928680419922e-05,
+  "probabilities_finite_and_normalised": true,
+  "inner_cv_refit_per_fold": "Tucker factors, site stats, scaler, PCA and SVM refitted in each of 5 folds",
+  "source_hashes_unchanged_during_run_including_script": false,
+  "source_hashes_changed_files": [
+    "C:\\Projects\\AIBSI\\neural_comparison\\advanced_clean_spectral\\experiment_waveform_tucker_before_stft.py"
+  ],
+  "source_hashes_unchanged_excluding_this_script": true,
+  "note_script_hash": "The experiment script was edited while the run was in progress, only to add the plotting/report stage and a stage switch; the experiment code path was not changed after launch. All data, cache, EEGPT and baseline source files are unchanged.",
+  "raw_recording_files_hashed": 206,
+  "raw_recording_hashes_unchanged": true
+}

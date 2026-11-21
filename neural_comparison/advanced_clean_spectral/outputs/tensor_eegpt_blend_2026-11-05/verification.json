@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "both saved models reproduce saved probability vectors after reload",
+    "all blended probability vectors sum to one",
+    "recomputed confusion matrices match saved metrics",
+    "all 288 SVM candidates and both 420-combination blend searches retained",
+    "all inner fold partitions exclude the validation and test participants",
+    "blend selections maximize validation F1"
+  ],
+  "verified_outputs": [
+    "C:\\Projects\\AIBSI\\neural_comparison\\advanced_clean_spectral\\outputs\\tensor_eegpt_blend_2026-11-05",
+    "C:\\Projects\\AIBSI\\neural_comparison\\advanced_clean_spectral\\outputs\\tensor_eegpt_blend_2026-11-05\\historical_tt_control"
+  ]
+}

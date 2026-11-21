@@ -1,0 +1,352 @@
+{
+  "participants": 174,
+  "splits": {
+    "train": 121,
+    "val": 26,
+    "test": 27
+  },
+  "representations": {
+    "log_stft": {
+      "selected_electrodes": [
+        "C3",
+        "P7",
+        "P8",
+        "Fp1",
+        "P4",
+        "Fz",
+        "O1",
+        "T8"
+      ],
+      "selected_count": 8,
+      "selection_val_macro_f1": 0.6495126705653022,
+      "selection_candidates": [
+        {
+          "electrodes": 6,
+          "selected": [
+            "C3",
+            "P7",
+            "P8",
+            "Fp1",
+            "P4",
+            "Fz"
+          ],
+          "val_macro_f1": 0.6111111111111112,
+          "val_accuracy": 0.6153846153846154
+        },
+        {
+          "electrodes": 8,
+          "selected": [
+            "C3",
+            "P7",
+            "P8",
+            "Fp1",
+            "P4",
+            "Fz",
+            "O1",
+            "T8"
+          ],
+          "val_macro_f1": 0.6495126705653022,
+          "val_accuracy": 0.6538461538461539
+        },
+        {
+          "electrodes": 10,
+          "selected": [
+            "C3",
+            "P7",
+            "P8",
+            "Fp1",
+            "P4",
+            "Fz",
+            "O1",
+            "T8",
+            "T7",
+            "F4"
+          ],
+          "val_macro_f1": 0.6050682261208576,
+          "val_accuracy": 0.6153846153846154
+        },
+        {
+          "electrodes": 12,
+          "selected": [
+            "C3",
+            "P7",
+            "P8",
+            "Fp1",
+            "P4",
+            "Fz",
+            "O1",
+            "T8",
+            "T7",
+            "F4",
+            "F3",
+            "C4"
+          ],
+          "val_macro_f1": 0.4735449735449735,
+          "val_accuracy": 0.5
+        },
+        {
+          "electrodes": 15,
+          "selected": [
+            "C3",
+            "P7",
+            "P8",
+            "Fp1",
+            "P4",
+            "Fz",
+            "O1",
+            "T8",
+            "T7",
+            "F4",
+            "F3",
+            "C4",
+            "O2",
+            "P3",
+            "Fp2"
+          ],
+          "val_macro_f1": 0.5065359477124183,
+          "val_accuracy": 0.5
+        },
+        {
+          "electrodes": 19,
+          "selected": [
+            "C3",
+            "P7",
+            "P8",
+            "Fp1",
+            "P4",
+            "Fz",
+            "O1",
+            "T8",
+            "T7",
+            "F4",
+            "F3",
+            "C4",
+            "O2",
+            "P3",
+            "Fp2",
+            "F8",
+            "Pz",
+            "F7",
+            "Cz"
+          ],
+          "val_macro_f1": 0.5862433862433862,
+          "val_accuracy": 0.5769230769230769
+        }
+      ],
+      "test": {
+        "subjects": 27,
+        "accuracy": 0.4074074074074074,
+        "balanced_accuracy": 0.398989898989899,
+        "macro_f1": 0.40196078431372545,
+        "macro_recall": 0.398989898989899,
+        "per_class": {
+          "AD": {
+            "precision": 0.6666666666666666,
+            "recall": 0.36363636363636365,
+            "f1": 0.47058823529411764,
+            "support": 11
+          },
+          "FTD": {
+            "precision": 0.18181818181818182,
+            "recall": 0.3333333333333333,
+            "f1": 0.23529411764705882,
+            "support": 6
+          },
+          "HC": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 10
+          }
+        },
+        "confusion_matrix": [
+          [
+            4,
+            5,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    "log_mel": {
+      "selected_electrodes": [
+        "C4",
+        "P4",
+        "C3",
+        "P8",
+        "Fz",
+        "F4"
+      ],
+      "selected_count": 6,
+      "selection_val_macro_f1": 0.6535947712418301,
+      "selection_candidates": [
+        {
+          "electrodes": 6,
+          "selected": [
+            "C4",
+            "P4",
+            "C3",
+            "P8",
+            "Fz",
+            "F4"
+          ],
+          "val_macro_f1": 0.6535947712418301,
+          "val_accuracy": 0.6538461538461539
+        },
+        {
+          "electrodes": 8,
+          "selected": [
+            "C4",
+            "P4",
+            "C3",
+            "P8",
+            "Fz",
+            "F4",
+            "P3",
+            "T7"
+          ],
+          "val_macro_f1": 0.41984126984126985,
+          "val_accuracy": 0.4230769230769231
+        },
+        {
+          "electrodes": 10,
+          "selected": [
+            "C4",
+            "P4",
+            "C3",
+            "P8",
+            "Fz",
+            "F4",
+            "P3",
+            "T7",
+            "P7",
+            "Pz"
+          ],
+          "val_macro_f1": 0.48120300751879697,
+          "val_accuracy": 0.5
+        },
+        {
+          "electrodes": 12,
+          "selected": [
+            "C4",
+            "P4",
+            "C3",
+            "P8",
+            "Fz",
+            "F4",
+            "P3",
+            "T7",
+            "P7",
+            "Pz",
+            "Fp1",
+            "F3"
+          ],
+          "val_macro_f1": 0.5333333333333333,
+          "val_accuracy": 0.5384615384615384
+        },
+        {
+          "electrodes": 15,
+          "selected": [
+            "C4",
+            "P4",
+            "C3",
+            "P8",
+            "Fz",
+            "F4",
+            "P3",
+            "T7",
+            "P7",
+            "Pz",
+            "Fp1",
+            "F3",
+            "T8",
+            "O2",
+            "O1"
+          ],
+          "val_macro_f1": 0.5176470588235295,
+          "val_accuracy": 0.5
+        },
+        {
+          "electrodes": 19,
+          "selected": [
+            "C4",
+            "P4",
+            "C3",
+            "P8",
+            "Fz",
+            "F4",
+            "P3",
+            "T7",
+            "P7",
+            "Pz",
+            "Fp1",
+            "F3",
+            "T8",
+            "O2",
+            "O1",
+            "Cz",
+            "F7",
+            "F8",
+            "Fp2"
+          ],
+          "val_macro_f1": 0.4492063492063492,
+          "val_accuracy": 0.4230769230769231
+        }
+      ],
+      "test": {
+        "subjects": 27,
+        "accuracy": 0.48148148148148145,
+        "balanced_accuracy": 0.46262626262626255,
+        "macro_f1": 0.46115288220551376,
+        "macro_recall": 0.46262626262626255,
+        "per_class": {
+          "AD": {
+            "precision": 0.625,
+            "recall": 0.45454545454545453,
+            "f1": 0.5263157894736842,
+            "support": 11
+          },
+          "FTD": {
+            "precision": 0.25,
+            "recall": 0.3333333333333333,
+            "f1": 0.2857142857142857,
+            "support": 6
+          },
+          "HC": {
+            "precision": 0.5454545454545454,
+            "recall": 0.6,
+            "f1": 0.5714285714285714,
+            "support": 10
+          }
+        },
+        "confusion_matrix": [
+          [
+            5,
+            4,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            2,
+            6
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "mean_accuracy": 0.75,
+  "mean_balanced_accuracy": 0.7200467562828754,
+  "mean_macro_f1": 0.718090451229247,
+  "mean_dementia_f1": 0.8125511624353113,
+  "mean_dementia_recall": 0.8079096045197741,
+  "mean_dementia_precision": 0.8180565661465491,
+  "mean_cn_specificity": 0.632183908045977,
+  "sd_accuracy": 0.011363636363636354,
+  "sd_balanced_accuracy": 0.026496122250261652,
+  "sd_macro_f1": 0.020605709084264377,
+  "sd_dementia_f1": 0.004197131570902124,
+  "sd_dementia_recall": 0.019571195565750037,
+  "sd_dementia_precision": 0.02512134144124058,
+  "sd_cn_specificity": 0.07178158618848736,
+  "repeat_metrics": [
+    {
+      "accuracy": 0.7386363636363636,
+      "balanced_accuracy": 0.6911163062536528,
+      "macro_f1": 0.6958677685950413,
+      "dementia_f1": 0.8099173553719008,
+      "dementia_recall": 0.8305084745762712,
+      "dementia_precision": 0.7903225806451613,
+      "cn_specificity": 0.5517241379310345,
+      "confusion_tn_fp_fn_tp": [
+        16,
+        13,
+        10,
+        49
+      ]
+    },
+    {
+      "accuracy": 0.7613636363636364,
+      "balanced_accuracy": 0.7431326709526593,
+      "macro_f1": 0.7365645046329294,
+      "dementia_f1": 0.8173913043478261,
+      "dementia_recall": 0.7966101694915254,
+      "dementia_precision": 0.8392857142857143,
+      "cn_specificity": 0.6896551724137931,
+      "confusion_tn_fp_fn_tp": [
+        20,
+        9,
+        12,
+        47
+      ]
+    },
+    {
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.7258912916423144,
+      "macro_f1": 0.7218390804597701,
+      "dementia_f1": 0.8103448275862069,
+      "dementia_recall": 0.7966101694915254,
+      "dementia_precision": 0.8245614035087719,
+      "cn_specificity": 0.6551724137931034,
+      "confusion_tn_fp_fn_tp": [
+        19,
+        10,
+        12,
+        47
+      ]
+    }
+  ],
+  "selected_config_counts": {
+    "{\"C\": 1.0, \"features\": \"connectivity\", \"k\": 32, \"model\": \"rbf_svm\"}": 1,
+    "{\"C\": 1.0, \"features\": \"connectivity\", \"k\": 32, \"model\": \"logistic\"}": 1,
+    "{\"C\": 0.1, \"features\": \"power\", \"k\": 64, \"model\": \"logistic\"}": 1,
+    "{\"C\": 1.0, \"features\": \"connectivity\", \"k\": 128, \"model\": \"logistic\"}": 1,
+    "{\"C\": 1.0, \"features\": \"power\", \"k\": 64, \"model\": \"rbf_svm\"}": 1,
+    "{\"C\": 1.0, \"features\": \"power\", \"k\": 64, \"model\": \"logistic\"}": 1,
+    "{\"C\": 10.0, \"features\": \"connectivity\", \"k\": 64, \"model\": \"rbf_svm\"}": 1,
+    "{\"C\": 1.0, \"features\": \"power\", \"k\": 32, \"model\": \"logistic\"}": 1,
+    "{\"C\": 10.0, \"features\": \"spectral\", \"k\": 64, \"model\": \"rbf_svm\"}": 2,
+    "{\"C\": 10.0, \"features\": \"spectral\", \"k\": 16, \"model\": \"rbf_svm\"}": 1,
+    "{\"C\": 1.0, \"features\": \"connectivity\", \"k\": 64, \"model\": \"logistic\"}": 1,
+    "{\"C\": 1.0, \"features\": \"power\", \"k\": 16, \"model\": \"rbf_svm\"}": 1,
+    "{\"C\": 0.1, \"features\": \"connectivity\", \"k\": 128, \"model\": \"logistic\"}": 1,
+    "{\"C\": 10.0, \"features\": \"connectivity\", \"k\": 128, \"model\": \"rbf_svm\"}": 1
+  },
+  "seconds": 7.48281549999956
+}

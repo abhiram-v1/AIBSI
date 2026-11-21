@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "participants": 88,
+  "outer_folds_per_task": 15,
+  "tasks": 2,
+  "frozen_shared_svm_dependency_sha256": "61a1204b954ad9b8a9a71029c6e40f2c7c3d398017e15405cb7e55724e265321",
+  "reproduced_heldout_models": [
+    "binary:repeat0/fold0/summary",
+    "three_class:repeat0/fold0/absolute_spectrum"
+  ],
+  "checks": [
+    "feature dimensions,units and relative-power normalization",
+    "unique subject IDs and OpenNeuro-only cohort",
+    "feature/protocol/snapshot hashes",
+    "same RMS measurements and binary baseline as previous audit",
+    "complete disjoint participant CV partitions",
+    "exact saved metric reproduction",
+    "feature-name/index alignment",
+    "independent refit of one selected held-out model per task",
+    "valid descriptive p/q values and severity sample size"
+  ]
+}

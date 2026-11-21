@@ -1,0 +1,318 @@
+{
+  "task": "AD+FTD positive versus CN negative; 88 people",
+  "design": "Exploratory tree comparison after V6-V8 outcomes were inspected.",
+  "outer": "Same V6 participant folds, 3x5 stratified, seed 9066.",
+  "inner": "3 stratified participant folds, seed 90900 + outer index.",
+  "selection": "Inner pooled macro F1, dementia recall, balanced accuracy; default threshold.",
+  "weights": "Current training fold class-balanced observation weights.",
+  "inputs_sha256": {
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\index.npz": "6692e7c987c5bdadb5132c9db5a70fc982c7cae45449ae94b8d2b5005cee9c83",
+    "tensor_pipeline\\outputs\\v3_waveform_full_cohort\\spectral_controls.npy": "6029e865dd53b80e2f98a9f8b096bccc64060ad8ad457c2b6a1ae30298425e73",
+    "tensor_pipeline\\outputs\\v5_connectivity\\bags_1.npz": "234419062fa7c5cbd132c0e702321f92744b560a90e7a735d8595b6ee5a5ef00",
+    "tensor_pipeline\\v8_binary_compact\\run.py": "f4572c5be6b7987d35e9fd8feb7b72473f3b61be64b6c52541298b189b4f1eeb",
+    "tensor_pipeline\\v9_binary_trees\\run.py": "35aa97e26dfcaf1dfa1f44872ac1d4ec6648c30eb41f7f730fc553a9d200444c"
+  },
+  "candidates": [
+    {
+      "features": "raw_spectral",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "raw_spectral",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "raw_spectral",
+      "k": 32,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "raw_spectral",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "raw_spectral",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "raw_spectral",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "raw_spectral",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "raw_spectral",
+      "k": 64,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "raw_spectral",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "raw_spectral",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "power",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "power",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "connectivity",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "connectivity",
+      "k": 128,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "spectral_power",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "spectral_power",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "graph_summary",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "graph_summary",
+      "k": 32,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "graph_summary",
+      "k": 32,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "graph_summary",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "graph_summary",
+      "k": 32,
+      "model": "xgboost",
+      "complexity": 2
+    },
+    {
+      "features": "graph_summary",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 2
+    },
+    {
+      "features": "graph_summary",
+      "k": 64,
+      "model": "extra_trees",
+      "complexity": 4
+    },
+    {
+      "features": "graph_summary",
+      "k": 64,
+      "model": "random_forest",
+      "complexity": 3
+    },
+    {
+      "features": "graph_summary",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 1
+    },
+    {
+      "features": "graph_summary",
+      "k": 64,
+      "model": "xgboost",
+      "complexity": 2
+    }
+  ],
+  "limits": "Same adaptively explored 88 subjects; no external confirmation."
+}

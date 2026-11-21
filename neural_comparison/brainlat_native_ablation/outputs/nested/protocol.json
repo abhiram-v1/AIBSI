@@ -1,0 +1,34 @@
+{
+  "participants": 86,
+  "class_counts": [
+    32,
+    54
+  ],
+  "repeats": 3,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "arms": [
+    "native128",
+    "native19",
+    "legacy19",
+    "aligned19"
+  ],
+  "seed": 20261106,
+  "selection": "pooled inner macro F1, balanced accuracy tie-break; threshold selected only using inner OOF",
+  "hashes": {
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\outputs\\prepared\\plan.json": "35a493725a176dea9d5fca4f3402fe2b7c4309b9ac6caeaef778bea3559bafdb",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\outputs\\prepared\\features.npz": "7984bb3e854c7988efca24636283ac15e7cc93c1bac0ad108df5051ac93cbf3a",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\outputs\\prepared\\operators.npz": "30d2c62561b2ec64fb3cd86efb365ce625ff9b0a609c5f680b951dc76ede53ab",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\brainlat_data.py": "df4aa807d11539818d9631db94c6e87bd2bf13b4d1457ab31a1a2c7b076761f4",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\brainlat_model.py": "923494ab8109646458df088a73f283a3f6b156853a3a9544ffcf98ba08de1403",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\report.py": "c5667aeb05c39b9a7821ce8e1ab056665bd2264ad9fe28c3201a7459faf6025b",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\run.py": "c5b1f6df9b3e357979285f7edb6fa88eedc5e84d2c0475389bf79d7e9c61abab",
+    "C:\\Projects\\AIBSI\\neural_comparison\\brainlat_native_ablation\\test_pipeline.py": "d6fb9ae8c9bf194496618f88d4f83c37cf18648ebbe2919e17924b10b33e5813"
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "sklearn": "1.7.2",
+    "mne": "1.12.1"
+  },
+  "caveat": "Previously explored cohort; native19 locations only approximate the interpolated19 locations. All arms share native128 reference and window-gain normalization."
+}

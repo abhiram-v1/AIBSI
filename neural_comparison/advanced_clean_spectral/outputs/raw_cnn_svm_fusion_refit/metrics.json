@@ -1,0 +1,152 @@
+{
+  "protocol": {
+    "development_participants": 147,
+    "test_participants": 27,
+    "window_epochs": 4,
+    "mil_epochs": 14,
+    "fusion_configuration": {
+      "svm_temperature": 0.25,
+      "window_temperature": 1.5,
+      "mil_temperature": 0.5,
+      "svm_weight": 0.30000000000000004,
+      "window_weight": 0.6000000000000001,
+      "mil_weight": 0.09999999999999987,
+      "accuracy": 0.8076923076923077,
+      "balanced_accuracy": 0.7761904761904761,
+      "macro_f1": 0.7760210803689064
+    },
+    "test_used_for_selection": false
+  },
+  "refit_window_cnn": {
+    "subjects": 27,
+    "accuracy": 0.7037037037037037,
+    "balanced_accuracy": 0.7484848484848484,
+    "macro_f1": 0.7098039215686275,
+    "macro_recall": 0.7484848484848484,
+    "per_class": {
+      "AD": {
+        "precision": 1.0,
+        "recall": 0.5454545454545454,
+        "f1": 0.7058823529411765,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.42857142857142855,
+        "recall": 1.0,
+        "f1": 0.6,
+        "support": 6
+      },
+      "HC": {
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        6,
+        5,
+        0
+      ],
+      [
+        0,
+        6,
+        0
+      ],
+      [
+        0,
+        3,
+        7
+      ]
+    ]
+  },
+  "refit_mil_cnn": {
+    "subjects": 27,
+    "accuracy": 0.7037037037037037,
+    "balanced_accuracy": 0.6696969696969698,
+    "macro_f1": 0.6705128205128205,
+    "macro_recall": 0.6696969696969698,
+    "per_class": {
+      "AD": {
+        "precision": 0.7142857142857143,
+        "recall": 0.9090909090909091,
+        "f1": 0.8,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.42857142857142855,
+        "recall": 0.5,
+        "f1": 0.46153846153846156,
+        "support": 6
+      },
+      "HC": {
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.75,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        10,
+        1,
+        0
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        1,
+        3,
+        6
+      ]
+    ]
+  },
+  "refit_fusion": {
+    "subjects": 27,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6646464646464647,
+    "macro_f1": 0.6554961378490791,
+    "macro_recall": 0.6646464646464647,
+    "per_class": {
+      "AD": {
+        "precision": 0.7272727272727273,
+        "recall": 0.7272727272727273,
+        "f1": 0.7272727272727273,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.4444444444444444,
+        "recall": 0.6666666666666666,
+        "f1": 0.5333333333333333,
+        "support": 6
+      },
+      "HC": {
+        "precision": 0.8571428571428571,
+        "recall": 0.6,
+        "f1": 0.7058823529411765,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        8,
+        2,
+        1
+      ],
+      [
+        2,
+        4,
+        0
+      ],
+      [
+        1,
+        3,
+        6
+      ]
+    ]
+  }
+}

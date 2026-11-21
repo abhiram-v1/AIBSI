@@ -1,0 +1,500 @@
+{
+  "method": "training-only shared Tucker/HOSVD on window x electrode x mel x STFT-frame data before participant pooling",
+  "input_window_shape": [
+    19,
+    24,
+    13
+  ],
+  "participant_split": {
+    "train": 121,
+    "val": 26,
+    "test": 27
+  },
+  "selection_endpoint": "validation participant macro F1; balanced accuracy and accuracy are tie breakers",
+  "candidate_count": 288,
+  "selected": {
+    "ranks": [
+      8,
+      16,
+      5
+    ],
+    "summary": "mean_std",
+    "normalization": "global",
+    "pca": 20,
+    "C": 10.0,
+    "kernel": "rbf",
+    "feature_count": 1280,
+    "accuracy": 0.7307692307692307,
+    "balanced_accuracy": 0.7021164021164021,
+    "macro_f1": 0.6986531986531986
+  },
+  "train_basis_mode_energy_retained_at_maximum_ranks": {
+    "channel": 0.77548144515381,
+    "frequency": 0.9369992177595483,
+    "time": 0.8610860060172536
+  },
+  "final_basis_mode_energy_retained": {
+    "channel": 0.7778763811365366,
+    "frequency": 0.9380361935659642,
+    "time": 0.8630844878853312
+  },
+  "test": {
+    "subjects": 27,
+    "accuracy": 0.5925925925925926,
+    "balanced_accuracy": 0.5818181818181818,
+    "macro_f1": 0.5756056808688387,
+    "macro_recall": 0.5818181818181818,
+    "per_class": {
+      "AD": {
+        "precision": 0.75,
+        "recall": 0.5454545454545454,
+        "f1": 0.631578947368421,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.375,
+        "recall": 0.5,
+        "f1": 0.42857142857142855,
+        "support": 6
+      },
+      "HC": {
+        "precision": 0.6363636363636364,
+        "recall": 0.7,
+        "f1": 0.6666666666666666,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        6,
+        2,
+        3
+      ],
+      [
+        2,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        7
+      ]
+    ]
+  },
+  "test_subjects": [
+    60,
+    125,
+    84,
+    168,
+    80,
+    102,
+    147,
+    22,
+    49,
+    135,
+    1,
+    73,
+    123,
+    36,
+    108,
+    150,
+    25,
+    19,
+    57,
+    14,
+    152,
+    104,
+    6,
+    100,
+    95,
+    154,
+    38
+  ],
+  "test_predictions": [
+    2,
+    0,
+    0,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    0,
+    1,
+    1,
+    1,
+    0,
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    2
+  ],
+  "test_truth": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    0,
+    2,
+    0,
+    2,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2
+  ],
+  "top_candidates": [
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 20,
+      "C": 10.0,
+      "kernel": "rbf",
+      "feature_count": 1280,
+      "accuracy": 0.7307692307692307,
+      "balanced_accuracy": 0.7021164021164021,
+      "macro_f1": 0.6986531986531986
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 40,
+      "C": 10.0,
+      "kernel": "rbf",
+      "feature_count": 576,
+      "accuracy": 0.6923076923076923,
+      "balanced_accuracy": 0.6761904761904761,
+      "macro_f1": 0.6616161616161617
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "site_center",
+      "pca": 20,
+      "C": 10.0,
+      "kernel": "rbf",
+      "feature_count": 1280,
+      "accuracy": 0.6538461538461539,
+      "balanced_accuracy": 0.6354497354497354,
+      "macro_f1": 0.6373737373737373
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "site_center",
+      "pca": 40,
+      "C": 1.0,
+      "kernel": "linear",
+      "feature_count": 1280,
+      "accuracy": 0.6538461538461539,
+      "balanced_accuracy": 0.6386243386243386,
+      "macro_f1": 0.6329059829059829
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "site_center",
+      "pca": 40,
+      "C": 10.0,
+      "kernel": "linear",
+      "feature_count": 1280,
+      "accuracy": 0.6538461538461539,
+      "balanced_accuracy": 0.6386243386243386,
+      "macro_f1": 0.6329059829059829
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 40,
+      "C": 1.0,
+      "kernel": "linear",
+      "feature_count": 1152,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5841269841269842,
+      "macro_f1": 0.5844481605351171
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 40,
+      "C": 0.01,
+      "kernel": "linear",
+      "feature_count": 1280,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5841269841269842,
+      "macro_f1": 0.5819607843137256
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 40,
+      "C": 10.0,
+      "kernel": "rbf",
+      "feature_count": 1152,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5915343915343915,
+      "macro_f1": 0.5756056808688387
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 40,
+      "C": 0.1,
+      "kernel": "linear",
+      "feature_count": 1280,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5804232804232804,
+      "macro_f1": 0.5724358974358975
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 80,
+      "C": 0.1,
+      "kernel": "linear",
+      "feature_count": 576,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.5507936507936507,
+      "macro_f1": 0.5499999999999999
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 80,
+      "C": 1.0,
+      "kernel": "linear",
+      "feature_count": 576,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.5507936507936507,
+      "macro_f1": 0.5499999999999999
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "feature_count": 576,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.5507936507936507,
+      "macro_f1": 0.5499999999999999
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 40,
+      "C": 10.0,
+      "kernel": "linear",
+      "feature_count": 1152,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.5470899470899472,
+      "macro_f1": 0.549344375431332
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 80,
+      "C": 0.01,
+      "kernel": "linear",
+      "feature_count": 2560,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5698412698412699,
+      "macro_f1": 0.5474358974358974
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 80,
+      "C": 0.1,
+      "kernel": "linear",
+      "feature_count": 2560,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5698412698412699,
+      "macro_f1": 0.5474358974358974
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 80,
+      "C": 1.0,
+      "kernel": "linear",
+      "feature_count": 2560,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5698412698412699,
+      "macro_f1": 0.5474358974358974
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "robust4",
+      "normalization": "global",
+      "pca": 80,
+      "C": 10.0,
+      "kernel": "linear",
+      "feature_count": 2560,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5698412698412699,
+      "macro_f1": 0.5474358974358974
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "global",
+      "pca": 20,
+      "C": 1.0,
+      "kernel": "rbf",
+      "feature_count": 1280,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.5582010582010581,
+      "macro_f1": 0.5458089668615984
+    },
+    {
+      "ranks": [
+        8,
+        16,
+        5
+      ],
+      "summary": "mean_std",
+      "normalization": "site_center",
+      "pca": 20,
+      "C": 1.0,
+      "kernel": "rbf",
+      "feature_count": 1280,
+      "accuracy": 0.5769230769230769,
+      "balanced_accuracy": 0.5582010582010581,
+      "macro_f1": 0.5458089668615984
+    },
+    {
+      "ranks": [
+        6,
+        12,
+        4
+      ],
+      "summary": "robust4",
+      "normalization": "site_center",
+      "pca": 80,
+      "C": 0.01,
+      "kernel": "linear",
+      "feature_count": 1152,
+      "accuracy": 0.6153846153846154,
+      "balanced_accuracy": 0.5735449735449736,
+      "macro_f1": 0.5441647597254003
+    }
+  ],
+  "runtime_seconds": 10.542198399998597,
+  "limitations": [
+    "The fixed test set was inspected in earlier experiments, so this is exploratory rather than an unbiased publication estimate.",
+    "Tucker/HOSVD is unsupervised and may retain acquisition-site variance rather than diagnosis-specific variance.",
+    "Independent evidence remains the number of participants, not the number of EEG windows."
+  ]
+}

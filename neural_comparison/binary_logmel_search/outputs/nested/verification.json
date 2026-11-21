@@ -1,0 +1,13 @@
+{
+  "original_validation_source_hashes_match": {
+    "features.py": true,
+    "model.py": true,
+    "plot_sampling.py": true,
+    "report.py": true,
+    "run.py": true,
+    "test_pipeline.py": true
+  },
+  "sampling_control_prediction_disagreements": 0,
+  "outer_folds": 15,
+  "participants_per_repeat": 174
+}

@@ -1,0 +1,101 @@
+{
+  "method": "class decision offsets selected only on validation macro F1",
+  "selected_on_validation": {
+    "bias": [
+      0.0,
+      -0.19999999999999996,
+      0.0
+    ],
+    "val_macro_f1": 0.677396878483835,
+    "val_accuracy": 0.6923076923076923,
+    "magnitude": 0.19999999999999996
+  },
+  "uncalibrated_test": {
+    "subjects": 27,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6424242424242425,
+    "macro_f1": 0.6428571428571428,
+    "macro_recall": 0.6424242424242425,
+    "per_class": {
+      "AD": {
+        "precision": 0.8,
+        "recall": 0.7272727272727273,
+        "f1": 0.7619047619047619,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 6
+      },
+      "HC": {
+        "precision": 0.6363636363636364,
+        "recall": 0.7,
+        "f1": 0.6666666666666666,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        8,
+        1,
+        2
+      ],
+      [
+        1,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        7
+      ]
+    ]
+  },
+  "calibrated_test": {
+    "subjects": 27,
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6424242424242425,
+    "macro_f1": 0.6428571428571428,
+    "macro_recall": 0.6424242424242425,
+    "per_class": {
+      "AD": {
+        "precision": 0.8,
+        "recall": 0.7272727272727273,
+        "f1": 0.7619047619047619,
+        "support": 11
+      },
+      "FTD": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 6
+      },
+      "HC": {
+        "precision": 0.6363636363636364,
+        "recall": 0.7,
+        "f1": 0.6666666666666666,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        8,
+        1,
+        2
+      ],
+      [
+        1,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        7
+      ]
+    ]
+  }
+}
