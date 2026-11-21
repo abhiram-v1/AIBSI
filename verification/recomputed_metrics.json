@@ -1,0 +1,228 @@
+[
+  {
+    "experiment": "Li CP6 + naive Bayes",
+    "report_section": "Sec. 9 / Table 9-tensor",
+    "source": "neural_comparison\\paper_benchmark\\outputs\\full_174\\li_cp6_gnb_oof.json",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.6034,
+        "report": 0.603,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.5651,
+        "report": 0.565,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Rostamikia hierarchical SVM",
+    "report_section": "Sec. 9 / Table 9-tensor",
+    "source": "neural_comparison\\paper_benchmark\\outputs\\full_174\\rostamikia_hierarchical_svm_oof.json",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.5517,
+        "report": 0.552,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.525,
+        "report": 0.525,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "DICE-Net (3-class)",
+    "report_section": "Sec. 9 / Table 9-tensor",
+    "source": "neural_comparison\\paper_benchmark\\outputs\\full_174\\dice_net_3class_oof.json",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.5115,
+        "report": 0.511,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.4827,
+        "report": 0.483,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Jiang microstate cascade",
+    "report_section": "Sec. 9 / Table 9-tensor",
+    "source": "neural_comparison\\paper_benchmark\\outputs\\full_174\\jiang_microstate_cascade_oof.json",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.4138,
+        "report": 0.414,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.4266,
+        "report": 0.427,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Raw 1D CNN 5-fold ensemble, out-of-fold (147 dev.)",
+    "report_section": "Sec. 12.4",
+    "source": "neural_comparison\\advanced_clean_spectral\\outputs\\raw_1d_cnn_cv_ensemble\\probabilities.npz",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.6599,
+        "report": 0.66,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.6534,
+        "report": 0.653,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.6431,
+        "report": 0.643,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Raw 1D CNN 5-fold ensemble, test (27)",
+    "report_section": "Sec. 12.4",
+    "source": "neural_comparison\\advanced_clean_spectral\\outputs\\raw_1d_cnn_cv_ensemble\\probabilities.npz",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.6667,
+        "report": 0.667,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.6929,
+        "report": 0.693,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.6667,
+        "report": 0.667,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Binary log-mel SVM (pooled per repeat, mean of 3)",
+    "report_section": "Sec. 7 / Table binary",
+    "source": "neural_comparison\\binary_logmel_search\\outputs\\nested\\oof_predictions.json",
+    "values": {
+      "accuracy": {
+        "recomputed": 0.7203,
+        "report": 0.72,
+        "match": true
+      },
+      "balanced_accuracy": {
+        "recomputed": 0.7029,
+        "report": 0.703,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.6985,
+        "report": 0.699,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Tensor CV: direct",
+    "report_section": "Sec. 11.5 / Table tensor",
+    "source": "neural_comparison\\graph_ntf_svm\\outputs\\full\\oof_predictions.json",
+    "values": {
+      "balanced_accuracy": {
+        "recomputed": 0.4868,
+        "report": 0.487,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.4505,
+        "report": 0.451,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Tensor CV: ntf",
+    "report_section": "Sec. 11.5 / Table tensor",
+    "source": "neural_comparison\\graph_ntf_svm\\outputs\\full\\oof_predictions.json",
+    "values": {
+      "balanced_accuracy": {
+        "recomputed": 0.4676,
+        "report": 0.468,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.4234,
+        "report": 0.423,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Tensor CV: gntf",
+    "report_section": "Sec. 11.5 / Table tensor",
+    "source": "neural_comparison\\graph_ntf_svm\\outputs\\full\\oof_predictions.json",
+    "values": {
+      "balanced_accuracy": {
+        "recomputed": 0.4718,
+        "report": 0.472,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.4109,
+        "report": 0.411,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Tensor CV: shuffled",
+    "report_section": "Sec. 11.5 / Table tensor",
+    "source": "neural_comparison\\graph_ntf_svm\\outputs\\full\\oof_predictions.json",
+    "values": {
+      "balanced_accuracy": {
+        "recomputed": 0.485,
+        "report": 0.485,
+        "match": true
+      }
+    },
+    "status": "match"
+  },
+  {
+    "experiment": "Tensor CV: tt",
+    "report_section": "Sec. 11.5 / Table tensor",
+    "source": "neural_comparison\\graph_ntf_svm\\outputs\\full\\oof_predictions.json",
+    "values": {
+      "balanced_accuracy": {
+        "recomputed": 0.5048,
+        "report": 0.505,
+        "match": true
+      },
+      "macro_f1": {
+        "recomputed": 0.4721,
+        "report": 0.472,
+        "match": true
+      }
+    },
+    "status": "match"
+  }
+]
