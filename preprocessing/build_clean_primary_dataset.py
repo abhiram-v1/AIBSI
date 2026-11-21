@@ -16,8 +16,9 @@ import numpy as np
 from numpy.lib.format import open_memmap
 
 
-SOURCE = Path(r"C:\Projects\AIBSI\preprocessing\02_balanced_primary\primary")
-OUTPUT = Path(r"C:\Projects\AIBSI\preprocessing\04_clean_primary")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+SOURCE = REPO_ROOT / "preprocessing" / "02_balanced_primary" / "primary"
+OUTPUT = REPO_ROOT / "preprocessing" / "04_clean_primary"
 KEEP_DIR = OUTPUT / "primary"
 EXCLUDED_DIR = OUTPUT / "excluded"
 

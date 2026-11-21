@@ -9,8 +9,9 @@ from pathlib import Path
 import numpy as np
 
 
-PRIMARY = Path(r"C:\Projects\AIBSI\preprocessing\02_balanced_primary\primary")
-OUT = Path(r"C:\Projects\AIBSI\preprocessing\03_signal_qc_audit")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+PRIMARY = REPO_ROOT / "preprocessing" / "02_balanced_primary" / "primary"
+OUT = REPO_ROOT / "preprocessing" / "03_signal_qc_audit"
 FS = 250.0
 
 

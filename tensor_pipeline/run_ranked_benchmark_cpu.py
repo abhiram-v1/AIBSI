@@ -16,8 +16,9 @@ def requested_rank(argv: list[str]) -> int:
 
 
 rank = requested_rank(sys.argv)
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
 cpu.benchmark.OUTPUT = (
-    Path(r"C:\Projects\AIBSI\tensor_pipeline\outputs\benchmark_rank_sweep")
+    REPO_ROOT / "tensor_pipeline" / "outputs" / "benchmark_rank_sweep"
     / f"rank_{rank}"
 )
 

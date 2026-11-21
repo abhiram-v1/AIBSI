@@ -14,7 +14,8 @@ import numpy as np
 from scipy.signal import welch
 
 
-WORKSPACE = Path(r"C:\Projects\AIBSI")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+WORKSPACE = REPO_ROOT
 SOURCE = WORKSPACE / "preprocessing" / "04_clean_primary" / "primary"
 OUTPUT = WORKSPACE / "tensor_pipeline" / "outputs" / "tensorization"
 

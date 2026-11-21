@@ -16,8 +16,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
 
-ROOT = Path(r"C:\Projects\AIBSI\tensor_pipeline\outputs\tensorization")
-OUT = Path(r"C:\Projects\AIBSI\tensor_pipeline\outputs\feature_bottleneck_diagnostic")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+ROOT = REPO_ROOT / "tensor_pipeline" / "outputs" / "tensorization"
+OUT = REPO_ROOT / "tensor_pipeline" / "outputs" / "feature_bottleneck_diagnostic"
 
 
 def representations(tensor: np.ndarray, frequencies: np.ndarray) -> dict[str, np.ndarray]:

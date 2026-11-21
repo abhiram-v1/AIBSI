@@ -18,9 +18,8 @@ def converged_nmf(**kwargs):
 
 cpu.benchmark.NMF = converged_nmf
 cpu.benchmark.METHODS = ("nmf",)
-cpu.benchmark.OUTPUT = Path(
-    r"C:\Projects\AIBSI\tensor_pipeline\outputs\nmf_rank8_convergence_check"
-)
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+cpu.benchmark.OUTPUT = REPO_ROOT / "tensor_pipeline" / "outputs" / "nmf_rank8_convergence_check"
 
 
 if __name__ == "__main__":

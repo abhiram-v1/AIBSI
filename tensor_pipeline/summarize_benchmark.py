@@ -10,8 +10,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-ROOT = Path(r"C:\Projects\AIBSI\tensor_pipeline\outputs\benchmark_rank_sweep")
-OUTPUT = Path(r"C:\Projects\AIBSI\tensor_pipeline\outputs\summary")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+ROOT = REPO_ROOT / "tensor_pipeline" / "outputs" / "benchmark_rank_sweep"
+OUTPUT = REPO_ROOT / "tensor_pipeline" / "outputs" / "summary"
 RANKS = [3, 5, 8]
 METHOD_LABELS = {
     "pca": "PCA",

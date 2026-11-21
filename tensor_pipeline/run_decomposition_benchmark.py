@@ -38,7 +38,8 @@ from tensorly.tucker_tensor import tucker_to_tensor
 from xgboost import XGBClassifier
 
 
-WORKSPACE = Path(r"C:\Projects\AIBSI")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+WORKSPACE = REPO_ROOT
 TENSOR_DIR = WORKSPACE / "tensor_pipeline" / "outputs" / "tensorization"
 OUTPUT = WORKSPACE / "tensor_pipeline" / "outputs" / "benchmark"
 LABEL_NAMES = {0: "AD", 1: "FTD", 2: "CN"}

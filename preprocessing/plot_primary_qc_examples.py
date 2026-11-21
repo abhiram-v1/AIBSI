@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-ROOT = Path(r"C:\Projects\AIBSI\preprocessing\02_balanced_primary\primary")
-AUDIT = Path(r"C:\Projects\AIBSI\preprocessing\03_signal_qc_audit")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+ROOT = REPO_ROOT / "preprocessing" / "02_balanced_primary" / "primary"
+AUDIT = REPO_ROOT / "preprocessing" / "03_signal_qc_audit"
 CHANNELS = ["Fp1", "Fp2", "F7", "F3", "Fz", "F4", "F8", "T3", "C3", "Cz", "C4", "T4", "T5", "P3", "Pz", "P4", "T6", "O1", "O2"]
 
 

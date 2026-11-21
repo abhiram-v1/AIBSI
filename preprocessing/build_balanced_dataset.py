@@ -22,7 +22,8 @@ from scipy.io import loadmat
 from scipy.optimize import Bounds, LinearConstraint, milp
 
 
-WORKSPACE = Path(r"C:\Projects\AIBSI")
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repository root (was a hard-coded C:\ path)
+WORKSPACE = REPO_ROOT
 SOURCE_ROOT = WORKSPACE / "dataset" / "ds004504"
 OUTPUT_ROOT = WORKSPACE / "preprocessing" / "02_balanced_primary"
 
