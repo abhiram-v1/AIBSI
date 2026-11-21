@@ -60,3 +60,15 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Regenerable build caches and duplicate chart candidates (untracked on the research branch)
+presentation_progress/.codex_build/node_modules/
+.chart-data-*/
+.codex-ppt-build/
+
+# Final report build byproducts
+final_report/*.aux
+final_report/*.log
+final_report/*.out
+final_report/compile_*.txt
+final_report/report_working_backup.tex
