@@ -83,8 +83,11 @@ Every experiment folder has its own `README.md` with the exact commands it was r
 Generated outputs (`outputs/` folders) are git-ignored because they hold multi-GB caches,
 checkpoints and per-participant records. This branch adds only **aggregate** evidence from them:
 `REPORT.md`/`RESULTS.md`, `metrics.json`, `summary.json`, `protocol.json`, `verification.json`
-and figures. Files containing participant IDs, predictions, probabilities, splits, feature
-matrices or model weights are deliberately **not** committed.
+and figures. This branch does **not add** files containing participant IDs, predictions,
+probabilities, splits, feature matrices or model weights. Note that two folders committed
+earlier on `master` already contain such files and were left unchanged:
+`neural_comparison/graph_ntf_svm/outputs/` (per-fold caches, models and predictions, about
+500 MB) and `demo_handoff_2026-10-26/` (participant-level log-mel arrays).
 
 ---
 
