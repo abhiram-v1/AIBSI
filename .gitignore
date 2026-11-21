@@ -72,3 +72,11 @@ final_report/*.log
 final_report/*.out
 final_report/compile_*.txt
 final_report/report_working_backup.tex
+
+# Generated outputs of the merged-cohort experiments (aggregate evidence is force-added)
+neural_comparison/binary_logmel_search/outputs/
+neural_comparison/brainlat_native_ablation/outputs/
+neural_comparison/dataset_compatibility/outputs/
+neural_comparison/openneuro_fourier/outputs/
+neural_comparison/source88_brainlat_transfer/outputs/
+neural_comparison/wav2vec_joint_eeg/outputs/
