@@ -112,9 +112,9 @@ Figure~\ref{fig:pipeline} summarises the final processing chain.
 %% =====================================================================
 \section{Literature Review}
 \label{sec:litreview}
-\paragraph{EEG markers of AD and FTD.} Quantitative EEG studies consistently describe AD as a slowing of the resting rhythm: delta and theta power increase, posterior alpha and beta power decrease, and coherence between regions falls \cite{jeong2004,dauwels2010}. FTD is usually reported to have a comparatively preserved spectrum with smaller, more frontal changes, which makes AD and FTD harder to separate from each other than either is from controls \cite{nishida2011}. These findings motivate the spectral features used throughout this report and are the reference point for the interpretability analysis in Sec.~\ref{sec:tensorinterp}.
+\paragraph{EEG markers of AD and FTD.} Quantitative EEG studies describe AD as a slowing of the resting rhythm: delta and theta power increase, while posterior alpha and beta power decrease; altered synchrony is also reported \cite{jeong2004,dauwels2010}. Nishida \emph{et al.}\ found frequency- and region-specific differences among mild FTD, AD and control groups using quantitative EEG and sLORETA \cite{nishida2011}. These findings motivate the spectral features used throughout this report and are the reference point for the interpretability analysis in Sec.~\ref{sec:tensorinterp}.
 
-\paragraph{Datasets and machine-learning results.} Miltiadous \emph{et al.}\ released the 88-participant AHEPA recordings used here (OpenNeuro \code{ds004504}) \cite{miltiadous2023}, and the same group compared validation schemes on these data, showing that the choice of scheme changes the reported AD/FTD accuracy \cite{miltiadous2021}. Splits that place windows of one person in both training and test sets are a known source of optimism, which is why every split in this report is by participant. On this cohort, DICE-Net feeds band-power and coherence features to a convolution--transformer network for two binary tasks \cite{dice2023}; Rostamikia \emph{et al.}\ build a hierarchical SVM from handcrafted spectral, nonlinear and connectivity features \cite{rostamikia2024}; and Jiang \emph{et al.}\ use a two-stage EEG-microstate fusion network for dementia screening and AD/FTD differentiation \cite{jiang2026}. Outside AHEPA, Li \emph{et al.}\ factorised spectra of more than 12,000 clinical EEGs with a non-negative tensor model and related the factors to neurodegenerative disease \cite{li2024}. BrainLat \cite{prado2023} adds AD, behavioural-variant FTD and control EEG from Latin American sites, recorded with a 128-channel BioSemi system. Table~\ref{tab:lit} lists the headline results. Most are binary, and none is a merged multi-site three-class result, so we re-implemented four of them under our own protocol (Sec.~\ref{sec:litadapt}).
+\paragraph{Datasets and machine-learning results.} Miltiadous \emph{et al.}\ released the 88-participant AHEPA recordings used here (OpenNeuro \code{ds004504}) \cite{miltiadous2023}. In an earlier, smaller 28-participant study, the same group compared validation schemes and showed that the choice of scheme changes reported AD/FTD accuracy \cite{miltiadous2021}. Splits that place windows of one person in both training and test sets are a known source of optimism, which is why every split in this report is by participant. On the later AHEPA cohort, DICE-Net feeds band-power and coherence features to a convolution--transformer network for two binary tasks \cite{dice2023}; Rostamikia \emph{et al.}\ build a hierarchical SVM from handcrafted spectral, nonlinear and connectivity features \cite{rostamikia2024}; and Jiang \emph{et al.}\ use a two-stage EEG-microstate fusion network for dementia screening and AD/FTD differentiation \cite{jiang2026}. Outside AHEPA, Li \emph{et al.}\ factorised spectra of more than 12,000 clinical EEGs with a non-negative tensor model and related the factors to neurodegenerative disease \cite{li2024}. BrainLat \cite{prado2023} adds AD, behavioural-variant FTD and control EEG from Latin American sites, recorded with a 128-channel BioSemi system. Table~\ref{tab:lit} lists the headline results. Most are binary, and none is a merged multi-site three-class result, so we re-implemented four of them under our own protocol (Sec.~\ref{sec:litadapt}).
 
 \begin{table}[t]
 \centering\scriptsize
@@ -730,14 +730,14 @@ Author & Role & Where in this report\\
 24BDS087 & Evaluation protocol and leakage control (participant-level splits, nested and repeated CV) & \sref{sec:study1prep}, \sref{sec:logmel}, \sref{sec:repeatedcv}\\
  & Machine-learning and deep-learning model development and training on the local machine & \sref{sec:logmel}--\sref{sec:threeclass}, \sref{sec:cnn}\\
  & Spectral processing (STFT, log-mel representation) & \sref{sec:spectral}\\
- & Tensor construction (participant-level tensors and projection of held-out people), shared with Neeruganti Jeevan Sai & \sref{sec:tensorrecipe}, \sref{sec:cp}, \sref{sec:tt}\\
+ & Tensor construction (participant-level tensors and projection of held-out people), shared with Kothapalli Tharun Chowdary & \sref{sec:tensorrecipe}, \sref{sec:cp}, \sref{sec:tt}\\
 \midrule
-\textbf{Neeruganti Jeevan Sai} & Tensor decomposition and interpretability: CP and graph-regularised NTF (shared role) & \sref{sec:cp}, \sref{sec:tensorresults}, \sref{sec:tensorinterp}\\
-24BDS046 & Tensor construction, shared with Vatipalli Abhiram & \sref{sec:tensorrecipe}, \sref{sec:tt}\\
- & Site normalisation and harmonisation & \sref{sec:compat}, \sref{sec:logmel}\\
- & Study I tensor benchmark (88 participants, V1--V6) & \sref{sec:study1}\\
- & Ablation and electrode/frequency stability analysis & \sref{sec:interp}, \sref{sec:repeatedcv}, \sref{sec:eegpt}\\
- & Environment and compute setup & \reprolink\\
+\textbf{Neeruganti Jeevan Sai} & Dataset collection (OpenNeuro and BrainLat) & \sref{sec:opn}, \sref{sec:brainlatdata}\\
+24BDS046 & Initial dataset audit & \sref{sec:study1prep}, \sref{sec:compat}\\
+ & Cleaning and preprocessing & \sref{sec:study1prep}, \sref{sec:prep}\\
+ & Clinical metadata and label verification & \sref{sec:brainlatdata}, \sref{sec:compat}\\
+ & Results and summarisation & \sref{sec:discussion}, Table~\ref{tab:summary}\\
+ & Site-difference validation (per-site checks of model results and site-normalisation corrections) & \sref{sec:eegpt}, \sref{sec:cnnsite}, \sref{sec:cnnopenneuro}\\
 \midrule
 \textbf{Palyam Maruthi} & Spatial interpolation (128$\to$19 electrodes) & \sref{sec:interp}\\
 24BCS098 & Hyperparameter search & \sref{sec:study1}, \sref{sec:binary}\\
@@ -746,12 +746,12 @@ Author & Role & Where in this report\\
  & Alternative baselines (Riemannian, MFCC, microstate, random forest) & \sref{sec:fixedsplit}, \sref{sec:repeatedcv}, \sref{sec:litadapt}, \sref{sec:cnnresults}\\
  & Presentation and demo handoff & (outside this report)\\
 \midrule
-\textbf{Kothapalli Tharun Chowdary} & Dataset collection (OpenNeuro and BrainLat) & \sref{sec:opn}, \sref{sec:brainlatdata}\\
-24BDS032 & Initial dataset audit & \sref{sec:study1prep}, \sref{sec:compat}\\
- & Cleaning and preprocessing & \sref{sec:study1prep}, \sref{sec:prep}\\
- & Clinical metadata and label verification & \sref{sec:brainlatdata}, \sref{sec:compat}\\
- & Results and summarisation & \sref{sec:discussion}, Table~\ref{tab:summary}\\
- & Site-difference validation (per-site checks of model results and site-normalisation corrections) & \sref{sec:eegpt}, \sref{sec:cnnsite}, \sref{sec:cnnopenneuro}\\
+\textbf{Kothapalli Tharun Chowdary} & Tensor decomposition and interpretability: CP and graph-regularised NTF (shared role) & \sref{sec:cp}, \sref{sec:tensorresults}, \sref{sec:tensorinterp}\\
+24BDS032 & Tensor construction, shared with Vatipalli Abhiram & \sref{sec:tensorrecipe}, \sref{sec:tt}\\
+ & Site normalisation and harmonisation & \sref{sec:compat}, \sref{sec:logmel}\\
+ & Study I tensor benchmark (88 participants, V1--V6) & \sref{sec:study1}\\
+ & Ablation and electrode/frequency stability analysis & \sref{sec:interp}, \sref{sec:repeatedcv}, \sref{sec:eegpt}\\
+ & Environment and compute setup & \reprolink\\
 \midrule
 \textbf{Shaik Moiz} & Tensor decomposition and interpretability: Tensor Train and Tucker (shared role) & \sref{sec:tt}, \sref{sec:tucker}, \sref{sec:tensorinterp}\\
 24BCS133 & Pretrained-model work (EEGPT) & \sref{sec:eegpt}\\
@@ -827,10 +827,10 @@ Ref. & Type & What we took from it & Where used\\
 \multicolumn{4}{@{}l}{\emph{Clinical EEG background}}\\
 \cite{jeong2004} & Background & AD slows the resting rhythm: more delta/theta, less posterior alpha/beta & \sref{sec:litreview}, \sref{sec:tensorinterp}\\
 \cite{dauwels2010} & Background & Review of EEG-based AD diagnosis; spectral slowing and reduced coherence as markers & \sref{sec:litreview}, \sref{sec:tensorinterp}\\
-\cite{nishida2011} & Background & FTD shows smaller, more frontal EEG changes than AD, which explains why FTD is the hardest class & \sref{sec:litreview}, \sref{sec:repeatedcv}\\
+\cite{nishida2011} & Background & Quantitative EEG and sLORETA show frequency- and region-specific differences among mild FTD, AD and controls & \sref{sec:litreview}\\
 \midrule
 \multicolumn{4}{@{}l}{\emph{Published classifiers compared or adapted}}\\
-\cite{miltiadous2021} & Background & Comparison of validation schemes on the AHEPA data; supports participant-level splits throughout & \sref{sec:litreview}, \sref{sec:study1prep}\\
+\cite{miltiadous2021} & Background & Comparison of validation schemes in an earlier 28-participant cohort; motivates participant-level splits & \sref{sec:litreview}, \sref{sec:study1prep}\\
 \cite{dice2023} & Adapted & DICE-Net (band power + coherence, convolution--transformer), re-headed for three classes & \sref{sec:litreview}, \sref{sec:litadapt}\\
 \cite{rostamikia2024} & Adapted & Hierarchical handcrafted-feature SVM (dementia vs.\ HC, then AD vs.\ FTD) & \sref{sec:litreview}, \sref{sec:litadapt}\\
 \cite{jiang2026} & Adapted & Two-stage EEG-microstate fusion cascade; the closest three-class endpoint to ours & \sref{sec:litreview}, \sref{sec:litadapt}\\

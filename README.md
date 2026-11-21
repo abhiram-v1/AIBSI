@@ -91,6 +91,8 @@ probabilities, splits, feature matrices or model weights. Note that two folders 
 earlier in this branch's history already contain such files and were left unchanged:
 `neural_comparison/graph_ntf_svm/outputs/` (per-fold caches, models and predictions, about
 500 MB) and `demo_handoff_2026-10-26/` (participant-level log-mel arrays).
+The redistribution status of these older derivatives against BrainLat's access terms has not
+been confirmed; review it before wider sharing.
 
 ---
 
@@ -272,9 +274,10 @@ quoted in the text is the SVM+EEGPT blend that was its primary protocol; both ar
    py -3.10 -m unittest discover -s neural_comparison\brainlat_native_ablation -p test_pipeline.py
    py -3.10 -m unittest discover -s neural_comparison\dataset_compatibility -p test_compatibility.py
    py -3.10 tensor_pipeline\v4_tuning\test_tuning.py
+   py -3.10 neural_comparison\paper_benchmark\test_pipeline.py
    ```
-   All five passed on the authors' machine on 2026-11-21 (4, 5, 5 and 5 unit tests; the V4
-   check reports `PASS`).
+   All six passed on the authors' machine on 2026-11-21 (4, 5, 5 and 5 unit tests; the V4
+   and paper-benchmark checks report `PASS`).
 3. **Get the data** (§3) and place it under `dataset/`.
 4. **Rebuild caches** in the order in §6, then run the experiment you want to check. Each script
    writes `metrics.json` / `REPORT.md` to its `outputs/` folder; compare with the committed copy
@@ -296,12 +299,12 @@ CNN and EEGPT training should be run on a CUDA GPU.
   recomputation from saved predictions and comparison with recorded metric files (§7).
 * **Data not included.** Raw EEG must be obtained from OpenNeuro and Synapse; 14 BrainLat HC
   recordings are unusable because their signal files are absent upstream.
-* **Committed evidence is aggregate only.** Per-participant predictions, splits and caches stay
-  local, so `verification/recompute_metrics.py` only runs after the experiments have been run.
-* **Known script problem.** `neural_comparison/paper_benchmark/test_pipeline.py` fails on a
-  fresh run because it expects `graph_ntf_svm/outputs/full/repeat_00_fold_000/gntf/result.json`,
-  a file that the current graph-NTF output layout does not produce. The benchmark itself
-  (`run.py`, `verify.py`) does not depend on it.
+* **Newly added verification evidence is aggregate.** Most per-participant inputs used by
+  `verification/recompute_metrics.py` are local and must be regenerated for a complete fresh-clone
+  recomputation. The graph-NTF prediction file is an older tracked exception. Other older
+  tracked folders also contain participant-level derivatives, as disclosed in §2.
+* **Paper-benchmark check.** `neural_comparison/paper_benchmark/test_pipeline.py` passes on
+  2026-11-21. Its referenced G-NTF fold result is tracked in this repository.
 * **Hard-coded paths fixed.** Eleven Study I scripts in `preprocessing/` and `tensor_pipeline/`
   used `C:\Projects\AIBSI`; on this branch they resolve the repository root from their own
   location, which gives the same paths on the original machine. They were not re-run after the

@@ -4,9 +4,10 @@ This script does not retrain anything. It reads prediction files written by the
 original experiment runs, recomputes accuracy / balanced accuracy / macro F1 with
 scikit-learn, and compares them with the values printed in the research report.
 
-The prediction files live under git-ignored output folders (they contain
-participant-level records derived from OpenNeuro and BrainLat), so this script only
-works on a machine where the experiments were run. Missing inputs are reported as
+Most prediction files live under git-ignored output folders (they contain
+participant-level records derived from OpenNeuro and BrainLat). The graph-NTF
+prediction file is an older tracked exception. A complete recomputation therefore
+requires a machine where the experiments were run. Missing inputs are reported as
 "missing", never as passed.
 
 Usage (from the repository root):

@@ -17,7 +17,7 @@ Report: `final_report/report.pdf`.
 Code checks performed: every Python file in the project folders parses; `compileall` succeeds;
 the unit tests of `graph_ntf_svm` (4), `binary_logmel_search` (5), `brainlat_native_ablation` (5)
 and `dataset_compatibility` (5) pass; `tensor_pipeline/v4_tuning/test_tuning.py` reports PASS.
-`paper_benchmark/test_pipeline.py` fails (missing G-NTF fold file, see Outstanding issues).
+`paper_benchmark/test_pipeline.py` also passes; its referenced G-NTF fold result is tracked.
 
 ## Mapping
 
@@ -59,7 +59,8 @@ and `dataset_compatibility` (5) pass; `tensor_pipeline/v4_tuning/test_tuning.py`
 
 (`outputs/...` paths in the code column's experiment folder; `advanced_clean_spectral` means
 `neural_comparison/advanced_clean_spectral`. Files marked "(local)" hold per-participant
-predictions and are intentionally not committed.)
+predictions and are not committed in the final-submission additions. The older graph-NTF OOF
+prediction file is already tracked.)
 
 ## Mismatches between report and code/evidence
 
@@ -71,9 +72,6 @@ predictions and are intentionally not committed.)
 
 ## Outstanding issues
 
-* `neural_comparison/paper_benchmark/test_pipeline.py` expects
-  `neural_comparison/graph_ntf_svm/outputs/full/repeat_00_fold_000/gntf/result.json`, which the
-  saved graph-NTF output does not contain, so the script stops with `FileNotFoundError`.
 * Eleven Study I scripts were changed from a hard-coded `C:\Projects\AIBSI` to a repository-relative
   root on this branch; they were compiled but not re-run.
 * Reproducing from raw EEG requires BrainLat access via Synapse and the EEGPT checkpoint.
