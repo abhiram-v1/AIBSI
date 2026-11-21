@@ -261,7 +261,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Frozen EEGPT + spectral repeated nested CV")
     parser.add_argument("--repeats", type=int, default=5)
     parser.add_argument("--permutation-check", action="store_true", help="Shuffle labels within site; expect ~chance")
+    parser.add_argument("--embeddings", type=Path, default=None, help="Alternative window_embeddings.npy")
+    parser.add_argument("--tag", default=None, help="Output folder suffix for this variant")
     args = parser.parse_args()
+    global EMBEDDINGS, OUT
+    if args.embeddings is not None:
+        EMBEDDINGS = args.embeddings
+    if args.tag:
+        OUT = OUT.with_name(f"frozen_eegpt_cv_{args.tag}")
     OUT.mkdir(parents=True, exist_ok=True)
     blocks, labels, sites, _ = load_data()
     print({name: matrix.shape for name, matrix in blocks.items()}, flush=True)
